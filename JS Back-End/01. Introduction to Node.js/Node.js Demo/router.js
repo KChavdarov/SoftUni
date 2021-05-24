@@ -1,7 +1,8 @@
 const handlers = {};
 
-function match(url) {
-    let handler = handlers[url];
+function match(method, url) {
+    const methods = handlers[url] || {};
+    let handler = methods[method];
 
     if (handler == undefined) {
         handler = defaultHandler;
@@ -10,8 +11,15 @@ function match(url) {
     return handler;
 }
 
-function registerHandler(url, handler) {
-    handlers[url] = handler;
+function registerHandler(method, url, handler) {
+    let methods = handlers[url];
+
+    if (methods == undefined) {
+        methods = {};
+        handlers[url] = methods;
+    }
+
+    handlers[url][method] = handler;
 }
 
 function defaultHandler(req, res) {
@@ -22,5 +30,8 @@ function defaultHandler(req, res) {
 
 module.exports = {
     match,
-    registerHandler
+    registerHandler,
+    get: (...params) => registerHandler('GET', ...params),
+    post: (...params) => registerHandler('POST', ...params),
+    // delete: (...params) => registerHandler('DELETE', ...params)
 };
