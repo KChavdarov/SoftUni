@@ -1,7 +1,7 @@
 const formidable = require('formidable');
 const database = require('../util/database.js');
 
-module.exports = (req, res) => {
+function createController(req, res) {
     const form = new formidable.IncomingForm();
 
     form.parse(req, (err, fields, files) => {
@@ -14,3 +14,5 @@ module.exports = (req, res) => {
         res.end();
     });
 };
+
+module.exports = createController;

@@ -1,14 +1,8 @@
-const layout = require('../views/layout.js');
+const { layout, loadTemplate } = require('../util/template.js');
 
-const aboutPage = `
-<div>
-    <h1>About us</h1>
-    <p>About page</p>
-</div>
-`;
-
-function aboutController(req, res) {
-    res.write(layout(aboutPage,'About us'));
+async function aboutController(req, res) {
+    const aboutPage = await loadTemplate('about');
+    res.write(await layout(aboutPage, 'About us'));
     res.end();
 }
 

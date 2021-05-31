@@ -1,0 +1,15 @@
+<div>
+    <h1>Catalog</h1>
+    <form method="POST" action="/create">
+        <label>Item Name<input type="text" name="name"></label>
+        <label>Serial Number<input type="text" name="sn"></label>
+        <input type="submit">
+    </form>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="uploaded-file">
+        <input type="submit" value="Upload">
+    </form>
+    <ul>
+        {{items}}
+    </ul>
+</div>
