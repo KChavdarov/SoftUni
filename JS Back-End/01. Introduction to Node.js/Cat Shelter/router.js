@@ -23,5 +23,7 @@ module.exports = {
     registerHandler,
     match,
     get: (...params) => registerHandler('GET', ...params),
-    post: (...params) => registerHandler('POST', ...params)
+    post: (...params) => registerHandler('POST', ...params),
+    put: (...params) => registerHandler('PUT', ...params),
+    delete: (...params) => registerHandler('DELETE', ...params)
 };

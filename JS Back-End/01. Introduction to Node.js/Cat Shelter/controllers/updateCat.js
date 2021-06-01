@@ -2,11 +2,10 @@ const fs = require('fs/promises');
 const formidable = require('formidable');
 const defaultHandler = require('./default.js');
 const path = require('path');
-const { addItem } = require('../util/catsDatabase.js');
+const { updateItem } = require('../util/catsDatabase.js');
 
-
-function addCat(req, res) {
-    let form = new formidable.IncomingForm();
+function updateCat(req, res) {
+    const form = new formidable.IncomingForm();
     form.parse(req, (err, fields, files) => {
         if (err) {
             return defaultHandler(req, res);
@@ -20,7 +19,8 @@ function addCat(req, res) {
             fs.rename(currentPath, newPath);
             cat.image = filename;
         }
-        addItem(cat);
+        cat.id = req.itemId;
+        updateItem(req.itemId, cat);
         res.writeHead(303, {
             'Location': '/'
         });
@@ -28,4 +28,4 @@ function addCat(req, res) {
     });
 }
 
-module.exports = addCat;
+module.exports = updateCat;
