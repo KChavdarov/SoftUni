@@ -1,3 +1,5 @@
+const staticHandler = require('./controllers/static.js');
+
 const handlers = {};
 
 function registerHandler(method, pathname, handler) {
@@ -9,15 +11,12 @@ function registerHandler(method, pathname, handler) {
 }
 
 function match(method, pathname) {
+    if (pathname.startsWith('/content')) {
+        return staticHandler;
+    }
     const methods = handlers[pathname] || {};
-    const handler = methods[method] || defaultHandler;
+    const handler = methods[method];
     return handler;
-}
-
-function defaultHandler(req, res) {
-    res.statusCode = 404;
-    res.write('Not found');
-    res.end();
 }
 
 module.exports = {
