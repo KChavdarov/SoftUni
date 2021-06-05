@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const filePath = path.normalize(path.join(__dirname, '../data/cats.json'));
+const filepath = path.normalize(path.join(__dirname, '../data/cats.json'));
 let database = '';
 
-fs.readFile(filePath, (err, data) => {
+fs.readFile(filepath, (err, data) => {
     database += data;
     database = JSON.parse(database.toString());
 });
@@ -30,7 +30,7 @@ function addItem(item) {
     const id = generateId();
     database[id] = item;
     item.id = id;
-    fs.writeFile(filePath, JSON.stringify(database), (err) => {
+    fs.writeFile(filepath, JSON.stringify(database), (err) => {
         if (err) {
             console.error(err);
         }
@@ -42,7 +42,7 @@ function deleteItem(id) {
     fs.unlink(path.normalize(path.join(__dirname, '../content/images/' + database[id]['image'])), () => console.log('image deleted'));
 
     delete database[id];
-    fs.writeFile(filePath, JSON.stringify(database), (err) => {
+    fs.writeFile(filepath, JSON.stringify(database), (err) => {
         if (err) {
             console.error(err);
         }
@@ -55,7 +55,7 @@ function updateItem(id, item) {
         fs.unlink(path.normalize(path.join(__dirname, '../content/images/' + database[id]['image'])), () => console.log('image deleted'));
     }
     database[id] = item;
-    fs.writeFile(filePath, JSON.stringify(database), (err) => {
+    fs.writeFile(filepath, JSON.stringify(database), (err) => {
         if (err) {
             console.error(err);
         }

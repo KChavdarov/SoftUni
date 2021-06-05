@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    background-color: lightgrey;
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    background-color: lightyellow;
+    min-height: 100vh;
+}
+
+#site-header {
+    background-color: moccasin;
+    border-bottom: 2px solid black;
+    padding: 1rem 2rem;
+}
+
+ul{
+    list-style: none;
+}
+
+#site-nav ul li{
+    display: inline;
+    list-style: none;
+}

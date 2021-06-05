@@ -1,56 +1,31 @@
 const express = require('express');
 const hbs = require('express-handlebars');
+const router = require('./controllers/catalog.js');
+const catalogController = require('./controllers/catalog.js');
+const homeController = require('./controllers/home.js');
 const logger = require('./logger.js');
-const app = express();
+const init = require('./util/database.js');
+const bodyParser = require('express').urlencoded({ extended: true });
 const port = 3030;
 
-app.engine('.hbs', hbs({
-    extname: '.hbs'
-}));
+async function startApp() {
+    const app = express();
 
-app.set('view engine', '.hbs');
+    app.engine('.hbs', hbs({
+        extname: '.hbs'
+    }));
+    app.set('view engine', '.hbs');
 
-app.use(logger);
-app.use('/static', express.static('static'));
+    app.use(logger);
+    app.use(bodyParser);
+    app.use(await init());
+    app.use('/static', express.static('static'));
+    app.use('/catalog', router);
 
-app.get('/', (req, res) => {
-    const data = {
-        'title': 'My Homepage',
-        'user': {
-            'username': 'Peter',
-            'email': 'peter@abv.bg'
-        },
-        'kitty': '/static/cat.jpg',
-        'name': 'Peter',
-        'age': 22,
-        // 'items': ['coins', 'chewing gum', 'keys', 'phone', 'wallet', 'lint']
-        'items': [{
-                'name': 'coins',
-                'qty': 55
-            }, {
-                'name': 'chewing gum',
-                'qty': 4
-            },
-            {
-                'name': 'keys',
-                'qty': 1
-            },
-            {
-                'name': 'phone',
-                'qty': 1
-            },
-            {
-                'name': 'wallet',
-                'qty': 1
-            },
-            {
-                'name': 'lint',
-                'qty': 1
-            }
-        ],
-        'message': '<p>Message</p>'
-    };
-    res.render('home', data);
-});
+    app.get('/', homeController);
+    app.get('/catalog', catalogController);
 
-app.listen(port, () => console.log('Server listening on port ' + port));
+    app.listen(port, () => console.log('Server listening on port ' + port));
+}
+
+startApp();

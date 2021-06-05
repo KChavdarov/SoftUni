@@ -5,28 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/site.css">
     <title>{{title}}</title>
 </head>
 
 <body>
-    <header>
-        {{#if user}}
-        <span>
-            Welcome, {{user.username}}!
-        </span>
-        {{else}}
-        <a href="/login">Login</a>
-        {{/if}}
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/catalog">Catalog</a></li>
-                <li><a href="/about">About</a></li>
-            </ul>
-        </nav>
-        <hr>
-    </header>
-    {{{body}}}
+    <div class="container">
+        <header id="site-header">
+            {{#if user}}
+            <span>
+                Welcome, {{user.username}}!
+            </span>
+            {{/if}}
+            <nav id="site-nav">
+                <ul>
+                    {{#if user}}
+                    {{else}}
+                    <li><a href="/login">Login</a></li>
+                    {{/if}}
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/catalog">Catalog</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {{{body}}}
+        </main>
+        <footer>
+            <span>&copy; Kiril Ivanov 2021</span>
+        </footer>
+    </div>
 </body>
 
 </html>
