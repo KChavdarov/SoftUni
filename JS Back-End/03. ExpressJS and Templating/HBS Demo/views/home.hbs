@@ -1,0 +1,18 @@
+<h1>Welcome to Express-Handlebars</h1>
+<div>
+    <h2>Name: {{name}}</h2>
+    <p>Age: {{age}}</p>
+    <h3>Items in pocket</h3>
+    {{#each items}}
+    <section>
+        <ul>
+            {{>item}}
+        </ul>
+    </section>
+    {{else}}
+    <p>No items - pocket is empty</p>
+    {{/each}}
+    {{{message}}}
+</div>
+<br>
+<img src="{{kitty}}">
