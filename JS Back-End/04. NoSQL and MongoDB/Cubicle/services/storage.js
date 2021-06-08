@@ -13,18 +13,20 @@ async function init() {
 }
 
 async function getAllItems(query) {
-    const options = {};
+    // const options = {};
 
-    if (query.search) {
-        options.name = new RegExp(`${query.search.toLocaleLowerCase()}`, 'i');
-    }
-    if (query.from) {
-        options.difficulty = { $gte: Number(query.from) };
-    }
-    if (query.to) {
-        options.difficulty = options.difficulty || {};
-        options.difficulty.$lte = Number(query.to);
-    }
+    // if (query.search) {
+    //     options.name = new RegExp(`${query.search}`, 'i');
+    // }
+    // if (query.from) {
+    //     options.difficulty = { $gte: Number(query.from) };
+    // }
+    // if (query.to) {
+    //     options.difficulty = options.difficulty || {};
+    //     options.difficulty.$lte = Number(query.to);
+    // }
+
+    const options = { name: new RegExp(`${query.search || ''}`, 'i'), difficulty: { $gte: query.from || 0, $lte: query.to || 6 } };
 
     return Cube.find(options).lean();
 }
