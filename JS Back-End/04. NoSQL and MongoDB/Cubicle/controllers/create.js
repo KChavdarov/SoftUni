@@ -9,8 +9,15 @@ module.exports = {
         item.description = req.body.description;
         item.imageUrl = req.body.imageUrl;
         item.difficulty = Number(req.body.difficulty);
-
-        await req.storage.addItem(item);
-        res.redirect('/');
+        try {
+            await req.storage.addItem(item);
+            return res.redirect('/');
+        } catch (err) {
+            if (err.name == 'ValidationError') {
+                return res.render('create', { title: 'Add New Cube', error: 'ValidationError' });
+            } else {
+                return res.redirect('404');
+            }
+        }
     }
 };
