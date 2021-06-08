@@ -1,19 +1,23 @@
 module.exports = {
-    edit: (req, res) => {
+    edit: async (req, res) => {
         const id = req.params.id;
-        const cubicle = req.storage.getItemById(id);
-        cubicle[`dif${cubicle.difficulty}`] = true;
+        const cubicle = await req.storage.getItemById(id);
         if (cubicle === undefined) {
             return res.redirect('/404');
         }
+        cubicle[`dif${cubicle.difficulty}`] = true;
         res.render('edit', { title: 'Edit Cubicle', cubicle });
-
     },
-    update: (req, res) => {
+    update: async (req, res) => {
         const id = req.params.id;
-        const data = req.body;
+        const item = {};
+
+        item.name = req.body.name;
+        item.description = req.body.description;
+        item.imageUrl = req.body.imageUrl;
+        item.difficulty = Number(req.body.difficulty);
         try {
-            req.storage.updateItem(id, data);
+            await req.storage.updateItem(id, item);
             res.redirect('/details/' + id);
         } catch {
             res.redirect('404');

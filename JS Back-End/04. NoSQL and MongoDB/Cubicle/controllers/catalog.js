@@ -1,7 +1,7 @@
 module.exports = {
-    catalog: (req, res) => {
+    catalog: async (req, res) => {
         const query = req.query;
-        const cubicles = req.storage.getAllItems(query);
+        const cubicles = await req.storage.getAllItems(query);
 
         const context = {
             title: 'Cubicle',

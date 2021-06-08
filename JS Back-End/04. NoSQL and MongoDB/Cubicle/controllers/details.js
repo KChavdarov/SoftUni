@@ -1,9 +1,9 @@
 module.exports = {
-    details: (req, res) => {
+    details: async (req, res) => {
         const id = req.params.id;
-        const cubicle = req.storage.getItemById(id);
+        const cubicle = await req.storage.getItemById(id);
         if (cubicle === undefined) {
-            return  res.redirect('/404');
+            return res.redirect('/404');
         }
         res.render('details', { title: 'Cubicle', cubicle });
     }
