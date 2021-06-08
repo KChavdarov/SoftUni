@@ -1,5 +1,8 @@
 <h1>Create</h1>
 <div class="form">
+  {{#if error}}
+  <p>All fields are required. Image URL must be valid.</p>
+  {{/if}}
   <form action='/create' method="POST">
     <label for="name">Name</label>
     <input type="text" id="name" name="name">

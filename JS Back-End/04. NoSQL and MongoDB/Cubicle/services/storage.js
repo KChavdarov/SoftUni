@@ -41,6 +41,7 @@ async function getItemById(id) {
 }
 
 async function addItem(item) {
+    // don't await in order to use try/catch at next stage
     const cube = new Cube(item);
     return cube.save();
 }
