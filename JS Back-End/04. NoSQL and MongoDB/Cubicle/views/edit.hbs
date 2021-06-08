@@ -1,0 +1,23 @@
+{{#with cubicle}}
+<h1>Edit</h1>
+<div class="form">
+  <form action='/edit/{{id}}' method="POST">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value="{{name}}">
+    <label for="name">Description</label>
+    <textarea id="name" name="description">{{description}}</textarea>
+    <label for="image">ImageUrl</label>
+    <input type="text" id="image" name="imageUrl" value="{{imageUrl}}">
+    <label for="difficulty">Difficulty</label>
+    <select id="difficulty" name="difficulty">
+      <option {{#if dif1}}selected{{/if}} value="1">1 - Very Easy</option>
+      <option {{#if dif2}}selected{{/if}} value="2">2 - Easy</option>
+      <option {{#if dif3}}selected{{/if}} value="3">3 - Medium (Standard 3x3)</option>
+      <option {{#if dif4}}selected{{/if}} value="4">4 - Intermediate</option>
+      <option {{#if dif5}}selected{{/if}} value="5">5 - Expert</option>
+      <option {{#if dif6}}selected{{/if}} value="6">6 - Hardcore</option>
+    </select>
+    <input type="submit" value="Update Cube">
+  </form>
+</div>
+{{/with}}

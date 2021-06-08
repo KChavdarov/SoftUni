@@ -1,0 +1,26 @@
+{
+  "3bbkuk6skpk84euk": {
+    "name": "Gan356 Air SM",
+    "description": "Magnets in AirSM will not drop, and their positions will be more precise with the Magnets-Snap-On design. With the use of 3mm*2mm magnets, the handfeel will be more stable and more comfortable. P.S. This design is brand new for the AirSM.",
+    "imageUrl": "https://ae01.alicdn.com/kf/HTB1CSddXRxRMKJjy0Fdq6yifFXa6/Gan-356-Air-SM-3x3-Black-Magic-cube-GAN-Air-SM-Magnetic-3x3x3-Speed-cube-gans.jpg",
+    "difficulty": 3
+  },
+  "3bbkuie4kpk85srt": {
+    "name": "Eco-Dark",
+    "description": "Amazing dark cube riddle",
+    "imageUrl": "https://thingsidesire.com/wp-content/uploads/2018/06/Eco-Dark-Rubik%E2%80%99s-Cube2.jpg",
+    "difficulty": 6
+  },
+  "3bbkuk40kpk86hi1": {
+    "name": "Pyraminx",
+    "description": "Amazing pyramid-shaped riddle",
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61izOzq%2BBAL._SY355_.jpg",
+    "difficulty": 1
+  },
+  "3bbku2kokpk878gy": {
+    "name": "Megaminx",
+    "description": "Amazing colorful riddle",
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61HpQqVQ37L._SY355_.jpg",
+    "difficulty": 1
+  }
+}
