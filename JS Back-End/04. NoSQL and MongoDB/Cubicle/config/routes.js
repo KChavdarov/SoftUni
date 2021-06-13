@@ -4,6 +4,7 @@ const { about } = require('../controllers/about.js');
 const { create, post } = require('../controllers/create.js');
 const { details } = require('../controllers/details.js');
 const { edit, update } = require('../controllers/edit.js');
+const { postComment } = require('../controllers/comment.js');
 
 
 module.exports = (app) => {
@@ -15,6 +16,7 @@ module.exports = (app) => {
     app.post('/create', post);
     app.get('/edit/:id', edit);
     app.post('/edit/:id', update);
+    app.post('/comments/:cubeId', postComment);
 
     // setup default handler
     app.all('*', defaultHandler);

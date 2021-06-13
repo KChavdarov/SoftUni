@@ -1,4 +1,5 @@
 const Cube = require('../models/Cube.js');
+const Comment = require('../models/Comment.js');
 
 async function init() {
     return (req, res, next) => {
@@ -6,7 +7,8 @@ async function init() {
             getAllItems,
             getItemById,
             addItem,
-            updateItem
+            updateItem,
+            createComment,
         };
         next();
     };
@@ -33,7 +35,7 @@ async function getAllItems(query) {
 
 async function getItemById(id) {
     try {
-        const cube = await Cube.findById(id).lean();
+        const cube = await Cube.findById(id).populate('comments').lean();
         return cube;
     } catch {
         return undefined;
@@ -53,6 +55,19 @@ async function updateItem(id, item) {
     }
     Object.assign(cube, item);
     return cube.save();
+}
+
+async function createComment(data) {
+    const cube = await Cube.findById(data.cubeId);
+    if (!cube) {
+        throw new ReferenceError('Cube not found');
+    }
+
+    const comment = new Comment(data);
+    await comment.save();
+
+    cube.comments.push(comment);
+    await cube.save();
 }
 
 module.exports = { init };

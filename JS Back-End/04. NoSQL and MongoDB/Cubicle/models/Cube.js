@@ -21,9 +21,10 @@ const cubeSchema = new mongoose.Schema({
     },
     difficulty: {
         type: Number,
-        min: 0,
+        min: 1,
         max: 6
-    }
+    },
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
 });
 
 module.exports = mongoose.model('Cube', cubeSchema);

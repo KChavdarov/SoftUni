@@ -6,3 +6,21 @@
   <a class="btn" href="/">Back</a>
   <a class="btn" href="/edit/{{cubicle._id}}">Edit</a>
 </div>
+<br>
+<div class="details">
+  <h3>Write a comment</h3>
+  <form action="/comments/{{cubicle._id}}" method="post">
+    <span>Your name:</span>
+    <input type="text" name="author">
+    <span>Comment:</span>
+    <textarea name="content"></textarea>
+    <input type="submit" value="Post">
+  </form>
+</div>
+<br>
+{{#each cubicle.comments}}
+{{> comment}}
+{{else}}
+<br>
+<div class="details"> There are no comments yet. You are welcome to write the first one.</div>
+{{/each}}
