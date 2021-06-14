@@ -1,5 +1,6 @@
 const Cube = require('../models/Cube.js');
 const Comment = require('../models/Comment.js');
+const Accessory = require('../models/Accessory.js');
 
 async function init() {
     return (req, res, next) => {
@@ -9,6 +10,9 @@ async function init() {
             addItem,
             updateItem,
             createComment,
+            createAccessory,
+            getAccessories,
+            attachAccessory,
         };
         next();
     };
@@ -35,7 +39,7 @@ async function getAllItems(query) {
 
 async function getItemById(id) {
     try {
-        const cube = await Cube.findById(id).populate('comments').lean();
+        const cube = await Cube.findById(id).populate('comments').populate('accessories').lean();
         return cube;
     } catch {
         return undefined;
@@ -68,6 +72,29 @@ async function createComment(data) {
 
     cube.comments.push(comment);
     await cube.save();
+}
+
+async function createAccessory(data) {
+    const accessory = new Accessory(data);
+    return accessory.save();
+}
+
+async function getAccessories(existing) {
+    return Accessory.find({ _id: { $nin: existing } }).lean();
+}
+
+async function attachAccessory(cubeId, accessoryId) {
+    const [cube, accessory] = await Promise.all([
+        Cube.findById(cubeId),
+        Accessory.findById(accessoryId)
+    ]);
+
+    if (!cube || !accessory) {
+        throw new ReferenceError('ID not found');
+    }
+
+    cube.accessories.push(accessory);
+    return cube.save();
 }
 
 module.exports = { init };
