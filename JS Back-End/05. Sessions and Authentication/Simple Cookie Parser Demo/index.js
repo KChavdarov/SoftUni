@@ -1,41 +1,39 @@
 const express = require('express');
+const bodyParser = require('express').urlencoded;
+const expressSession = require('express-session');
+const routes = require('./controllers.js');
+const auth = require('./auth.js');
+
 
 const app = express();
-
-const sessions = {};
-
-function mySessionStorage(req, res, next) {
-    let session = {};
-    if (req.headers.cookie) {
-        const id = req.headers.cookie.split('=')[1];
-        if (sessions[id] == undefined) {
-            console.log('Invalid user session. Generating new...');
-            createNewSession();
-        } else {
-            session = sessions[id];
-            console.log('Existing user session. ID: ' + id);
-        }
-    } else {
-        createNewSession();
-    }
-    session.visited++;
-
-    req.session = session;
+app.use(bodyParser({ extended: false }));
+app.use(expressSession({
+    secret: 'my secret',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+}));
+app.use((req, res, next) => {
+    console.log('>>> ', req.method, req.url, req.body);
+    console.log('Session Data: ', req.session);
     next();
+});
+app.use(auth);
+routes(app);
 
-    function createNewSession() {
-        const id = ('0000000' + (Math.random() * 99999999 | 0).toString(16)).slice(-8);
-        sessions[id] = session;
-        session.visited = 0;
-        res.setHeader('Set-Cookie', 'sessionId=' + id);
-        console.log('New user session generated. ID: ' + id);
+
+app.post('/register', async (req, res) => {
+    await req.register(req.body.username, req.body.password);
+    res.redirect('/login');
+});
+
+app.post('/login', async (req, res) => {
+    const match = await req.login(req.body.username, req.body.password);
+    if (match) {
+        res.redirect('/');
+    } else {
+        res.send('username and password don\'t match');
     }
-}
-
-app.use(mySessionStorage);
-
-app.get('/', (req, res) => {
-    res.send('<h1>Hello!</h1><p>You have visited this web page ' + req.session.visited + ' number of times</p>');
 });
 
 app.listen(3030);
