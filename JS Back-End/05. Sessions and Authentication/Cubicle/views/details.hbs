@@ -1,0 +1,36 @@
+<h1>{{cubicle.name}}</h1>
+<img class="cube" src="{{cubicle.imageUrl}}">
+<div class="details">
+  <p><span>Description:</span> {{cubicle.description}}</p>
+  <p><span>Difficulty level:</span> {{cubicle.difficulty}}</p>
+  <a class="btn" href="/products">Back</a>
+  <a class="btn" href="/details/{{cubicle._id}}/attach">Attach Accessory</a>
+  <a class="btn" href="/products/edit/{{cubicle._id}}">Edit</a>
+</div>
+<br>
+<h2>Accessories</h2>
+<div class="accessories">
+  {{#each cubicle.accessories}}
+  {{> accessory}}
+  {{else}}
+  <h3 class="italic">This cube has no accessories yet...</h3>
+  {{/each}}
+</div>
+
+<div class="details">
+  <h3>Write a comment</h3>
+  <form action="/comments/{{cubicle._id}}" method="post">
+    <span>Your name:</span>
+    <input type="text" name="author">
+    <span>Comment:</span>
+    <textarea name="content"></textarea>
+    <input type="submit" value="Post">
+  </form>
+</div>
+<br>
+{{#each cubicle.comments}}
+{{> comment}}
+{{else}}
+<br>
+<div class="details"> There are no comments yet. You are welcome to write the first one.</div>
+{{/each}}
