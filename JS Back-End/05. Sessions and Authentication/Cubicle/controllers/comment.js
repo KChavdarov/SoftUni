@@ -7,7 +7,7 @@ router.post('/:cubeId', async (req, res) => {
         cubeId: req.params.cubeId,
     };
     await req.storage.createComment(comment);
-    return res.redirect('products/details/' + req.params.cubeId);
+    return res.redirect('/products/details/' + req.params.cubeId);
 });
 
 module.exports = router;

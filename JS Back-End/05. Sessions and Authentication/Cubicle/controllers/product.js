@@ -34,7 +34,7 @@ router.post('/create', async (req, res) => {
         if (err.name == 'ValidationError') {
             return res.render('create', { title: 'Add New Cube', error: 'ValidationError' });
         } else {
-            return res.redirect('404');
+            return res.redirect('/404');
         }
     }
 });
@@ -70,7 +70,7 @@ router.post('/edit/:id', async (req, res) => {
         await req.storage.updateItem(id, item);
         res.redirect('/products/details/' + id);
     } catch {
-        res.redirect('404');
+        res.redirect('/404');
     }
 });
 

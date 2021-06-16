@@ -3,7 +3,7 @@ const express = require('express');
 const expressConfig = require('./config/express.js');
 const databaseConfig = require('./config/database.js');
 const routesConfig = require('./config/routes.js');
-const { init: storage } = require('./services/storage.js');
+const storage = require('./middleware/storage.js');
 const port = 3030;
 
 start();
