@@ -7,7 +7,7 @@ router.get('/register', (req, res) => {
 router.post('/register', async (req, res) => {
     try {
         await req.auth.register(req.body);
-        res.redirect('/auth/login');
+        res.redirect('/products');
     } catch (error) {
         const context = {
             title: 'Register',
@@ -25,7 +25,7 @@ router.get('/login', (req, res) => {
 router.post('/login', async (req, res) => {
     try {
         await req.auth.login(req.body.username, req.body.password);
-        res.redirect('/auth/login');
+        res.redirect('/products');
     } catch (error) {
         const context = {
             title: 'Login',
@@ -36,5 +36,9 @@ router.post('/login', async (req, res) => {
     }
 });
 
+router.get('/logout', (req, res) => {
+    req.auth.logout();
+    res.redirect('/auth/login');
+});
 
 module.exports = router;

@@ -6,6 +6,7 @@ async function createUser(username, hashedPassword) {
         hashedPassword
     });
     await user.save();
+    return user;
 }
 
 async function getUserByUsername(username) {
