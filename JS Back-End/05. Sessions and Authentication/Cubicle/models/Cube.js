@@ -26,6 +26,7 @@ const cubeSchema = new mongoose.Schema({
     },
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
     accessories: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Accessory' }],
+    author: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
 });
 
 module.exports = mongoose.model('Cube', cubeSchema);

@@ -1,12 +1,16 @@
+const { isAuth } = require('../middleware/guards.js');
+
 const router = require('express').Router();
 
-router.post('/:cubeId', async (req, res) => {
-    const comment = {
-        author: req.body.author,
-        content: req.body.content,
-        cubeId: req.params.cubeId,
-    };
-    await req.storage.createComment(comment);
+router.post('/:cubeId', isAuth, async (req, res) => {
+    if (req.body.content) {
+        const comment = {
+            author: req.user._id,
+            content: req.body.content,
+            cubeId: req.params.cubeId,
+        };
+        await req.storage.createComment(comment);
+    }
     return res.redirect('/products/details/' + req.params.cubeId);
 });
 

@@ -1,4 +1,6 @@
 const { Router } = require('express');
+const { isAuth, isOwner } = require('../middleware/guards.js');
+const { preloadCube } = require('../services/preload.js');
 
 const router = Router();
 
@@ -16,17 +18,18 @@ router.get('/', async (req, res) => {
     res.render('index', context);
 });
 
-router.get('/create', (req, res) => {
+router.get('/create', isAuth, (req, res) => {
     res.render('create', { title: 'Add New Cube' });
 });
 
-router.post('/create', async (req, res) => {
-    const item = {};
-
-    item.name = req.body.name;
-    item.description = req.body.description;
-    item.imageUrl = req.body.imageUrl;
-    item.difficulty = Number(req.body.difficulty);
+router.post('/create', isAuth, async (req, res) => {
+    const item = {
+        name: req.body.name,
+        description: req.body.description,
+        imageUrl: req.body.imageUrl,
+        difficulty: Number(req.body.difficulty),
+        author: req.user._id,
+    };
     try {
         await req.storage.addItem(item);
         return res.redirect('/');
@@ -39,26 +42,28 @@ router.post('/create', async (req, res) => {
     }
 });
 
-router.get('/details/:id', async (req, res) => {
-    const id = req.params.id;
-    const cubicle = await req.storage.getItemById(id);
+router.get('/details/:id', preloadCube, async (req, res) => {
+    const cubicle = await req.data.cubicle;
     if (cubicle === undefined) {
         return res.redirect('/404');
+    } else {
+        cubicle.isAuth = req.user;
+        cubicle.isOwner = req.user && (req.data.cubicle.author._id == req.user._id);
+        res.render('details', { title: 'Cubicle', cubicle });
     }
-    res.render('details', { title: 'Cubicle', cubicle });
 });
 
-router.get('/edit/:id', async (req, res) => {
-    const id = req.params.id;
-    const cubicle = await req.storage.getItemById(id);
-    if (cubicle === undefined) {
-        return res.redirect('/404');
+router.get('/edit/:id', preloadCube, isOwner, async (req, res) => {
+    const cubicle = await req.data.cubicle;
+    if (cubicle) {
+        cubicle[`dif${cubicle.difficulty}`] = true;
+        res.render('edit', { title: 'Edit Cubicle', cubicle });
+    } else {
+        res.redirect('/404');
     }
-    cubicle[`dif${cubicle.difficulty}`] = true;
-    res.render('edit', { title: 'Edit Cubicle', cubicle });
 });
 
-router.post('/edit/:id', async (req, res) => {
+router.post('/edit/:id', preloadCube, isOwner, async (req, res) => {
     const id = req.params.id;
     const item = {};
 
@@ -69,6 +74,25 @@ router.post('/edit/:id', async (req, res) => {
     try {
         await req.storage.updateItem(id, item);
         res.redirect('/products/details/' + id);
+    } catch {
+        res.redirect('/404');
+    }
+});
+
+router.get('/delete/:id', preloadCube, isOwner, async (req, res) => {
+    const cubicle = await req.data.cubicle;
+    if (cubicle) {
+        cubicle[`dif${cubicle.difficulty}`] = true;
+        res.render('delete', { title: 'Delete Cube', cubicle });
+    } else {
+        res.redirect('/404');
+    }
+});
+
+router.post('/delete/:id', preloadCube, isOwner, async (req, res) => {
+    try {
+        await req.storage.deleteItem(req.params.id);
+        res.redirect('/products');
     } catch {
         res.redirect('/404');
     }

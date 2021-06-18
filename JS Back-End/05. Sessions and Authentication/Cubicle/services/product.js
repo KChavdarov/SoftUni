@@ -9,7 +9,12 @@ async function getAllItems(query) {
 
 async function getItemById(id) {
     try {
-        const cube = await Cube.findById(id).populate('comments').populate('accessories').lean();
+        const cube = await Cube
+            .findById(id)
+            .populate({ path: 'comments', populate: { path: 'author', select: 'username' } })
+            .populate('accessories')
+            .populate({ path: 'author', select: 'username' })
+            .lean();
         return cube;
     } catch {
         return undefined;
@@ -28,6 +33,14 @@ async function updateItem(id, item) {
     }
     Object.assign(cube, item);
     return cube.save();
+}
+
+async function deleteItem(id) {
+    const cube = await Cube.findById(id);
+    if (!cube) {
+        throw new ReferenceError('Cube not found');
+    }
+    await Cube.findByIdAndDelete(id);
 }
 
 async function createComment(data) {
@@ -62,6 +75,7 @@ module.exports = {
     getItemById,
     addItem,
     updateItem,
+    deleteItem,
     createComment,
     attachAccessory,
 };
