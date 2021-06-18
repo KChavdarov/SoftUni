@@ -1,0 +1,43 @@
+{{#with cubicle}}
+<h1>{{name}}</h1>
+<img class="cube" src="{{imageUrl}}">
+<div class="details">
+  <p><span>Author:</span> {{author.username}}</p>
+  <p><span>Description:</span> {{description}}</p>
+  <p><span>Difficulty level:</span> {{difficulty}}</p>
+  <a class="btn" href="/products">Back</a>
+  {{#if isOwner}}
+  <a class="btn" href="/products/attach/{{_id}}">Attach Accessory</a>
+  <a class="btn" href="/products/edit/{{_id}}">Edit</a>
+  <a class="btn" href="/products/delete/{{_id}}">Delete</a>
+  {{/if}}
+</div>
+<br>
+<h2>Accessories</h2>
+<div class="accessories">
+  {{#each accessories}}
+  {{> accessory}}
+  {{else}}
+  <h3 class="italic">This cube has no accessories yet...</h3>
+  {{/each}}
+</div>
+
+{{#if isAuth}}
+<div class="details">
+  <h3>Write a comment</h3>
+  <form action="/comments/{{_id}}" method="post">
+    <span>Comment:</span>
+    <textarea name="content"></textarea>
+    <input type="submit" value="Post">
+  </form>
+</div>
+{{/if}}
+
+<br>
+{{#each comments}}
+{{> comment}}
+{{else}}
+<br>
+<div class="details"> There are no comments yet. You are welcome to write the first one.</div>
+{{/each}}
+{{/with}}
