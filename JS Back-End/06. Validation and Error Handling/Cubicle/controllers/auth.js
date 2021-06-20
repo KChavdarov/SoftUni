@@ -9,28 +9,23 @@ router.get('/register', isGuest, (req, res) => {
 
 router.post('/register',
     isGuest,
-    body('username', 'Username cannot be empty').trim().notEmpty().custom(async (value, { req }) => {
-        const user = req.auth.getUserByUsername(value);
-        if (user) {
-            throw new Error('User already exists');
-        }
-        return true;
+    body('username', 'Invalid username!').trim().isLength({ min: 5 }).isAlphanumeric(),
+    body('password', 'Password must be at least 8 characters long!').trim().isLength({ min: 8 }).isAlphanumeric(),
+    body('repeatPassword', 'Passwords don\'t match!').custom((value, { req }) => {
+        return req.body.password === value;
     }),
-    body('email', 'Please enter a valid email').isEmail().normalizeEmail(),
-    body('password', 'Password must be at least 5 characters long').trim().isLength({ min: 5 }),
     async (req, res) => {
         try {
-            // await req.auth.register(req.body);
-            const { errors } = validationResult(req);
+            const errors = Object.values(validationResult(req).mapped());
             if (errors.length > 0) {
-                throw new Error(errors.map(e => e.msg).join());
+                throw new Error(errors.map(e => e.msg).join('/n'));
             }
-
+            await req.auth.register(req.body);
             res.redirect('/products');
-        } catch (error) {
+        } catch (errors) {
             const context = {
                 title: 'Register',
-                error: error.message,
+                errors: errors.message.split('/n'),
                 data: { username: req.body.username }
             };
             res.render('register', context);

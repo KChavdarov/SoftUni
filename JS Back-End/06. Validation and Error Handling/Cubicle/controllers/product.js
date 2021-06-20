@@ -1,7 +1,8 @@
 const { Router } = require('express');
-const { body, validationResult } = require('express-validator');
+// const { body, validationResult } = require('express-validator');
 const { isAuth, isOwner } = require('../middleware/guards.js');
 const { preloadCube } = require('../services/preload.js');
+const { parseErrorMessage } = require('../util/parse.js');
 
 const router = Router();
 
@@ -25,29 +26,23 @@ router.get('/create', isAuth, (req, res) => {
 
 router.post('/create',
     isAuth,
-    body('imageUrl', 'Please enter a valid URL').isURL(),
-    body('difficulty').notEmpty().toInt(),
+    // body('imageUrl', 'Please enter a valid URL').isURL(),
+    // body('difficulty').notEmpty().toInt(),
     async (req, res) => {
-        const item = {
+        const cubicle = {
             name: req.body.name,
             description: req.body.description,
             imageUrl: req.body.imageUrl,
-            difficulty: Number(req.body.difficulty),
+            difficulty: Number(req.body.difficulty) || 1,
             author: req.user._id,
         };
         try {
-            const { errors } = validationResult(req);
-            if (errors.length > 0) {
-                throw new Error(errors.map(e => e.msg).join(' '));
-            }
-            await req.storage.addItem(item);
+            await req.storage.addItem(cubicle);
             return res.redirect('/');
         } catch (err) {
-            if (err.name == 'ValidationError') {
-                return res.render('create', { title: 'Add New Cube', error: 'ValidationError' });
-            } else {
-                return res.redirect('/404');
-            }
+            cubicle[`dif${cubicle.difficulty}`] = true;
+            const errors = parseErrorMessage(err);
+            return res.render('create', { title: 'Add New Cube', cubicle, errors });
         }
     });
 

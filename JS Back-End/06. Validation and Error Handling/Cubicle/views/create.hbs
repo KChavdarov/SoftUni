@@ -5,19 +5,19 @@
   {{/if}}
   <form action='/products/create' method="POST">
     <label for="name">Name</label>
-    <input type="text" id="name" name="name">
+    <input type="text" id="name" name="name" value="{{cubicle.name}}">
     <label for="name">Description</label>
-    <textarea id="name" name="description"></textarea>
+    <textarea id="name" name="description">{{cubicle.description}}</textarea>
     <label for="image">ImageUrl</label>
-    <input type="text" id="image" name="imageUrl">
+    <input type="text" id="image" name="imageUrl" value="{{cubicle.imageUrl}}">
     <label for="difficulty">Difficulty</label>
     <select id="difficulty" name="difficulty">
-      <option value="1">1 - Very Easy</option>
-      <option value="2">2 - Easy</option>
-      <option value="3">3 - Medium (Standard 3x3)</option>
-      <option value="4">4 - Intermediate</option>
-      <option value="5">5 - Expert</option>
-      <option value="6">6 - Hardcore</option>
+      <option {{#if cubicle.dif1}}selected{{/if}} value="1">1 - Very Easy</option>
+      <option {{#if cubicle.dif2}}selected{{/if}} value="2">2 - Easy</option>
+      <option {{#if cubicle.dif3}}selected{{/if}} value="3">3 - Medium (Standard 3x3)</option>
+      <option {{#if cubicle.dif4}}selected{{/if}} value="4">4 - Intermediate</option>
+      <option {{#if cubicle.dif5}}selected{{/if}} value="5">5 - Expert</option>
+      <option {{#if cubicle.dif6}}selected{{/if}} value="6">6 - Hardcore</option>
     </select>
     <input type="submit" value="Create">
   </form>

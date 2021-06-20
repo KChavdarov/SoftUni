@@ -8,7 +8,6 @@ module.exports = () => (req, res, next) => {
         register,
         login,
         logout,
-        getUserByUsername: userService.getUserByUsername,
     };
 
     if (readToken()) {
@@ -16,10 +15,9 @@ module.exports = () => (req, res, next) => {
     }
 
     async function register({ username, password, repeatPassword }) {
-        if (username == '' || password == '' || repeatPassword == '') {
-            throw new Error('All fields are required!');
-        } else if (password !== repeatPassword) {
-            throw new Error('Passwords don\'t match!');
+        const existing = await userService.getUserByUsername(username);
+        if (existing) {
+            throw new Error('Username already in use');
         } else {
             const hashedPassword = await bcrypt.hash(password, 8);
             const user = await userService.createUser(username, hashedPassword);

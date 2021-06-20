@@ -1,14 +1,20 @@
 const mongoose = require('mongoose');
 
+const NAME_PATTERN = /^[\s\d\w]+$/;
+
 const cubeSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        minLength: 5,
+        match: NAME_PATTERN,
     },
     description: {
         type: String,
         required: true,
+        minLength: 20,
         maxLength: 500,
+        match: NAME_PATTERN,
     },
     imageUrl: {
         type: String,

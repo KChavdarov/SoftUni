@@ -12,4 +12,9 @@ module.exports = (app) => {
     app.use('/auth', authController);
 
     app.use('/', homeController);
+
+    app.use((err, req, res, next) => {
+        console.log(err.message);
+        res.send('Something went wrong!');
+    });
 };

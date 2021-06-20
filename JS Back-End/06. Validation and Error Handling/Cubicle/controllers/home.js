@@ -1,10 +1,12 @@
+const asyncWrapper = require('../util/asyncWrapper.js');
+
 const router = require('express').Router();
 
 router.get('/', (req, res) => res.redirect('/products'));
 
-router.get('/about', (req, res) => {
+router.get('/about', asyncWrapper(async (req, res) => {
     res.render('about', { title: 'About Page' });
-});
+}));
 
 router.all('*', (req, res) => {
     res.render('404', { title: 'Page Not Found' });
