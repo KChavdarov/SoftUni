@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const { body, validationResult } = require('express-validator');
 const { isAuth, isOwner } = require('../middleware/guards.js');
 const { preloadCube } = require('../services/preload.js');
 
@@ -22,25 +23,33 @@ router.get('/create', isAuth, (req, res) => {
     res.render('create', { title: 'Add New Cube' });
 });
 
-router.post('/create', isAuth, async (req, res) => {
-    const item = {
-        name: req.body.name,
-        description: req.body.description,
-        imageUrl: req.body.imageUrl,
-        difficulty: Number(req.body.difficulty),
-        author: req.user._id,
-    };
-    try {
-        await req.storage.addItem(item);
-        return res.redirect('/');
-    } catch (err) {
-        if (err.name == 'ValidationError') {
-            return res.render('create', { title: 'Add New Cube', error: 'ValidationError' });
-        } else {
-            return res.redirect('/404');
+router.post('/create',
+    isAuth,
+    body('imageUrl', 'Please enter a valid URL').isURL(),
+    body('difficulty').notEmpty().toInt(),
+    async (req, res) => {
+        const item = {
+            name: req.body.name,
+            description: req.body.description,
+            imageUrl: req.body.imageUrl,
+            difficulty: Number(req.body.difficulty),
+            author: req.user._id,
+        };
+        try {
+            const { errors } = validationResult(req);
+            if (errors.length > 0) {
+                throw new Error(errors.map(e => e.msg).join(' '));
+            }
+            await req.storage.addItem(item);
+            return res.redirect('/');
+        } catch (err) {
+            if (err.name == 'ValidationError') {
+                return res.render('create', { title: 'Add New Cube', error: 'ValidationError' });
+            } else {
+                return res.redirect('/404');
+            }
         }
-    }
-});
+    });
 
 router.get('/details/:id', preloadCube, async (req, res) => {
     const cubicle = await req.data.cubicle;

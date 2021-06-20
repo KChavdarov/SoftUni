@@ -8,6 +8,7 @@ module.exports = () => (req, res, next) => {
         register,
         login,
         logout,
+        getUserByUsername: userService.getUserByUsername,
     };
 
     if (readToken()) {
