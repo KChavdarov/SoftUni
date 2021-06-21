@@ -3,7 +3,7 @@ const { body, validationResult } = require('express-validator');
 const { isGuest, isUser } = require('../middleware/guards.js');
 
 router.get('/login', isGuest(), (req, res) => {
-    res.render('user/login');
+    res.render('login');
 });
 
 router.post('/login', isGuest(), async (req, res) => {
@@ -17,19 +17,18 @@ router.post('/login', isGuest(), async (req, res) => {
             data: { username: req.body.username }
         };
         console.log(errors.message);
-        res.render('user/login', context);
+        res.render('login', context);
     }
 });
 
 router.get('/register', isGuest(), (req, res) => {
-    res.render('user/register');
+    res.render('register');
 });
 
 router.post('/register',
     isGuest(),
-    body('username', 'Invalid username').isLength({ min: 3 }),   // Change message and validation according to project requirements
-    body('email', 'Invalid Email').isEmail(),   // Change message and validation according to project requirements
-    body('password', 'Invalid password').isLength({ min: 3 }),  // Change message and validation according to project requirements
+    body('username', 'Invalid username').isLength({ min: 3 }), // Change message and validation according to project requirements
+    body('password', 'Invalid password').isLength({ min: 3 }), // Change message and validation according to project requirements
     body('repeatPassword', 'Passwords don\'t match').custom((value, { req }) => value == req.body.password),
     async (req, res) => {
         try {
@@ -45,10 +44,10 @@ router.post('/register',
             const context = {
                 title: 'Register',
                 errors: errors.message.split('/n'),
-                data: { username: req.body.username, email: req.body.email }
+                data: { username: req.body.username }
             };
-            console.log(errors.message);
-            res.render('user/register', context);
+            // console.log(errors.message);
+            res.render('register', context);
         }
     });
 
