@@ -19,9 +19,10 @@ router.post('/register',
             const errors = Object.values(validationResult(req).mapped());
             if (errors.length > 0) {
                 throw new Error(errors.map(e => e.msg).join('/n'));
+            } else {
+                await req.auth.register(req.body);
+                res.redirect('/products');
             }
-            await req.auth.register(req.body);
-            res.redirect('/products');
         } catch (errors) {
             const context = {
                 title: 'Register',
