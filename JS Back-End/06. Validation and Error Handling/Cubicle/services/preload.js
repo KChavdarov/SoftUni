@@ -13,6 +13,6 @@ async function preloadCube(req, res, next) {
 }
 
 module.exports = {
-    preloadCube,
+    preloadCube, 
 
 };

@@ -19,6 +19,10 @@ module.exports = () => {
                 logout() {
                     res.clearCookie(COOKIE_NAME);
                 },
+                bookHotel: userService.bookHotel,
+            };
+            req.data = {
+                getUserById: userService.getUserById,
             };
             next();
         }
@@ -53,7 +57,12 @@ async function loginUser(username, password) {
 }
 
 function generateToken(userData) {
-    const token = jwt.sign({ _id: userData._id, username: userData.username, email: userData.email }, TOKEN_SECRET);
+    const token = jwt.sign({
+        _id: userData._id,
+        username: userData.username,
+        email: userData.email,
+        bookedHotels: userData.bookedHotels,
+    }, TOKEN_SECRET);
     return token;
 }
 

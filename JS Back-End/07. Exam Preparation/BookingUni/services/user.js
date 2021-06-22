@@ -4,6 +4,8 @@ module.exports = {
     createUser,
     getUserByUsername,
     getUserByEmail,
+    bookHotel,
+    getUserById,
 };
 
 
@@ -20,4 +22,18 @@ async function getUserByUsername(username) {
 async function getUserByEmail(email) {
     const user = await User.findOne({ email: { $regex: new RegExp(`^${email}$`, 'i') } });
     return user;
+}
+
+async function bookHotel(hotelId, userId) {
+    const user = await User.findById(userId);
+    if (user) {
+        user.bookedHotels.push(hotelId);
+        await user.save();
+    } else {
+        throw new Error('User not found');
+    }
+}
+
+async function getUserById(id) {
+    return await User.findById(id).populate('bookedHotels').lean();
 }

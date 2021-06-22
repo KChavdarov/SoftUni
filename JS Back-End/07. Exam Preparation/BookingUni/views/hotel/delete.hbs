@@ -1,0 +1,15 @@
+<section id="viewAddhotel">
+    <h2>Delete hotel</h2>
+    <form id="formAddhotel" action="/hotels/delete/{{hotel._id}}" method="POST">
+        <label for="hotel">Hotel name:</label>
+        <input type="text" id="hotel" name="name" placeholder="Hotel name" value="{{hotel.name}}" disabled>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" placeholder="City" value="{{hotel.city}}" disabled>
+        <label for="free-rooms">Free rooms:</label>
+        <input type="number" id="free-rooms" name="rooms" placeholder="Free rooms" value={{hotel.rooms}} disabled>
+        <label for="imgUrl">Image:</label>
+        <input type="text" id="imgUrl" name="imageUrl" placeholder="https://" value="{{hotel.imageUrl}}" disabled>
+
+        <input type="submit" class="create" value="Delete">
+    </form>
+</section>

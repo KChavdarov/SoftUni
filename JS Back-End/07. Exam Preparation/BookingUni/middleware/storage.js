@@ -1,7 +1,8 @@
+const hotel = require('../services/hotel.js');
+
 module.exports = () => {
     return (req, res, next) => {
-        // TODO -> Import Main model services
-        req.storage = Object.assign({});
+        req.storage = { ...hotel };
         next();
     };
 };

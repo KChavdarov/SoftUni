@@ -12,7 +12,15 @@ const userSchema = new mongoose.Schema({
     hashedPassword: {
         type: String,
         required: true,
-    }
+    },
+    bookedHotels: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Hotel'
+    }],
+    offeredHotels: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Hotel'
+    }]
 });
 
 module.exports = new mongoose.model('User', userSchema);
