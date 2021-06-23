@@ -20,8 +20,8 @@ const playSchema = new mongoose.Schema({
         default: false
     },
     createdAt: {
-        type: String || Date,
-        required: true,
+        type: Date,
+        default: Date.now,
     },
     usersLiked: [{
         type: mongoose.Schema.Types.ObjectId,

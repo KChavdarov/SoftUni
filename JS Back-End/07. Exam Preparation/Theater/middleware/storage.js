@@ -1,7 +1,8 @@
+const playService = require('../services/play.js');
+
 module.exports = () => {
     return (req, res, next) => {
-        // TODO -> Import Main model services
-        req.storage = Object.assign({});
+        req.storage = Object.assign({}, playService);
         next();
     };
 };

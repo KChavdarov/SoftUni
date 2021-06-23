@@ -17,8 +17,8 @@ async function getPlayById(id) {
 }
 
 async function createPlay(data) {
-    const play = new Play({ data });
-    play.save();
+    const play = new Play(data);
+    await play.save();
     return play;
 }
 
