@@ -5,7 +5,7 @@ const userService = require('../services/user.js');
 
 module.exports = () => {
     return (req, res, next) => {
-        // TODO Parse JWT and if verified call next(), else return redirect to login page
+        // Parses JWT and if verified calls next(), else return redirect to login page
         if (parseToken(req, res)) {
             req.auth = {
                 async register({ username, password }) { //Accepts whole request body as an object, not individual params
@@ -48,6 +48,7 @@ async function loginUser(username, password) {
 }
 
 function generateToken(userData) {
+    // Add additional elements to the user data if needed 
     const token = jwt.sign({ _id: userData._id, username: userData.username, }, TOKEN_SECRET);
     return token;
 }
@@ -58,7 +59,7 @@ function parseToken(req, res) {
         try {
             const userData = jwt.verify(token, TOKEN_SECRET);
             req.user = userData;
-            // res.locals.user = userData;
+            res.locals.user = userData;
         } catch {
             res.clearCookie(COOKIE_NAME);
             res.redirect('/auth/login');
