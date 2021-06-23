@@ -6,6 +6,7 @@ module.exports = {
     createPlay,
     editPlay,
     deletePlay,
+    likePlay
 };
 
 async function getAllPlays() {
@@ -17,9 +18,7 @@ async function getPlayById(id) {
 }
 
 async function createPlay(data) {
-    console.log(data);
     const pattern = new RegExp(`^${data.title}$`, 'i');
-    console.log(pattern);
     const existing = await Play.findOne({ title: pattern });
     if (existing) {
         throw new Error('Play with this title already exists');
@@ -39,4 +38,11 @@ async function editPlay(id, data) {
 
 async function deletePlay(id) {
     return await Play.findByIdAndDelete(id);
+}
+
+async function likePlay(playId, userId) {
+    const play = await Play.findById(playId);
+    play.usersLiked.push(userId);
+    await play.save();
+    return play;
 }
