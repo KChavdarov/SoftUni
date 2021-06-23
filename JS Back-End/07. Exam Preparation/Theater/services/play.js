@@ -9,8 +9,8 @@ module.exports = {
     likePlay
 };
 
-async function getAllPlays() {
-    return await Play.find({ isPublic: true }).sort('-createdAt').lean();
+async function getAllPlays(sort = 'createdAt') {
+    return await Play.find({ isPublic: true }).sort(`-${sort}`).lean();
 }
 
 async function getPlayById(id) {
