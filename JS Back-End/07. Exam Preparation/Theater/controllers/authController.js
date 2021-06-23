@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { body, validationResult } = require('express-validator');
 const { isGuest, isUser } = require('../middleware/guards.js');
+const { parseErrorMessage } = require('../util/parser.js');
 
 router.get('/login', isGuest(), (req, res) => {
     res.render('login');
@@ -27,9 +28,9 @@ router.get('/register', isGuest(), (req, res) => {
 
 router.post('/register',
     isGuest(),
-    body('username', 'Invalid username').isLength({ min: 3 }), // Change message and validation according to project requirements
-    body('password', 'Invalid password').isLength({ min: 3 }), // Change message and validation according to project requirements
-    body('repeatPassword', 'Passwords don\'t match').custom((value, { req }) => value == req.body.password),
+    body('username', 'Invalid username').trim().isLength({ min: 3 }).isAlphanumeric(), // Change message and validation according to project requirements
+    body('password', 'Invalid password').trim().isLength({ min: 3 }).isAlphanumeric(), // Change message and validation according to project requirements
+    body('repeatPassword', 'Passwords don\'t match').custom((value, { req }) => value.trim() == req.body.password.trim()),
     async (req, res) => {
         try {
             const errors = Object.values(validationResult(req).mapped());
@@ -40,10 +41,11 @@ router.post('/register',
                 await req.auth.register(req.body);
                 res.redirect('/'); // Redirect according to project requirements
             }
-        } catch (errors) {
+        } catch (error) {
+            const errMsg = parseErrorMessage(error);
             const context = {
                 title: 'Register',
-                errors: errors.message.split('/n'),
+                errors: errMsg,
                 data: { username: req.body.username }
             };
             // console.log(errors.message);

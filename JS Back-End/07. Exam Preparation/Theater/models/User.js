@@ -8,7 +8,11 @@ const userSchema = new mongoose.Schema({
     hashedPassword: {
         type: String,
         required: true,
-    }
+    },
+    likedPlays: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Play'
+    }]
 });
 
 module.exports = new mongoose.model('User', userSchema);

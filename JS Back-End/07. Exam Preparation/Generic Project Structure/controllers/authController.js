@@ -27,9 +27,9 @@ router.get('/register', isGuest(), (req, res) => {
 
 router.post('/register',
     isGuest(),
-    body('username', 'Invalid username').isLength({ min: 3 }), // Change message and validation according to project requirements
-    body('password', 'Invalid password').isLength({ min: 3 }), // Change message and validation according to project requirements
-    body('repeatPassword', 'Passwords don\'t match').custom((value, { req }) => value == req.body.password),
+    body('username', 'Invalid username').trim().isLength({ min: 3 }), // Change message and validation according to project requirements
+    body('password', 'Invalid password').trim().isLength({ min: 3 }), // Change message and validation according to project requirements
+    body('repeatPassword', 'Passwords don\'t match').custom((value, { req }) => value.trim() == req.body.password.trim()),
     async (req, res) => {
         try {
             const errors = Object.values(validationResult(req).mapped());
