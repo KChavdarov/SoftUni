@@ -1,10 +1,10 @@
 const router = require('express').Router();
 
 router.get('/', async (req, res) => {
+    const sort = req.query.sort;
     try {
-        let plays = await req.storage.getAllPlays();
+        let plays = await req.storage.getAllPlays(sort);
         plays.forEach(p => p.likes = p.usersLiked.length);
-        console.log(plays[0]);
         res.render('home', { title: 'Theater', plays });
     } catch {
         res.render('home', { title: 'Theater' });
