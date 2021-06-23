@@ -11,11 +11,11 @@
         <p>{{play.description}}</p>
         {{#if user}}
         <div class="buttons">
-            {{#if isOwner}}
+            {{#if play.isOwner}}
                 <a class="btn delete" href="/plays/delete/{{play._id}}">Delete</a>
                 <a class="btn edit" href="/plays/edit/{{play._id}}">Edit</a>
                 {{else}}
-                    {{#if isLiked}}
+                    {{#if play.isLiked}}
                     <span class="liked">You have already liked this play!</span>
                     {{else}}
                     <a class="btn like" href="/plays/like/{{play._id}}">Like</a>

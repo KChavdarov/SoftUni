@@ -26,10 +26,17 @@ router.post('/create', isUser(), async (req, res) => {
 });
 
 router.get('/details/:id', async (req, res) => {
-    const play = await req.storage.getPlayById(req.params.id);
-    play.isOwner = play.author == req.user._id;
-    play.isLiked = play.usersLiked.find(u => u == req.user._id);
-    res.render('play/details', { title: play.title, play });
+    try {
+        const play = await req.storage.getPlayById(req.params.id);
+        if (req.user) {
+            play.isOwner = play.author == req.user._id;
+            console.log(play.isOwner);
+            play.isLiked = play.usersLiked.find(u => u == req.user._id);
+        }
+        res.render('play/details', { title: play.title, play });
+    } catch {
+        res.redirect('/');
+    }
 });
 
 module.exports = router;
