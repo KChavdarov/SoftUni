@@ -9,7 +9,7 @@ module.exports = {
 };
 
 async function getAllPlays() {
-    return await Play.find({}).lean();
+    return await Play.find({ isPublic: true }).sort('-createdAt').lean();
 }
 
 async function getPlayById(id) {
@@ -17,9 +17,15 @@ async function getPlayById(id) {
 }
 
 async function createPlay(data) {
-    const play = new Play(data);
-    await play.save();
-    return play;
+    const pattern = new RegExp(`^${data.title}&`, 'i');
+    const existing = await Play.find({ title: pattern });
+    if (existing) {
+        throw new Error('Play with this title already exists');
+    } else {
+        const play = new Play(data);
+        await play.save();
+        return play;
+    }
 }
 
 async function editPlay(id, data) {

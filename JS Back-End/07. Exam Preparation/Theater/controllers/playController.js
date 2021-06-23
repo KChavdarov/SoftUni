@@ -16,10 +16,9 @@ router.post('/create', isUser(), async (req, res) => {
         author: req.user._id
     };
 
-    console.log(playData);
     try {
         const play = await req.storage.createPlay(playData);
-        res.redirect('/plays/details' + play._id);
+        res.redirect('/plays/details/' + play._id);
     } catch (error) {
         const errors = parseErrorMessage(error);
         res.render('play/create', { title: 'Create a play', playData, errors });
@@ -28,6 +27,8 @@ router.post('/create', isUser(), async (req, res) => {
 
 router.get('/details/:id', async (req, res) => {
     const play = await req.storage.getPlayById(req.params.id);
+    play.isOwner = play.author == req.user._id;
+    play.isLiked = play.usersLiked.find(u => u == req.user._id);
     res.render('play/details', { title: play.title, play });
 });
 

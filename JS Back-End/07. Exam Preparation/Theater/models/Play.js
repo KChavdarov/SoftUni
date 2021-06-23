@@ -3,17 +3,17 @@ const mongoose = require('mongoose');
 const playSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: true,
+        required: [true, 'Please enter a title'],
     },
     description: {
         type: String,
-        required: true,
-        maxLength: 50,
+        required: [true, 'Please enter a description shorter than 50 characters'],
+        maxLength: [50, 'Please enter a description shorter than 50 characters'],
     },
     imageUrl: {
         type: String,
-        required: true,
-        match: /^https?/i,
+        required: [true, 'Please enter a valid Image URL'],
+        match: [/^https?/i, 'Please enter a Image URL'],
     },
     isPublic: {
         type: Boolean,

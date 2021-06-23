@@ -14,34 +14,18 @@
     <div class="aux">
         <h1>Available Plays</h1>
         <div class="home-buttons">
+            {{#if user}}
             <a class="btn create-play" href="/plays/create">Create Theater</a>
-            <a class="btn create-play" href="">Sort by Date</a>
-            <a class="btn create-play" href="">Sort by Likes</a>
+            {{/if}}
+            <a class="btn create-play" href="/">Sort by Date</a>
+            <a class="btn create-play" href="/">Sort by Likes</a>
         </div>
     </div>
     <div class="theaters-container">
-        <div>
-            <div class="home-image">
-                <img src="https://media.timeout.com/images/103727744/380/285/image.jpg" alt="Card image cap">
-            </div>
-            <div class="info">
-                <h4>Who's Afraid of Virginia Woolf? by Edward Albee</h4>
-                <div class="info-buttons">
-                    <a class="btn details" href="">Details</a>
-                    <span class="likes">5 likes</span>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="home-image">
-                <img src="https://media.timeout.com/images/103727744/380/285/image.jpg" alt="Card image cap"
-                    width="400">
-            </div>
-            <div class="info">
-                <h4>Who's Afraid of Virginia Woolf? by Edward Albee</h4>
-            </div>
-        </div>
-        <!-- <h4>No plays yet...</h4> -->
-
+        {{#each plays}}
+        {{>play}}
+        {{else}}
+        <h4>No plays yet...</h4>
+        {{/each}}
     </div>
 </section>
