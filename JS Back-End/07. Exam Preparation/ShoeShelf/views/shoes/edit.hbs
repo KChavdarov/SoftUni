@@ -1,6 +1,6 @@
-<h1>Create New Offer</h1>
+<h1>Edit Shoe</h1>
 <p class="message">{{errors}}</p>
-<form action="/shoes/create" method="POST">
+<form action="/shoes/edit/{{shoe._id}}" method="POST">
     <div>
         <input type="text" name="name" placeholder="Name..." value="{{shoe.name}}">
     </div>
@@ -18,6 +18,6 @@
         <input type="text" name="brand" placeholder="Brand..." value="{{shoe.brand}}">
     </div>
     <div>
-        <button>Create</button>
+        <button>Edit</button>
     </div>
 </form>

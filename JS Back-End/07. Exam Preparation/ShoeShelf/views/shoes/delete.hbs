@@ -1,0 +1,23 @@
+<h1>Delete Shoe</h1>
+<p class="message">{{errors}}</p>
+<form action="/shoes/delete/{{shoe._id}}" method="POST">
+    <div>
+        <input type="text" name="name" placeholder="Name..." value="{{shoe.name}}" disabled>
+    </div>
+    <div>
+        <input type="text" name="price" placeholder="Price..." value="{{shoe.price}}" disabled>
+    </div>
+    <div>
+        <input type=" text" name="imageUrl" placeholder="Image url..." value="{{shoe.imageUrl}}" disabled>
+    </div>
+    <div>
+        <textarea disabled name="description"
+            placeholder="Give us some description about this offer...">{{shoe.description}}</textarea>
+    </div>
+    <div>
+        <input type="text" name="brand" placeholder="Brand..." value="{{shoe.brand}}" disabled>
+    </div>
+    <div>
+        <button>Delete</button>
+    </div>
+</form>

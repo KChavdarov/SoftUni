@@ -19,6 +19,8 @@ module.exports = () => {
                 logout() {
                     res.clearCookie(COOKIE_NAME);
                 },
+                buyShoe: userService.buyShoe,
+                getUserById: userService.getUserById,
             };
             next();
         }

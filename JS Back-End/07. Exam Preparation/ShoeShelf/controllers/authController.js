@@ -4,7 +4,7 @@ const { isGuest, isUser } = require('../middleware/guards.js');
 const { parseErrorMessage } = require('../util/parser.js');
 
 router.get('/login', isGuest(), (req, res) => {
-    res.render('user/login', { title: 'Login Page'});
+    res.render('user/login', { title: 'Login Page' });
 });
 
 router.post('/login', isGuest(), async (req, res) => {
@@ -23,7 +23,7 @@ router.post('/login', isGuest(), async (req, res) => {
 });
 
 router.get('/register', isGuest(), (req, res) => {
-    res.render('user/register', {title: 'Register Page'});
+    res.render('user/register', { title: 'Register Page' });
 });
 
 router.post('/register',
@@ -55,6 +55,24 @@ router.post('/register',
 router.get('/logout', isUser(), (req, res) => {
     req.auth.logout();
     res.redirect('/auth/login');
+});
+
+router.get('/profile', isUser(), async (req, res) => {
+    try {
+        const user = await req.auth.getUserById(req.user._id);
+        user.total = user.shoes.reduce((a, c) => {
+            a += Number(c.price);
+            return a;
+        }, 0).toFixed(2);
+        console.log(user.total);
+        const offers = await req.storage.getUserShoeCount(req.user._id);
+        console.log(offers);
+        user.offers = offers;
+        res.render('user/profile', { title: 'User Profile', user });
+    } catch (error) {
+        console.log(parseErrorMessage(error));
+        res.redirect('/');
+    }
 });
 
 module.exports = router;
