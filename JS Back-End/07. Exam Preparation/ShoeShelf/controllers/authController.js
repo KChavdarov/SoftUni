@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const { body, validationResult } = require('express-validator');
 const { isGuest, isUser } = require('../middleware/guards.js');
+const { parseErrorMessage } = require('../util/parser.js');
 
 router.get('/login', isGuest(), (req, res) => {
-    res.render('login');
+    res.render('user/login', { title: 'Login Page'});
 });
 
 router.post('/login', isGuest(), async (req, res) => {
@@ -12,23 +13,23 @@ router.post('/login', isGuest(), async (req, res) => {
         res.redirect('/'); // Redirect according to project requirements
     } catch (errors) {
         const context = {
-            title: 'Login',
-            errors: errors.message.split('/n'),
-            data: { username: req.body.username }
+            title: 'Login Page',
+            errors: parseErrorMessage(errors),
+            data: { email: req.body.email }
         };
         console.log(errors.message);
-        res.render('login', context);
+        res.render('user/login', context);
     }
 });
 
 router.get('/register', isGuest(), (req, res) => {
-    res.render('register');
+    res.render('user/register', {title: 'Register Page'});
 });
 
 router.post('/register',
     isGuest(),
-    body('username', 'Invalid username').trim().isLength({ min: 3 }), // Change message and validation according to project requirements
-    body('password', 'Invalid password').trim().isLength({ min: 3 }), // Change message and validation according to project requirements
+    body('email', 'Please enter a valid email').trim().isEmail().isLength({ min: 3 }), // Change message and validation according to project requirements
+    body('password', 'Invalid password').trim().isAlphanumeric().isLength({ min: 3 }), // Change message and validation according to project requirements
     body('repeatPassword', 'Passwords don\'t match').custom((value, { req }) => value.trim() == req.body.password.trim()),
     async (req, res) => {
         try {
@@ -42,12 +43,12 @@ router.post('/register',
             }
         } catch (errors) {
             const context = {
-                title: 'Register',
-                errors: errors.message.split('/n'),
-                data: { username: req.body.username }
+                title: 'Register Page',
+                errors: parseErrorMessage(errors),
+                data: { username: req.body.username, email: req.body.email }
             };
-            // console.log(errors.message);
-            res.render('register', context);
+            console.log(errors.message);
+            res.render('user/register', context);
         }
     });
 

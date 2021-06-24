@@ -3,7 +3,7 @@ const { body, validationResult } = require('express-validator');
 const { isGuest, isUser } = require('../middleware/guards.js');
 
 router.get('/login', isGuest(), (req, res) => {
-    res.render('login');
+    res.render('login', {title: 'Login Page'});
 });
 
 router.post('/login', isGuest(), async (req, res) => {
@@ -12,7 +12,7 @@ router.post('/login', isGuest(), async (req, res) => {
         res.redirect('/'); // Redirect according to project requirements
     } catch (errors) {
         const context = {
-            title: 'Login',
+            title: 'Login Page',
             errors: errors.message.split('/n'),
             data: { username: req.body.username }
         };
@@ -22,7 +22,7 @@ router.post('/login', isGuest(), async (req, res) => {
 });
 
 router.get('/register', isGuest(), (req, res) => {
-    res.render('register');
+    res.render('register', {title: 'Register Page'});
 });
 
 router.post('/register',
@@ -42,11 +42,11 @@ router.post('/register',
             }
         } catch (errors) {
             const context = {
-                title: 'Register',
+                title: 'Register Page',
                 errors: errors.message.split('/n'),
                 data: { username: req.body.username }
             };
-            // console.log(errors.message);
+            console.log(errors.message);
             res.render('register', context);
         }
     });

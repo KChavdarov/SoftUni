@@ -3,13 +3,53 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/styles.css">
+    <link rel="icon" type="image/png" href="/public/favicon.png">
     <title>{{title}}</title>
 </head>
 
 <body>
-    {{{body}}}
+    <header>
+        <nav>
+            <ul>
+                {{#if user}}
+
+                <li>
+                    <a href="/shoes/create">Create new offer</a>
+                </li>
+                <li>
+                    <a href="/">
+                        <img src="/public/sneakers.png" alt="">
+                    </a>
+                </li>
+                <li>Welcome, {{user.email}} |
+                    <a href="/auth/logout">Logout</a>
+                </li>
+
+                {{else}}
+
+                <li class="site-logo">Shoe</li>
+                <li>
+                    <a href="/">
+                        <img src="/public/sneakers.png" alt="">
+                    </a>
+                </li>
+                <li class="site-logo">Shelf</li>
+
+                {{/if}}
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        {{{body}}}
+    </main>
+
+    <footer>
+        <p><a href="https://softuni.bg">Software University</a> - JS Back End @ 2020</p>
+    </footer>
 </body>
 
 </html>

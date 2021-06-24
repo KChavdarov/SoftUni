@@ -1,0 +1,22 @@
+<h1>Register</h1>
+<p class="form-info">Already registered?
+    <a href="/auth/login">Login now</a> and have some fun!
+</p>
+<form action="/auth/register" method="POST">
+    <div>
+        <input type="email" placeholder="Email..." name="email" value="{{data.email}}">
+    </div>
+    <div>
+        <input type="text" placeholder="Full name..." name="username" value="{{data.username}}">
+    </div>
+    <div>
+        <input type="password" placeholder="Password" name="password">
+    </div>
+    <div>
+        <input type="password" placeholder="Re-password" name="repeatPassword">
+    </div>
+    <div>
+        <p class="message">{{errors}}</p>
+        <button>Register</button>
+    </div>
+</form>

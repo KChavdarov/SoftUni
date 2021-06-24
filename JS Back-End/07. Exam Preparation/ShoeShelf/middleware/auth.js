@@ -8,12 +8,12 @@ module.exports = () => {
         // Parses JWT and if verified calls next(), else return redirect to login page
         if (parseToken(req, res)) {
             req.auth = {
-                async register({ username, password }) { //Accepts whole request body as an object, not individual params
-                    const token = await registerUser(username, password);
+                async register({ email, username, password }) { //Accepts whole request body as an object, not individual params
+                    const token = await registerUser(email, username, password);
                     res.cookie(COOKIE_NAME, token);
                 },
-                async login({ username, password }) {
-                    const token = await loginUser(username, password);
+                async login({ email, password }) {
+                    const token = await loginUser(email, password);
                     res.cookie(COOKIE_NAME, token);
                 },
                 logout() {
@@ -25,20 +25,20 @@ module.exports = () => {
     };
 };
 
-async function registerUser(username, password) {
-    const existing = await userService.getUserByUsername(username);
+async function registerUser(email, username, password) {
+    const existing = await userService.getUserByEmail(email);
     if (existing) {
-        throw new Error('Username already in use!');
+        throw new Error('Email already in use!');
     }
 
     const hashedPassword = await bcrypt.hash(password, 8);
-    const user = await userService.createUser(username, hashedPassword);
+    const user = await userService.createUser(email, username, hashedPassword);
 
     return generateToken(user);
 }
 
-async function loginUser(username, password) {
-    const user = await userService.getUserByUsername(username);
+async function loginUser(email, password) {
+    const user = await userService.getUserByEmail(email);
 
     if (user && await bcrypt.compare(password, user.hashedPassword)) {
         return generateToken(user);
@@ -49,7 +49,7 @@ async function loginUser(username, password) {
 
 function generateToken(userData) {
     // Add additional elements to the user data if needed 
-    const token = jwt.sign({ _id: userData._id, username: userData.username, }, TOKEN_SECRET);
+    const token = jwt.sign({ _id: userData._id, username: userData.username, email: userData.email }, TOKEN_SECRET);
     return token;
 }
 
