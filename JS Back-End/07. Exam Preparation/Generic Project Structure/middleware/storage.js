@@ -1,6 +1,7 @@
+// IMPORT ALL NECESSARY PRODUCT SERVICES AND ADD THEM TO THE STORAGE OBJECT
+
 module.exports = () => {
     return (req, res, next) => {
-        // TODO -> Import Main model services
         req.storage = Object.assign({});
         next();
     };
