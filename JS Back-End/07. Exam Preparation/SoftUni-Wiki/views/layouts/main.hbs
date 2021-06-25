@@ -3,13 +3,55 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
+    <link rel="stylesheet" href="/static/css/site.css">
 </head>
 
 <body>
-    {{{body}}}
+    <div>
+        <aside>
+            <div class="center">
+                <img class="logo" src="/static/img/logo.png" alt="logo">
+            </div>
+
+            <nav>
+                <a href="/">Main Page</a>
+                <a href="/">All Articles</a>
+                <form action="/" method="GET">
+                    <input type="text" name="search">
+                    <input type="submit" value="Search">
+                </form>
+                {{#if user}}
+                <a href="/articles/create">Create New Article</a>
+                {{/if}}
+            </nav>
+        </aside>
+        <div id="container">
+            <header>
+                {{#if user}}
+                <span>Welcome, {{user.username}}</span>
+                <a href="/auth/logout">[Logout]</a>
+                {{else}}
+                <a href="/auth/login">Login</a>
+                <a href="/auth/register">Register</a>
+                {{/if}}
+            </header>
+            <main>
+                <h1>Welcome to SoftUni Wiki!</h1>
+                <div id="notifications">
+                    {{#each errors}}
+                    <p>{{this}}</p>
+                    {{/each}}
+                    </div>
+                <section>
+                {{{body}}}
+                </section>
+            </main>
+            <footer>
+                SoftUni Wiki &copy; 2018 - 2019
+            </footer>
+        </div>
+    </div>
 </body>
 
 </html>

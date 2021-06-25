@@ -1,6 +1,12 @@
-<form action="/auth/register" method="post">
-<input type="text" name="username">
-<input type="text" name="password">
-<input type="text" name="repeatPassword">
-<input type="submit" value="Register">
-</form>
+<h2>Register</h2>
+<div class="spacer">
+    <form action="/auth/register" method="POST">
+        <label>Username:</label>
+        <input type="text" name="username" value="{{data.username}}">
+        <label>Password:</label>
+        <input type="password" name="password">
+        <label>Repeat password:</label>
+        <input type="password" name="repeatPassword">
+        <input type="submit" value="Register">
+    </form>
+</div>

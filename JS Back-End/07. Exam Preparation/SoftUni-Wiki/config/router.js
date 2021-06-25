@@ -6,5 +6,5 @@ const productController = require('../controllers/productController.js');
 module.exports = (app) => {
     app.use('/', homeController);
     app.use('/auth', authController);
-    app.use('/product', productController); // CHANGE CONTROLLER PATH
+    app.use('/article', productController); // CHANGE CONTROLLER PATH
 };
