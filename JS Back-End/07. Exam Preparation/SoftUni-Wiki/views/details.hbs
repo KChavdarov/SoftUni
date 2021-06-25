@@ -1,0 +1,15 @@
+<h2>{{article.title}}
+    {{#if article.isUser}}
+    <div class="controls">
+        <a href="/articles/edit/{{article._id}}">[edit]</a>
+        {{#if article.isOwner}}
+        <a href="/articles/delete/{{article._id}}">[delete]</a>
+        {{/if}}
+    </div>
+    {{/if}}
+</h2>
+<article>
+    {{#each article.description}}
+    <p>{{this}}</p>
+    {{/each}}
+</article>

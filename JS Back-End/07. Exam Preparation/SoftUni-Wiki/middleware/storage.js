@@ -1,8 +1,8 @@
-// IMPORT ALL NECESSARY PRODUCT SERVICES AND ADD THEM TO THE STORAGE OBJECT
+const articleServices = require('../services/article.js');
 
 module.exports = () => {
     return (req, res, next) => {
-        req.storage = Object.assign({});
+        req.storage = Object.assign({}, articleServices);
         next();
     };
 };

@@ -2,21 +2,11 @@
     <h2>All articles</h2>
     <div class="spacer">
         <ul>
-            <li>
-                <a href="article.html">Astronomy</a>
-            </li>
-            <li>
-                <a href="article.html">Galaxy</a>
-            </li>
-            <li>
-                <a href="article.html">Planet</a>
-            </li>
-            <li>
-                <a href="article.html">Star</a>
-            </li>
-            <li>
-                <a href="article.html">Telescope</a>
-            </li>
+            {{#each articles}}
+                <li><a href="/articles/details/{{this._id}}">{{this.title}}</a></li>
+            {{else}}
+                <li>There are no articles yet. You are welcome to post the first one!</li>
+            {{/each}}
         </ul>
     </div>
 </section>
