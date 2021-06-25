@@ -1,14 +1,12 @@
 const Article = require('../models/Article.js');
 
 module.exports = {
-    //EXPORT ALL FUNCTIONS!
     create,
     getById,
-    getAll,
+    getLatest,
     getAllTitles,
     edit,
     deleteById,
-    PRODUCT_ACTION,
 };
 
 async function create(data) {
@@ -28,12 +26,13 @@ async function getById(id) {
     return article;
 };
 
-async function getAll() {
-    return await Article.find({}).lean(); //    ADD SORTING/FILTERING IF NECESSARY
+async function getLatest() {
+    return await Article.find({}).limit(3).sort('-createdAt').lean();
 };
 
-async function getAllTitles() {
-    return await Article.find({}).select('title').lean(); //    ADD SORTING/FILTERING IF NECESSARY
+async function getAllTitles(query) {
+    const pattern = new RegExp(`${query}`, 'i');
+    return await Article.find({ title: pattern }).select('title').lean();
 };
 
 async function edit(id, data) {
@@ -46,23 +45,3 @@ async function edit(id, data) {
 async function deleteById(id) {
     return await Article.findByIdAndDelete(id);
 };
-
-
-
-//  ADD ANY SPECIFIC FUNCTIONS TO IMPLEMENT COMMENT/LIKE/BUY/ETC. ACTIONS
-
-async function PRODUCT_ACTION(PRODUCT_Id, userId) {
-    const PRODUCT = await PRODUCT.findById(PRODUCT_Id);
-    if (PRODUCT) {
-        const isACTIONED = Boolean(PRODUCT.users.find(b => b == userId));
-        if (isACTIONED) {
-            throw new Error('User has already ACTION the PRODUCT');
-        } else {
-            PRODUCT.users.push(userId);
-            await PRODUCT.save();
-            return PRODUCT;
-        }
-    } else {
-        throw new Error('PRODUCT not found');
-    }
-}

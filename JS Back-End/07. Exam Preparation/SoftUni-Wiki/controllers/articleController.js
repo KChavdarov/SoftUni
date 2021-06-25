@@ -115,23 +115,4 @@ router.post('/delete/:id', isUser(), async (req, res) => {
     }
 });
 
-
-/*  ***  BUY / LIKE / COMMENT / ETC. ACTIONS ***  */
-router.get('/ACTION/:id', isUser(), async (req, res) => {
-    try {
-        const PRODUCT = await req.storage.getById(req.params.id);
-        if (req.user._id == PRODUCT.creator) {
-            throw new Error('Cannot ACTION PRODUCT you have created');
-        } else {
-            await Promise.all([
-                req.auth.PRODUCT_ACTION(req.params.id, req.user._id),
-                req.storage.USER_ACTION(req.params.id, req.user._id)
-            ]);
-        }
-    } catch (error) {
-        console.log(parseErrorMessage(error));
-    }
-    res.redirect('/PRODUCT/details/' + req.params.id);
-});
-
 module.exports = router;

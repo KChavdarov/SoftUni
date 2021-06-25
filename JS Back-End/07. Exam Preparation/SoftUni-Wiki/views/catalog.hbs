@@ -1,5 +1,9 @@
 <section>
+    {{#if query}}
+    <h2>Search results for: "{{query}}"</h2>
+    {{else}}
     <h2>All articles</h2>
+    {{/if}}
     <div class="spacer">
         <ul>
             {{#each articles}}
