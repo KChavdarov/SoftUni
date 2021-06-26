@@ -19,7 +19,7 @@ module.exports = () => {
                 logout() {
                     res.clearCookie(COOKIE_NAME);
                 },
-
+                enroll: userService.enroll,
             };
             next();
         }

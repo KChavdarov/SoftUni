@@ -3,8 +3,6 @@ const { body, validationResult } = require('express-validator');
 const { isGuest, isUser } = require('../middleware/guards.js');
 const { parseErrorMessage } = require('../util/parser.js');
 
-//CHANGE PATH TO TEMPLATES IN RENDER CALLS IF NECESSARY
-
 /*  ***  LOGIN ACTIONS  ***  */
 router.get('/login', isGuest(), (req, res) => {
     res.render('user/login', { title: 'SoftUni Tutorials - Login' });
@@ -33,8 +31,8 @@ router.get('/register', isGuest(), (req, res) => {
 
 router.post('/register',
     isGuest(),
-    body('username', 'Invalid username').trim().notEmpty(), // Change message and validation according to project requirements
-    body('password', 'Invalid password').trim().notEmpty(), // Change message and validation according to project requirements
+    body('username', 'Invalid username').trim().isLength(5).isAlphanumeric(),
+    body('password', 'Invalid password').trim().isLength(5).isAlphanumeric(),
     body('repeatPassword', 'Passwords don\'t match').custom((value, { req }) => value.trim() == req.body.password.trim()),
     async (req, res) => {
         try {

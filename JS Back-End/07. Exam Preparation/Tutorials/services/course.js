@@ -8,7 +8,7 @@ module.exports = {
     getTop,
     edit,
     deleteById,
-    PRODUCT_ACTION,
+    enroll,
 };
 
 async function create(data) {
@@ -28,12 +28,13 @@ async function getById(id) {
     return course;
 };
 
-async function getAll() {
-    return await Course.find({}).sort('-createdAt').lean(); //    ADD SORTING/FILTERING IF NECESSARY
+async function getAll(query = '') {
+    const pattern = new RegExp(`${query}`, 'i');
+    return await Course.find({ title: pattern }).sort('-createdAt').lean();
 };
 
 async function getTop() {
-    return await Course.find({}).sort('-users').limit(3).lean(); //    ADD SORTING/FILTERING IF NECESSARY
+    return await Course.find({}).sort('users').limit(3).lean();
 };
 
 async function edit(id, data) {
@@ -56,22 +57,18 @@ async function deleteById(id) {
     return await Course.findByIdAndDelete(id);
 };
 
-
-
-//  ADD ANY SPECIFIC FUNCTIONS TO IMPLEMENT COMMENT/LIKE/BUY/ETC. ACTIONS
-
-async function PRODUCT_ACTION(PRODUCT_Id, userId) {
-    const PRODUCT = await PRODUCT.findById(PRODUCT_Id);
-    if (PRODUCT) {
-        const isACTIONED = Boolean(PRODUCT.users.find(b => b == userId));
-        if (isACTIONED) {
-            throw new Error('User has already ACTION the PRODUCT');
+async function enroll(courseId, userId) {
+    const course = await Course.findById(courseId);
+    if (course) {
+        const isEnrolled = Boolean(course.users.find(b => b == userId));
+        if (isEnrolled) {
+            throw new Error('User is already enrolled in the course');
         } else {
-            PRODUCT.users.push(userId);
-            await PRODUCT.save();
-            return PRODUCT;
+            course.users.push(userId);
+            await course.save();
+            return course;
         }
     } else {
-        throw new Error('PRODUCT not found');
+        throw new Error('Course not found');
     }
 }

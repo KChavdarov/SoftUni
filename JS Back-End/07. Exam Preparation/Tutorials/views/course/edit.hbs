@@ -1,5 +1,5 @@
-<form class="text-center border border-light p-5" action="/courses/create" method="POST">
-    <h1>Create Course</h1>
+<form class="text-center border border-light p-5" action="/courses/edit/{{course._id}}" method="POST">
+    <h1>Edit Course</h1>
     <div class="form-group">
         <label for="title">Title</label>
         <input id="title" type="text" class="form-control" placeholder="Course name" name="title"
@@ -20,5 +20,5 @@
         <input id="duration" type="text" class="form-control" placeholder="4 weeks" name="duration"
             value="{{course.duration}}">
     </div>
-    <button type="submit" class="btn btn-primary">Create</button>
+    <button type="submit" class="btn btn-primary">Edit</button>
 </form>
