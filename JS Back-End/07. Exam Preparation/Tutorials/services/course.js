@@ -1,54 +1,59 @@
-const PRODUCT = require('../models/Product.js');
+const Course = require('../models/Course.js');
 
 module.exports = {
     //EXPORT ALL FUNCTIONS!
     create,
     getById,
     getAll,
+    getTop,
     edit,
     deleteById,
     PRODUCT_ACTION,
 };
 
 async function create(data) {
-    const pattern = new RegExp(`^${data.name}$`, 'i');
-    const existing = await PRODUCT.findOne({ name: pattern });
+    const pattern = new RegExp(`^${data.title}$`, 'i');
+    const existing = await Course.findOne({ title: pattern });
     if (existing) {
-        throw new Error('Name already in use');
+        throw new Error('Course with this title already exists');
     } else {
-        const PRODUCT = new PRODUCT(data);
-        await PRODUCT.save();
-        return PRODUCT;
+        const course = new Course(data);
+        await course.save();
+        return course;
     }
 };
 
 async function getById(id) {
-    const PRODUCT = await PRODUCT.findById(id).lean();
-    return PRODUCT;
+    const course = await Course.findById(id).lean();
+    return course;
 };
 
 async function getAll() {
-    return await PRODUCT.find({}).lean(); //    ADD SORTING/FILTERING IF NECESSARY
+    return await Course.find({}).sort('-createdAt').lean(); //    ADD SORTING/FILTERING IF NECESSARY
+};
+
+async function getTop() {
+    return await Course.find({}).sort('-users').limit(3).lean(); //    ADD SORTING/FILTERING IF NECESSARY
 };
 
 async function edit(id, data) {
-    const PRODUCT = await PRODUCT.findById(id);
+    const course = await Course.findById(id);
 
-    if (PRODUCT.name.toLowerCase() != data.name.toLowerCase()) {
-        const pattern = new RegExp(`^${data.name}$`, 'i');
-        const existing = await PRODUCT.findOne({ name: pattern });
+    if (course.title.toLocaleLowerCase() != data.title.toLocaleLowerCase()) {
+        const pattern = new RegExp(`^${data.title}$`, 'i');
+        const existing = await Course.findOne({ title: pattern });
         if (existing) {
-            throw new Error('Name already in use');
+            throw new Error('Course with this title already exists');
         }
     }
 
-    Object.assign(PRODUCT, data);
-    await PRODUCT.save();
-    return PRODUCT;
+    Object.assign(course, data);
+    await course.save();
+    return course;
 };
 
 async function deleteById(id) {
-    return await PRODUCT.findByIdAndDelete(id);
+    return await Course.findByIdAndDelete(id);
 };
 
 

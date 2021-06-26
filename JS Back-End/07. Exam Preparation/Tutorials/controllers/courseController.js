@@ -8,32 +8,30 @@ const router = require('express').Router();
 
 /*  ***  CREATE ACTIONS  ***  */
 router.get('/create', isUser(), async (req, res) => {
-    res.render('PRODUCT/create', { title: 'Create Page' });
+    res.render('course/create', { title: 'SoftUni Tutorials - Create Course' });
 });
 
 router.post('/create', isUser(), async (req, res) => {
-    const PRODUCT = {
-        // CHANGE DATA BASED ON CREATE FORM REQUIREMENTS
-        name: req.body.name.trim(),
+    const course = {
+        title: req.body.title.trim(),
         description: req.body.description.trim(),
         imageUrl: req.body.imageUrl.trim(),
-        price: Number(req.body.price),
-        brand: req.body.brand.trim(),
+        duration: req.body.duration.trim(),
 
         creator: req.user._id,
     };
     try {
-        await req.storage.create(PRODUCT);
-        res.redirect('/'); // REDIRECT BASED NO PROJECT REQUIREMENTS
+        await req.storage.create(course);
+        res.redirect('/');
     } catch (error) {
         const errors = parseErrorMessage(error);
         console.log(errors);
         const context = {
-            title: 'Create Page',
+            title: 'SoftUni Tutorials - Create Course',
             errors,
-            PRODUCT,
+            course,
         };
-        res.render('PRODUCT/create', context);
+        res.render('course/create', context);
     }
 });
 

@@ -21,9 +21,9 @@ const courseSchema = new mongoose.Schema({
     },
 
     creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+
     createdAt: { type: Date, default: Date.now },
 
-    //  ADD ARRAY OF USER OBJECT IDs TO IMPLEMENT LIKE/COMMENT/BUY/ETC.
     users: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
 });
 
