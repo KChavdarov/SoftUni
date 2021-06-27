@@ -1,7 +1,7 @@
-const PRODUCT = require('../models/Product.js');
+const Trip = require('../models/Trip.js');
+const User = require('../models/User.js');
 
 module.exports = {
-    //EXPORT ALL FUNCTIONS!
     create,
     getById,
     getAll,
@@ -11,44 +11,52 @@ module.exports = {
 };
 
 async function create(data) {
-    const pattern = new RegExp(`^${data.name}$`, 'i');
-    const existing = await PRODUCT.findOne({ name: pattern });
-    if (existing) {
-        throw new Error('Name already in use');
-    } else {
-        const PRODUCT = new PRODUCT(data);
-        await PRODUCT.save();
-        return PRODUCT;
-    }
+    const user = await User.findById(data.creator);
+    const trip = new Trip(data);
+
+    trip.buddies.push(user);
+    user.trips.push(trip);
+
+    await trip.save();
+    await user.save();
+
+    return trip;
 };
 
 async function getById(id) {
-    const PRODUCT = await PRODUCT.findById(id).lean();
-    return PRODUCT;
+    const trip = await Trip.findById(id).lean();
+    return trip;
 };
 
 async function getAll() {
-    return await PRODUCT.find({}).lean(); //    ADD SORTING/FILTERING IF NECESSARY
+    return await Trip.find({}).lean(); //    ADD SORTING/FILTERING IF NECESSARY
 };
 
-async function edit(id, data) {
-    const PRODUCT = await PRODUCT.findById(id);
 
-    if (PRODUCT.name.toLowerCase() != data.name.toLowerCase()) {
+
+
+
+async function edit(id, data) {
+    const trip = await Trip.findById(id);
+
+    if (trip.name.toLowerCase() != data.name.toLowerCase()) {
         const pattern = new RegExp(`^${data.name}$`, 'i');
-        const existing = await PRODUCT.findOne({ name: pattern });
+        const existing = await trip.findOne({ name: pattern });
         if (existing) {
             throw new Error('Name already in use');
         }
     }
 
-    Object.assign(PRODUCT, data);
-    await PRODUCT.save();
-    return PRODUCT;
+    Object.assign(trip, data);
+    await trip.save();
+    return trip;
 };
 
+
+
+
 async function deleteById(id) {
-    return await PRODUCT.findByIdAndDelete(id);
+    return await Trip.findByIdAndDelete(id);
 };
 
 

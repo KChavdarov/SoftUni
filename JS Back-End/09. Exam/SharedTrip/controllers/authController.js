@@ -3,11 +3,9 @@ const { body, validationResult } = require('express-validator');
 const { isGuest, isUser } = require('../middleware/guards.js');
 const { parseErrorMessage } = require('../util/parser.js');
 
-//CHANGE PATH TO TEMPLATES IN RENDER CALLS IF NECESSARY
-
 /*  ***  LOGIN ACTIONS  ***  */
 router.get('/login', isGuest(), (req, res) => {
-    res.render('login', { title: 'Login Page' });
+    res.render('login', { title: 'Shared Trip - Login' });
 });
 
 router.post('/login', isGuest(), async (req, res) => {
@@ -17,9 +15,9 @@ router.post('/login', isGuest(), async (req, res) => {
     } catch (error) {
         const errors = parseErrorMessage(error);
         const context = {
-            title: 'Login Page',
+            title: 'Shared Trip - Login',
             errors,
-            data: { username: req.body.username, email: req.body.email } // ADD OR CHANGE LOGIN METHOD IF NECESSARY (EMAIL/USERNAME)
+            data: { email: req.body.email, gender: req.body.gender } // ADD OR CHANGE LOGIN METHOD IF NECESSARY (EMAIL/USERNAME)
         };
         console.log(errors);
         res.render('login', context);
@@ -28,14 +26,14 @@ router.post('/login', isGuest(), async (req, res) => {
 
 /*  ***  REGISTER ACTIONS  ***  */
 router.get('/register', isGuest(), (req, res) => {
-    res.render('register', { title: 'Register Page' });
+    res.render('register', { title: 'Shared Trip - Register' });
 });
 
 router.post('/register',
     isGuest(),
-    body('email', 'Please enter a valid email').trim().isEmail().isLength({ min: 3 }), // Change message and validation according to project requirements
-    body('username', 'Invalid username').trim().isLength({ min: 3 }), // Change message and validation according to project requirements
-    body('password', 'Invalid password').trim().isLength({ min: 3 }), // Change message and validation according to project requirements
+    body('email', 'Please enter a valid email').trim().isEmail().notEmpty(),
+    body('gender', 'Please select a valid gender').trim().isIn(['male', 'female']),
+    body('password', 'Password must be at least 4 characters long').trim().isLength({ min: 4 }),
     body('repeatPassword', 'Passwords don\'t match').custom((value, { req }) => value.trim() == req.body.password.trim()),
     async (req, res) => {
         try {
@@ -44,14 +42,14 @@ router.post('/register',
                 throw new Error(errors.map(e => e.msg).join('\n'));
             } else {
                 await req.auth.register(req.body);
-                res.redirect('/'); // Redirect according to project requirements
+                res.redirect('/');
             }
         } catch (error) {
             const errors = parseErrorMessage(error);
             const context = {
-                title: 'Register Page',
+                title: 'Shared Trip - Register',
                 errors,
-                data: { username: req.body.username, email: req.body.email } // ADD OR CHANGE LOGIN METHOD IF NECESSARY (EMAIL/USERNAME)
+                data: { email: req.body.email, gender: req.body.gender }
             };
             console.log(errors);
             res.render('register', context);

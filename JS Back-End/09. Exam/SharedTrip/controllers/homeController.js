@@ -1,12 +1,15 @@
 const router = require('express').Router();
 
 router.get('/', async (req, res) => {
+    res.render('home', { title: 'Shared Trip - Welcome' });
+});
+
+router.get('/catalog', async (req, res) => {
     try {
-        const products = await req.storage.getAll();
-        // Add correct title
-        res.render('home/home', { title: 'Home Page', products });
+        const trips = await req.storage.getAll();
+        res.render('catalog', { title: 'Shared Trip - Catalog', trips });
     } catch (error) {
-        res.render('home/home', { title: 'Home Page' });
+        res.render('catalog', { title: 'Shared Trip - Catalog' });
     }
 });
 

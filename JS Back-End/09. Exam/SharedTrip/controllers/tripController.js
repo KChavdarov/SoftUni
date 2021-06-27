@@ -8,32 +8,35 @@ const router = require('express').Router();
 
 /*  ***  CREATE ACTIONS  ***  */
 router.get('/create', isUser(), async (req, res) => {
-    res.render('PRODUCT/create', { title: 'Create Page' });
+    res.render('create', { title: 'Shared Trips - Create Trip' });
 });
 
 router.post('/create', isUser(), async (req, res) => {
-    const PRODUCT = {
-        // CHANGE DATA BASED ON CREATE FORM REQUIREMENTS
-        name: req.body.name.trim(),
-        description: req.body.description.trim(),
+    const trip = {
+        start: req.body.start.trim(),
+        end: req.body.end.trim(),
+        date: req.body.date.trim(),
+        time: req.body.time.trim(),
         imageUrl: req.body.imageUrl.trim(),
+        car: req.body.car.trim(),
+        seats: Number(req.body.seats),
         price: Number(req.body.price),
-        brand: req.body.brand.trim(),
+        description: req.body.description.trim(),
 
         creator: req.user._id,
     };
     try {
-        await req.storage.create(PRODUCT);
-        res.redirect('/'); // REDIRECT BASED NO PROJECT REQUIREMENTS
+        await req.storage.create(trip);
+        res.redirect('/catalog');
     } catch (error) {
         const errors = parseErrorMessage(error);
         console.log(errors);
         const context = {
-            title: 'Create Page',
+            title: 'Shared Trips - Create Trip',
             errors,
-            PRODUCT,
+            trip,
         };
-        res.render('PRODUCT/create', context);
+        res.render('create', context);
     }
 });
 

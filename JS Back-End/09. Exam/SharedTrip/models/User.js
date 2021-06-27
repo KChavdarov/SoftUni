@@ -5,19 +5,18 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    username: {
-        type: String,
-        required: true,
-    },
     hashedPassword: {
         type: String,
         required: true,
     },
+    gender: {
+        type: String,
+        required: true
+    },
 
-    // ADDD AN ARRAY OF PRODUCTS BASED ON PROJECT REQUIREMENTS
-    PRODUCTS: [{
+    trips: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Shoe'
+        ref: 'Trip'
     }],
 
 });
