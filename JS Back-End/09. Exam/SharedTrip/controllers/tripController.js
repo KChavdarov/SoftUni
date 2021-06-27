@@ -41,17 +41,18 @@ router.post('/create', isUser(), async (req, res) => {
 });
 
 /*  ***  DETAILS  ***  */
-router.get('/details/:id', isUser(), async (req, res) => {
+router.get('/details/:id', async (req, res) => {
     try {
-        const PRODUCT = await req.storage.getById(req.params.id);
+        const trip = await req.storage.getById(req.params.id);
 
-        //CHANGE DATA LOAD BASED ON PROJECT REQUIREMENTS
-        PRODUCT.isOwner = req.user._id == PRODUCT.creator;
-        PRODUCT.isBought = Boolean(PRODUCT.buyers.find(b => b == req.user._id));
-        PRODUCT.purchases = PRODUCT.buyers.length;
-        PRODUCT.price = PRODUCT.price.toFixed(2);
+        trip.isUser = Boolean(req.user);
+        trip.isCreator = req.user._id == trip.creator._id;
+        trip.isJoined = Boolean(trip.buddies.find(b => b._id == req.user._id));
+        trip.isAvailable = trip.seats > 0;
+        const buddies = trip.buddies.map(b => b.email);
+        trip.buddies = buddies.join(', ');
 
-        res.render('PRODUCT/details', { title: 'Details Page', PRODUCT });
+        res.render('details', { title: 'Shared Trips - Trip Details', trip });
     } catch (error) {
         console.log(parseErrorMessage(error));
         res.redirect('/');
@@ -61,100 +62,92 @@ router.get('/details/:id', isUser(), async (req, res) => {
 /*  ***  EDIT ACTIONS  ***  */
 router.get('/edit/:id', isUser(), async (req, res) => {
     try {
-        const PRODUCT = await req.storage.getById(req.params.id);
-        if (req.user._id == PRODUCT.creator) {
-            res.render('PRODUCT/edit', { title: 'Edit Page', PRODUCT });
+        const trip = await req.storage.getById(req.params.id);
+        if (req.user._id == trip.creator._id) {
+            res.render('edit', { title: 'Shared Trips - Edit Trip', trip });
         } else {
             throw new Error('Only creator can edit or delete');
         }
     } catch (error) {
         console.log(parseErrorMessage(error));
-        res.redirect('/PRODUCT/details/' + req.params.id);
+        res.redirect('/trips/details/' + req.params.id);
     }
 });
 
 router.post('/edit/:id', isUser(), async (req, res) => {
-    const PRODUCT_DATA = {
+    const tripData = {
         _id: req.params.id,
 
-        //CHANGE BASED ON PROJECT REQUIREMENTS
-        name: req.body.name.trim(),
-        description: req.body.description.trim(),
+        start: req.body.start.trim(),
+        end: req.body.end.trim(),
+        date: req.body.date.trim(),
+        time: req.body.time.trim(),
         imageUrl: req.body.imageUrl.trim(),
+        car: req.body.car.trim(),
+        seats: Number(req.body.seats),
         price: Number(req.body.price),
-        brand: req.body.brand.trim(),
+        description: req.body.description.trim(),
 
         creator: req.user._id,
     };
 
     try {
-        const PRODUCT = await req.storage.getById(req.params.id);
-        if (req.user._id == PRODUCT.creator) {
-            await req.storage.edit(req.params.id, PRODUCT_DATA);
-            res.redirect('/PRODUCT/details/' + req.params.id);
+        const trip = await req.storage.getById(req.params.id);
+        if (req.user._id == trip.creator._id) {
+            await req.storage.edit(req.params.id, tripData);
+            res.redirect('/trips/details/' + req.params.id);
         } else {
             throw new Error('Only creator can edit or delete');
         }
     } catch (error) {
         const errors = parseErrorMessage(error);
         const context = {
-            title: 'Edit Page',
+            title: 'Shared Trips - Edit Trip',
             errors,
-            PRODUCT: PRODUCT_DATA,
+            trip: tripData,
         };
         console.log(errors);
-        res.render('PRODUCT/edit', context);
+        res.render('edit', context);
     }
 });
 
 /*  ***  DELETE ACTIONS  ***  */
 router.get('/delete/:id', isUser(), async (req, res) => {
     try {
-        const PRODUCT = await req.storage.getById(req.params.id);
-        if (req.user._id == PRODUCT.creator) {
-            res.render('PRODUCT/delete', { title: 'Delete Page', PRODUCT });
-        } else {
-            throw new Error('Only creator can edit or delete');
-        }
-    } catch (error) {
-        console.log(parseErrorMessage(error));
-        res.redirect('/PRODUCT/details/' + req.params.id);
-    }
-
-});
-
-router.post('/delete/:id', isUser(), async (req, res) => {
-    try {
-        const PRODUCT = await req.storage.getById(req.params.id);
-        if (req.user._id == PRODUCT.creator) {
+        const trip = await req.storage.getById(req.params.id);
+        if (req.user._id == trip.creator._id) {
             await req.storage.deleteById(req.params.id);
-            res.redirect('/');
+            res.redirect('/catalog');
         } else {
             throw new Error('Only creator can edit or delete');
         }
     } catch (error) {
         console.log(parseErrorMessage(error));
-        res.redirect('/PRODUCT/details/' + req.params.id);
+        res.redirect('/trips/details/' + req.params.id);
     }
 });
 
 
-/*  ***  BUY / LIKE / COMMENT / ETC. ACTIONS ***  */
-router.get('/ACTION/:id', isUser(), async (req, res) => {
+router.get('/join/:id', isUser(), async (req, res) => {
     try {
-        const PRODUCT = await req.storage.getById(req.params.id);
-        if (req.user._id == PRODUCT.creator) {
-            throw new Error('Cannot ACTION PRODUCT you have created');
+        const trip = await req.storage.getById(req.params.id);
+
+        if (req.user._id == trip.creator) {
+            throw new Error('Cannot join a trip you have created');
+
+        } else if (trip.buddies.find(b => b._id == req.user._id)) {
+            throw new Error('Trip already joined');
+
+        } else if (trip.seats <= trip.buddies.length) {
+            throw new Error('There are no seats left for this trip');
+
         } else {
-            await Promise.all([
-                req.auth.PRODUCT_ACTION(req.params.id, req.user._id),
-                req.storage.USER_ACTION(req.params.id, req.user._id)
-            ]);
+            await req.storage.joinTrip(req.params.id, req.user._id);
         }
     } catch (error) {
         console.log(parseErrorMessage(error));
     }
-    res.redirect('/PRODUCT/details/' + req.params.id);
+    res.redirect('/trips/details/' + req.params.id);
 });
 
 module.exports = router;

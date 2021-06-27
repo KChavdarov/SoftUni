@@ -7,14 +7,13 @@ module.exports = {
     getAll,
     edit,
     deleteById,
-    PRODUCT_ACTION,
+    joinTrip,
 };
 
 async function create(data) {
     const user = await User.findById(data.creator);
     const trip = new Trip(data);
 
-    trip.buddies.push(user);
     user.trips.push(trip);
 
     await trip.save();
@@ -24,7 +23,7 @@ async function create(data) {
 };
 
 async function getById(id) {
-    const trip = await Trip.findById(id).lean();
+    const trip = await Trip.findById(id).populate('creator').populate('buddies').lean();
     return trip;
 };
 
@@ -32,49 +31,31 @@ async function getAll() {
     return await Trip.find({}).lean(); //    ADD SORTING/FILTERING IF NECESSARY
 };
 
-
-
-
-
 async function edit(id, data) {
     const trip = await Trip.findById(id);
-
-    if (trip.name.toLowerCase() != data.name.toLowerCase()) {
-        const pattern = new RegExp(`^${data.name}$`, 'i');
-        const existing = await trip.findOne({ name: pattern });
-        if (existing) {
-            throw new Error('Name already in use');
-        }
-    }
-
     Object.assign(trip, data);
     await trip.save();
     return trip;
 };
 
-
-
-
 async function deleteById(id) {
     return await Trip.findByIdAndDelete(id);
 };
 
+async function joinTrip(tripId, userId) {
+    const trip = await Trip.findById(tripId);
+    const user = await User.findById(userId);
 
-
-//  ADD ANY SPECIFIC FUNCTIONS TO IMPLEMENT COMMENT/LIKE/BUY/ETC. ACTIONS
-
-async function PRODUCT_ACTION(PRODUCT_Id, userId) {
-    const PRODUCT = await PRODUCT.findById(PRODUCT_Id);
-    if (PRODUCT) {
-        const isACTIONED = Boolean(PRODUCT.users.find(b => b == userId));
-        if (isACTIONED) {
-            throw new Error('User has already ACTION the PRODUCT');
-        } else {
-            PRODUCT.users.push(userId);
-            await PRODUCT.save();
-            return PRODUCT;
-        }
+    if (trip && user) {
+        trip.buddies.push(user);
+        trip.seats--;
+        user.trips.push(trip);
+        await Promise.all([
+            trip.save(),
+            user.save()
+        ]);
+        return trip;
     } else {
-        throw new Error('PRODUCT not found');
+        throw new Error('Error occurred while joining trip');
     }
 }
