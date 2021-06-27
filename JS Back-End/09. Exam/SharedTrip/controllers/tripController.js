@@ -46,8 +46,10 @@ router.get('/details/:id', async (req, res) => {
         const trip = await req.storage.getById(req.params.id);
 
         trip.isUser = Boolean(req.user);
-        trip.isCreator = req.user._id == trip.creator._id;
-        trip.isJoined = Boolean(trip.buddies.find(b => b._id == req.user._id));
+        if(trip.isUser){
+            trip.isCreator = req.user._id == trip.creator._id;
+            trip.isJoined = Boolean(trip.buddies.find(b => b._id == req.user._id));
+        }   
         trip.isAvailable = trip.seats > 0;
         const buddies = trip.buddies.map(b => b.email);
         trip.buddies = buddies.join(', ');
@@ -55,7 +57,7 @@ router.get('/details/:id', async (req, res) => {
         res.render('details', { title: 'Shared Trips - Trip Details', trip });
     } catch (error) {
         console.log(parseErrorMessage(error));
-        res.redirect('/');
+        res.redirect('/404');
     }
 });
 

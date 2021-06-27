@@ -51,16 +51,11 @@ async function deleteById(id) {
 
 async function joinTrip(tripId, userId) {
     const trip = await Trip.findById(tripId);
-    const user = await User.findById(userId);
 
-    if (trip && user) {
-        trip.buddies.push(user);
+    if (trip) {
+        trip.buddies.push(userId);
         trip.seats--;
-        user.trips.push(trip);
-        await Promise.all([
-            trip.save(),
-            user.save()
-        ]);
+        await trip.save();
         return trip;
     } else {
         throw new Error('Error occurred while joining trip');

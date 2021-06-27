@@ -11,13 +11,13 @@ router.get('/login', isGuest(), (req, res) => {
 router.post('/login', isGuest(), async (req, res) => {
     try {
         await req.auth.login(req.body);
-        res.redirect('/'); // Redirect according to project requirements
+        res.redirect('/');
     } catch (error) {
         const errors = parseErrorMessage(error);
         const context = {
             title: 'Shared Trip - Login',
             errors,
-            data: { email: req.body.email, gender: req.body.gender } // ADD OR CHANGE LOGIN METHOD IF NECESSARY (EMAIL/USERNAME)
+            data: { email: req.body.email, gender: req.body.gender }
         };
         console.log(errors);
         res.render('login', context);
@@ -49,7 +49,10 @@ router.post('/register',
             const context = {
                 title: 'Shared Trip - Register',
                 errors,
-                data: { email: req.body.email, gender: req.body.gender }
+                data: {
+                    email: req.body.email,
+                    gender: req.body.gender
+                }
             };
             console.log(errors);
             res.render('register', context);

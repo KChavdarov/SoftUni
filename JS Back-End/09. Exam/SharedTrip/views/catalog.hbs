@@ -7,11 +7,9 @@
     </header>
 
     <div class="row text-center">
-        <!-- If there are shared trips in the database display each of them -->
         {{#each trips}}
             {{>trip}}
         {{else}}
-        <!-- If there are no shared trips in the database -->
         <div class="no-trips">
             <img src="https://www.stagweb.co.uk/img/activities/big/sexyhitchhiker1.jpg" />
             <p class="lead">Hitchhiker time...</p>
