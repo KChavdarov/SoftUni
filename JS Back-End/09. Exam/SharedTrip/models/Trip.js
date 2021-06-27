@@ -22,7 +22,7 @@ const tripSchema = new mongoose.Schema({
     description: {
         type: String,
         required: [true, 'Please enter trip description longer than 10 characters'],
-        minLength: [10, 'Please enter trip description longer than 10 characters' ]
+        minLength: [10, 'Please enter trip description longer than 10 characters']
     },
     seats: {
         type: Number,
@@ -48,10 +48,12 @@ const tripSchema = new mongoose.Schema({
     },
 
     creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-    
+
     createdAt: { type: Date, default: Date.now },
 
     buddies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+
+    isDeleted: { type: Boolean, default: false }
 });
 
 module.exports = new mongoose.model('Trip', tripSchema);

@@ -8,6 +8,7 @@ module.exports = {
     edit,
     deleteById,
     joinTrip,
+    getUserTrips,
 };
 
 async function create(data) {
@@ -23,12 +24,14 @@ async function create(data) {
 };
 
 async function getById(id) {
-    const trip = await Trip.findById(id).populate('creator').populate('buddies').lean();
+    // const trip = await Trip.findById(id).where({ isDeleted: false }).populate('creator').populate('buddies').lean();
+    const trip = await Trip.findById(id).where().populate('creator').populate('buddies').lean();
     return trip;
 };
 
 async function getAll() {
-    return await Trip.find({}).lean(); //    ADD SORTING/FILTERING IF NECESSARY
+    // return await Trip.find({ isDeleted: false }).lean();
+    return await Trip.find().lean();
 };
 
 async function edit(id, data) {
@@ -39,6 +42,10 @@ async function edit(id, data) {
 };
 
 async function deleteById(id) {
+    // const trip = await Trip.findById(id);
+    // trip.isDeleted = true;
+    // await trip.save();
+    // return trip;
     return await Trip.findByIdAndDelete(id);
 };
 
@@ -58,4 +65,9 @@ async function joinTrip(tripId, userId) {
     } else {
         throw new Error('Error occurred while joining trip');
     }
+}
+
+async function getUserTrips(userId) {
+    const user = await User.findById(userId).populate('trips').lean();
+    return user;
 }
