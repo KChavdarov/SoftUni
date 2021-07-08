@@ -33,9 +33,13 @@ const furnitureSchema = new mongoose.Schema({
         min: [1950, 'Year must be between 1950 and 2050'],
         max: [2050, 'Year must be between 1950 and 2050'],
     },
-    ownerId: {
+    owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
     }
 });
 
