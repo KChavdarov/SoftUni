@@ -1,0 +1,11 @@
+<div class="container">
+    <p>
+        <input #userName type="text">
+        <input #userAge type="number">
+        <button (click)="addNewUser(userName,userAge)">Create User</button>
+    </p>
+
+    <ul>
+        <app-user-list-item *ngFor="let user of users" [user]="user"></app-user-list-item>
+    </ul>
+</div>
