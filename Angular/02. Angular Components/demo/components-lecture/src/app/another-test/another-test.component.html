@@ -1,0 +1,16 @@
+<h2>Clicks count: {{counter}}</h2>
+<input type="text" [value]="counter" disabled>
+<button (click)=clickCounter()>click Me</button>
+
+<ul [class]="classes">
+    <li *ngFor="let user of users"><span>Name: {{user.name}}</span><span> ({{user.age}})</span></li>
+</ul>
+
+<div *ngIf="testBool">this is a test div</div>
+
+
+<section>
+    <input #phoneInput type="text">
+    <button (click)="logPhone(phoneInput)" >Enter Phone</button>
+    <div *ngIf='phone'>{{phone}}</div>
+</section>
