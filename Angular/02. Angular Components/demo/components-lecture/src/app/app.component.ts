@@ -1,5 +1,16 @@
 import { Component } from '@angular/core';
-import { User } from './interfaces/User.js';
+import { User } from './interfaces/User';
+import { UserService } from './user.service';
+import { of } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
+
+const value = of(1000, 20, 300).pipe(map(x => x + 100));
+
+value.subscribe(x => console.log(x));
+
+
+
+
 
 @Component({
   selector: 'app-root',
@@ -9,13 +20,13 @@ import { User } from './interfaces/User.js';
 export class AppComponent {
   title = 'Components Lecture';
 
-  addNewUserHandler(newUser: User): void {
-    this.users.push(newUser);
+  constructor(private userService: UserService) { }
+
+  get users() {
+    return this.userService.users;
   }
 
-  users = [
-    { name: 'Gosho', age: 20 },
-    { name: 'Kiro', age: 29 },
-    { name: 'Pesho', age: 32 },
-  ]
+  get addNewUserHandler() {
+    return this.userService.addNewUserHandler;
+  }
 }
