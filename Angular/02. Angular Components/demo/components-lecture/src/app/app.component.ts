@@ -1,15 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from './interfaces/User';
 import { UserService } from './user.service';
 import { of } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
-
-const value = of(1000, 20, 300).pipe(map(x => x + 100));
-
-value.subscribe(x => console.log(x));
-
-
-
+import { catchError, map, tap } from 'rxjs/operators';
 
 
 @Component({
@@ -17,16 +10,30 @@ value.subscribe(x => console.log(x));
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Components Lecture';
+  users: User[] | undefined;
 
   constructor(private userService: UserService) { }
 
-  get users() {
-    return this.userService.users;
+  ngOnInit(): void {
+    this.loadUsers()
   }
 
-  get addNewUserHandler() {
-    return this.userService.addNewUserHandler;
+  searchUsers(input: HTMLInputElement) {
+    const search = input.value;
+    this.loadUsers(search);
+    input.value = '';
+  }
+
+  loadUsers(search: string = '') {
+    this.userService.loadUsers(search).pipe(
+      catchError(() => of([]))
+    ).subscribe(
+      users => this.users = users, //Next fn
+      error => console.log(error),  //Error fn
+      () => console.log('Load user stream completed!'), //Executed when stream finishes (including with error)
+
+    );
   }
 }

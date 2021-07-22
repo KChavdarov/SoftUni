@@ -1,6 +1,10 @@
-<header>HEADER</header>
+<header>HEADER
+    <app-time></app-time>
+</header>
+<input #search type="text">
+<button (click)="searchUsers(search)">Search</button>
 <div class="content">
-    <app-user-list *ngIf="users" [users]="users" (addUser)="addNewUserHandler($event)"></app-user-list>
-    <p *ngIf="users.length == 0">Loading ...</p>
+    <app-user-list *ngIf="users" [users]="users"></app-user-list>
+    <p *ngIf="users?.length == 0">Loading ...</p>
 </div>
 <footer>FOOTER</footer>
