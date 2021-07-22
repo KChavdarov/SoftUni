@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import { ThemeService } from './theme.service';
 import { ThemeComponent } from './theme/theme.component';
 
 @NgModule({
@@ -14,7 +15,7 @@ import { ThemeComponent } from './theme/theme.component';
     BrowserModule,
     CoreModule
   ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

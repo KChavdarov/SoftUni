@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http'
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AsideComponent } from './aside/aside.component';
-
-
+import { PostService } from '../post.service';
 
 @NgModule({
   declarations: [
@@ -13,12 +13,14 @@ import { AsideComponent } from './aside/aside.component';
     AsideComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     AsideComponent,
-  ]
+  ],
+  providers: [PostService]
 })
 export class CoreModule { }

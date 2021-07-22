@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from 'src/app/post.service';
+import { Post } from '../../shared/interfaces/post';
+
 
 @Component({
   selector: 'app-aside',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsideComponent implements OnInit {
 
-  constructor() { }
+  public posts!: Post[]
 
-  ngOnInit(): void {
+  constructor(private postService: PostService) {
   }
 
+  ngOnInit(): void {
+    this.postService.LoadLatestPosts().subscribe((data) => { this.posts = data });
+  }
 }
