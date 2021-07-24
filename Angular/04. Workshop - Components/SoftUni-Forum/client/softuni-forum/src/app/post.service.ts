@@ -6,8 +6,12 @@ import { Post } from './shared/interfaces/post';
 export class PostService {
 
   constructor(private http: HttpClient) { }
-  
-  LoadLatestPosts() {
-    return this.http.get<Post[]>('http://localhost:3000/api/posts?limit=5');
+
+  loadPosts(count?: number) {
+    let url = 'http://localhost:3000/api/posts'
+    if (count) {
+      url += '?limit=' + count
+    }
+    return this.http.get<Post[]>(url);
   }
 }
