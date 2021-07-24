@@ -5,11 +5,13 @@
         </h2>
         <div *ngIf="posts">
             <div *ngFor="let post of posts" class="aside-theme">
-                <a href="#">
+                <ng-container *ngTemplateOutlet="postTemplateRef; context: {$implicit: post}">
+                </ng-container>
+                <!-- <a href="#">
                     <h3>{{post.text}}</h3>
                     <p>{{post.userId.username}}</p>
                     <p><span>{{post.created_at}}</span></p>
-                </a>
+                </a> -->
             </div>
         </div>
         <div *ngIf="!posts">Loading...</div>

@@ -3,6 +3,15 @@
     <main>
         <app-theme></app-theme>
     </main>
-    <app-aside></app-aside>
+
+    <ng-template #postTemplate let-post>
+        <a href="#">
+            <h3>{{post.text}}</h3>
+            <p>{{post.userId.username}}</p>
+            <p><span>{{post.created_at}}</span></p>
+        </a>
+    </ng-template>
+
+    <app-aside [postTemplateRef]="postTemplate"></app-aside>
 </div>
 <app-footer></app-footer>

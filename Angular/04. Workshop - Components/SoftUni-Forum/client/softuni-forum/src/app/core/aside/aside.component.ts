@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { PostService } from 'src/app/post.service';
 import { Post } from '../../shared/interfaces/post';
 
@@ -10,6 +10,7 @@ import { Post } from '../../shared/interfaces/post';
 })
 export class AsideComponent implements OnInit {
 
+  @Input() postTemplateRef!: TemplateRef<{ $implicit: Post }>
   public posts!: Post[]
 
   constructor(private postService: PostService) {

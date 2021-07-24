@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { Post } from './shared/interfaces/post';
 
 @Injectable()
@@ -8,7 +9,7 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   loadPosts(count?: number) {
-    let url = 'http://localhost:3000/api/posts'
+    let url = environment.apiUrl + '/api/posts'
     if (count) {
       url += '?limit=' + count
     }
