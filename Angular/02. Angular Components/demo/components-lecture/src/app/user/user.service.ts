@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Inject, Injectable } from '@angular/core';
-import { myStringInjectionToken } from './app.module';
-import { User } from './interfaces/User';
+import { Injectable } from '@angular/core';
+import { User } from '../interfaces/User';
 
 
 @Injectable()
