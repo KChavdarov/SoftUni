@@ -1,0 +1,9 @@
+<div class="container" *ngIf="user">
+    <input type="text" disabled [value]="user.name">
+    <input type="text" disabled [value]="user.email">
+    <input type="text" disabled [value]="user.phone">
+    <br>
+    <button [routerLink]="['/user-detail', user.id + 1]">Next User</button>
+</div>
+<p *ngIf="!user">Loading...</p>
+<a routerLink="/user-list">Back to User list</a>

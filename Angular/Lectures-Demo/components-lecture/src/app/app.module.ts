@@ -8,13 +8,18 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app-routing.module';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { TestModule } from './test/test.module';
 
 export const myStringInjectionToken = new InjectionToken('myString');
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent
+    AboutComponent,
+    NotFoundComponent,
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +28,7 @@ export const myStringInjectionToken = new InjectionToken('myString');
     UserModule,
     SharedModule,
     AppRoutingModule,
+    TestModule,
   ],
   providers: [
     {

@@ -11,4 +11,8 @@ export class UserService {
     const query = search ? '?email_like=' + search : '';
     return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users' + query);
   }
+
+  loadUser(id: number) {
+    return this.http.get<User>('https://jsonplaceholder.typicode.com/users/' + id);
+  }
 }
