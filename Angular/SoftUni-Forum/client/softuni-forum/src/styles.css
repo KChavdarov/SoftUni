@@ -43,3 +43,6 @@ main {
     width: 50%;
 }
 
+router-outlet {
+    display: none;
+}

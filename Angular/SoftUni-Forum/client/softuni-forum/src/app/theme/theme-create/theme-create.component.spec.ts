@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ThemeComponent } from './theme.component';
+import { ThemeCreateComponent } from './theme-create.component';
 
-describe('ThemeComponent', () => {
-  let component: ThemeComponent;
-  let fixture: ComponentFixture<ThemeComponent>;
+describe('ThemeCreateComponent', () => {
+  let component: ThemeCreateComponent;
+  let fixture: ComponentFixture<ThemeCreateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ThemeComponent ]
+      declarations: [ ThemeCreateComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ThemeComponent);
+    fixture = TestBed.createComponent(ThemeCreateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

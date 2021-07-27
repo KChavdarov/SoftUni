@@ -1,21 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { ThemeService } from './theme.service';
-import { ThemeComponent } from './theme/theme.component';
+import { ThemeModule } from './theme/theme.module';
+import { UserModule } from './user/user.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ThemeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
-    CoreModule
+    CoreModule,
+    UserModule,
+    ThemeModule,
+    AppRoutingModule,
   ],
-  providers: [ThemeService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

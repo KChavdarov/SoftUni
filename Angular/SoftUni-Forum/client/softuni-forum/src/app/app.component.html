@@ -1,7 +1,10 @@
 <app-header></app-header>
 <div class="container">
-    <main>
-        <app-theme></app-theme>
+    <router-outlet></router-outlet>
+
+
+    <!-- <main>
+        <app-theme-list></app-theme-list>
     </main>
 
     <ng-template #postTemplate let-post>
@@ -12,6 +15,6 @@
         </a>
     </ng-template>
 
-    <app-aside [postTemplateRef]="postTemplate"></app-aside>
+    <app-aside [postTemplateRef]="postTemplate"></app-aside> -->
 </div>
 <app-footer></app-footer>
