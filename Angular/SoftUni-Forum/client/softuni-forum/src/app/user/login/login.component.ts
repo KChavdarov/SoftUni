@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../user.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { UserService } from '../user.service';
 export class LoginComponent {
 
   constructor(
+    private activatedRoute: ActivatedRoute,
     private userService: UserService,
     private router: Router) {}
 
@@ -17,6 +18,6 @@ export class LoginComponent {
     this.userService.login(email.value, password.value);
     email.value = '';
     password.value = '';
-    this.router.navigate(['/home']);
+    this.router.navigate([this.activatedRoute.snapshot.queryParams['redirectUrl'] || '/']);
   }
 }

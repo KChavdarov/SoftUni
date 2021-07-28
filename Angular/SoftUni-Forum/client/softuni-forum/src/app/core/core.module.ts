@@ -3,16 +3,15 @@ import { CommonModule, isPlatformBrowser, isPlatformServer } from '@angular/comm
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { AsideComponent } from './aside/aside.component';
 import { PostService } from '../post.service';
 import { RouterModule } from '@angular/router';
 import { SessionStorage } from './injection-tokens';
+import { AuthActivate } from './guards/auth.activate';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    AsideComponent,
   ],
   imports: [
     CommonModule,
@@ -22,10 +21,10 @@ import { SessionStorage } from './injection-tokens';
   exports: [
     HeaderComponent,
     FooterComponent,
-    AsideComponent,
   ],
   providers: [
     PostService,
+    AuthActivate,
     {
       provide: SessionStorage,
       useFactory: (platformId: Object) => {
@@ -58,7 +57,7 @@ import { SessionStorage } from './injection-tokens';
         throw new Error('Not implemented.');
       },
       deps: [PLATFORM_ID]
-    }
+    },
   ]
 })
 export class CoreModule {}

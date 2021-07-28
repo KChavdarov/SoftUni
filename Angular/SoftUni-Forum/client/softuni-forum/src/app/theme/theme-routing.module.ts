@@ -1,8 +1,8 @@
 import { RouterModule, Routes } from '@angular/router';
+import { AuthActivate } from '../core/guards/auth.activate';
+import { ThemeContainerComponent } from './theme-container/theme-container.component';
 import { ThemeCreateComponent } from './theme-create/theme-create.component';
 import { ThemeItemComponent } from './theme-item/theme-item.component';
-import { ThemeListComponent } from './theme-list/theme-list.component';
-
 
 const routes: Routes = [
     {
@@ -11,17 +11,22 @@ const routes: Routes = [
             {
                 path: '',
                 pathMatch: 'full',
-                component: ThemeListComponent
+                component: ThemeContainerComponent
+            },
+            {
+                path: 'add-theme',
+                component: ThemeCreateComponent,
+                canActivate: [AuthActivate],
+                data: {
+                    authenticationRequired: true,
+                    redirectUrl: '/login'
+                }
             },
             {
                 path: ':themeId',
                 component: ThemeItemComponent
             },
-            {
-                path: 'add-theme',
-                component: ThemeCreateComponent
-            },
-        ]
+        ],
     }
 ];
 

@@ -22,7 +22,7 @@ export class UserService {
   login(email: string, password: string): void {
     this.user = {
       email,
-      username: 'Johny',
+      username: 'Johnny',
       tel: '+359 885888588',
     };
     try {
@@ -38,6 +38,6 @@ export class UserService {
 
   logout(): void {
     this.user = null;
-    this.sessionStorage.clear();
+    this.sessionStorage.removeItem('<USER>');
   };
 }

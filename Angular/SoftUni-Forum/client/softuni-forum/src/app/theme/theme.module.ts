@@ -4,6 +4,9 @@ import { ThemeListComponent } from './theme-list/theme-list.component';
 import { ThemeItemComponent } from './theme-item/theme-item.component';
 import { ThemeRoutingModule } from './theme-routing.module';
 import { ThemeCreateComponent } from './theme-create/theme-create.component';
+import { AsideComponent } from './aside/aside.component';
+import { ThemeContainerComponent } from './theme-container/theme-container.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -11,11 +14,14 @@ import { ThemeCreateComponent } from './theme-create/theme-create.component';
   declarations: [
     ThemeListComponent,
     ThemeItemComponent,
-    ThemeCreateComponent
+    ThemeCreateComponent,
+    AsideComponent,
+    ThemeContainerComponent,
   ],
   imports: [
     CommonModule,
     ThemeRoutingModule,
+    SharedModule,
   ],
   exports: [
     ThemeListComponent
