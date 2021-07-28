@@ -7,7 +7,6 @@ import { ThemeService } from '../theme.service';
   selector: 'app-theme-list',
   templateUrl: './theme-list.component.html',
   styleUrls: ['./theme-list.component.css'],
-  providers: [ThemeService],
 })
 export class ThemeListComponent implements OnInit {
   public themes!: Theme[];

@@ -6,9 +6,13 @@ import { Theme } from '../shared/interfaces/theme';
 @Injectable()
 export class ThemeService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   loadThemes() {
     return this.http.get<Theme[]>(environment.apiUrl + '/api/themes');
+  }
+
+  getThemeById(id: string) {
+    return this.http.get<Theme>(environment.apiUrl + '/api/themes/' + id);
   }
 }
