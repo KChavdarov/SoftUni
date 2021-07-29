@@ -11,6 +11,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { TestModule } from './test/test.module';
+import { HighlightDirective } from './highlight.directive';
+import { MyIfDirective } from './my-if.directive';
+import { LoginComponent } from './login/login.component';
 
 export const myStringInjectionToken = new InjectionToken('myString');
 
@@ -20,6 +23,9 @@ export const myStringInjectionToken = new InjectionToken('myString');
     AboutComponent,
     NotFoundComponent,
     UserDetailComponent,
+    HighlightDirective,
+    MyIfDirective,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
