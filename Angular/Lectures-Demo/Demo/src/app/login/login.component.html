@@ -1,1 +1,28 @@
-<p>login works!</p>
+<form #form="ngForm" (ngSubmit)="loginHandler(form)">
+    <div class="form-group">
+        <label for="email" [appHighlight]="true">Email</label>
+        <input type="text" name="email" id="email" #emailInput="ngModel" ngModel required email>
+    </div>
+    <ul *ngIf="emailInput.invalid && emailInput.touched" class="errors">
+        <li *ngIf="emailInput.errors?.required">Email is required</li>
+        <li *ngIf="emailInput.errors?.email">Email is invalid</li>
+    </ul>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" name="password" id="password" #passwordInput="ngModel" ngModel required minlength="6">
+    </div>
+    <ul *ngIf="passwordInput.invalid && passwordInput.touched" class="errors">
+        <li *ngIf="passwordInput.errors?.required">Password is required</li>
+        <li *ngIf="passwordInput.errors?.minlength">Password too short</li>
+    </ul>
+    <div class="form-group">
+        <label for="repeatPassword">Repeat Password</label>
+        <input type="text" name="repeatPassword" id="repeatPassword" #rePass="ngModel" appSameValue="password" ngModel>
+    </div>
+    <ul *ngIf="rePass.invalid && rePass.touched" class="errors">
+        <li *ngIf="rePass.errors?.required">Password is required</li>
+        <li *ngIf="rePass.errors?.minlength">Password too short</li>
+        <li *ngIf="rePass.errors?.sameValue">Passwords don't match </li>
+    </ul>
+    <button>Login</button>
+</form>

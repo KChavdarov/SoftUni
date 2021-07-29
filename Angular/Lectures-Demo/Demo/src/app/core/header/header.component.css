@@ -1,3 +1,9 @@
 a.active {
     color: red;
 }
+
+ul li {
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 0.5rem;
+}
