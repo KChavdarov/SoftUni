@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Theme } from 'src/app/shared/interfaces/theme';
 import { ThemeService } from '../theme.service';
-import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-theme-item',
