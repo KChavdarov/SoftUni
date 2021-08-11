@@ -16,6 +16,7 @@ import { MyIfDirective } from './my-if.directive';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { SameValueDirective } from './same-value.directive';
+import { AuthModule } from './auth/auth.module';
 
 export const myStringInjectionToken = new InjectionToken('myString');
 
@@ -36,9 +37,10 @@ export const myStringInjectionToken = new InjectionToken('myString');
     CoreModule,
     UserModule,
     SharedModule,
-    AppRoutingModule,
     TestModule,
+    AuthModule,
     FormsModule,
+    AppRoutingModule,
   ],
   providers: [
     {

@@ -1,0 +1,68 @@
+<form #registerForm="ngForm" (ngSubmit)="registerHandler()">
+    <fieldset>
+        <h1>Registration Form</h1>
+
+        <p class="field field-icon">
+            <label for="username"><span><i class="fas fa-user"></i></span></label>
+            <input #username="ngModel" type="text" name="username" id="username" placeholder="Mark Ulrich" ngModel required pattern="^[A-Z]\w+\ [A-Z]\w+$">
+        </p>
+
+        <p *ngIf="username.touched && username.errors?.required" class="error">Please enter your name and surname</p>
+        <p *ngIf="username.touched && username.errors?.pattern" class="error">Please enter your name and surname starting with capitals</p>
+
+        <p class="field field-icon">
+            <label for="email"><span><i class="fas fa-envelope"></i></span></label>
+            <input #email="ngModel" type="text" name="email" id="email" placeholder="marк@gmial.com" ngModel required email>
+        </p>
+
+        <p class="error" *ngIf="email.touched && email.errors?.required">Please enter a valid email</p>
+        <p class="error" *ngIf="email.touched && email.errors?.email">Please enter a valid email</p>
+
+
+        <p class="field field-icon">
+            <label for="image"><span><i class="fas fa-image"></i></span></label>
+            <input #image="ngModel" type="text" name="image" id="image" ngModel required appIsImage>
+        </p>
+
+        <p class="error" *ngIf="image.touched && image.errors?.appIsImage">please enter a valid URL</p>
+
+        <p class="field field-icon">
+            <label for="tel"><span><i class="fas fa-phone"></i></span></label>
+            <select #code="ngModel" name="code" id="code" class="code" [ngModel]="codes[0]">
+                <option *ngFor="let code of codes; let i = index" [value]="code">{{code}}</option>
+            </select>
+            <input #tel="ngModel" type="text" name="tel" id="tel" placeholder="888 888" ngModel pattern="^\d{6}$">
+        </p>
+        <p class="error" *ngIf="tel.touched && tel.errors?.pattern">Please enter a 6 digit phone number</p>
+
+        <p class="field field-icon">
+            <label for="profession"><span><i class="fas fa-building"></i></span></label>
+            <select #profession="ngModel" name="profession" id="profession" class="profession" [ngModel]="professions[0]">
+                <option *ngFor="let profession of professions">{{profession}}</option>
+            </select>
+        </p>
+
+        <ng-container #passData="ngModelGroup" ngModelGroup="passData" appPasswordCheck>
+            <p class=" field field-icon">
+                <label for="password"><span><i class="fas fa-lock"></i></span></label>
+                <input #password="ngModel" type="password" name="password" id="password" placeholder="******" ngModel required>
+            </p>
+
+            <p class="field field-icon">
+                <label for="re-password"><span><i class="fas fa-lock"></i></span></label>
+                <input #rePass="ngModel" type="password" name="re-password" id="re-password" placeholder="******" ngModel required>
+            </p>
+        </ng-container>
+        <p class="error" *ngIf="rePass.touched && passData.errors?.appPasswordCheck">Passwords don't match</p>
+
+        <p>
+            <button type="submit" [disabled]="registerForm.invalid">Create Account</button>
+        </p>
+
+        <p class="text-center">
+            Have an account?
+            <a href="">Log In</a>
+        </p>
+
+    </fieldset>
+</form>

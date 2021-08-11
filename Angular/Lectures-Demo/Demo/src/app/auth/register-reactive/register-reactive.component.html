@@ -1,0 +1,69 @@
+<form #registerForm [formGroup]="form" (ngSubmit)="registerHandler()">
+    <fieldset>
+        <h1>Registration Form</h1>
+
+        <p class="field field-icon">
+            <label for="username"><span><i class="fas fa-user"></i></span></label>
+            <input #username formControlName="username" type="text" name="username" id="username" placeholder="Mark Ulrich">
+        </p>
+        <p *ngIf="register.username.touched && register.username.errors?.required" class="error">Please enter your name and surname</p>
+        <p *ngIf="register.username.touched && register.username.errors?.pattern" class="error">Please enter your name and surname starting with capitals</p>
+
+
+        <p class="field field-icon">
+            <label for="email"><span><i class="fas fa-envelope"></i></span></label>
+            <input #email formControlName="email" type="text" name="email" id="email" placeholder="marк@gmial.com">
+        </p>
+
+        <p class="error" *ngIf="register.email.touched && register.email.errors?.required">Please enter a valid email</p>
+        <p class="error" *ngIf="register.email.touched && register.email.errors?.email">Please enter a valid email</p>
+
+        <p class="field field-icon">
+            <label for="image"><span><i class="fas fa-image"></i></span></label>
+            <input #image formControlName="image" type="text" name="image" id="image">
+        </p>
+
+        <p class="error" *ngIf="register.image.touched && register.image.errors?.isImage">please enter a valid URL</p>
+
+        <p class="field field-icon">
+            <label for="tel"><span><i class="fas fa-phone"></i></span></label>
+            <select #code formControlName="code" name="code" id="code" class="code">
+                <option *ngFor="let code of codes" [value]="code">{{code}}</option>
+            </select>
+            <input #tel formControlName="tel" type="text" name="tel" id="tel" placeholder="888 888">
+        </p>
+        <p class="error" *ngIf="register.tel.touched && register.tel.errors?.required">Please enter a 6 digit phone number</p>
+        <p class="error" *ngIf="register.tel.touched && register.tel.errors?.pattern">Please enter a 6 digit phone number</p>
+
+        <p class="field field-icon">
+            <label for="profession"><span><i class="fas fa-building"></i></span></label>
+            <select #profession name="profession" id="profession" class="profession">
+                <option *ngFor="let profession of professions">{{profession}}</option>
+            </select>
+        </p>
+
+        <p class=" field field-icon">
+            <label for="password"><span><i class="fas fa-lock"></i></span></label>
+            <input #password formControlName="password" type="password" name="password" id="password" placeholder="******">
+        </p>
+
+        <p class="error" *ngIf="register.password.touched && register.password.errors?.minlength">Password too short</p>
+
+        <p class="field field-icon">
+            <label for="rePass"><span><i class="fas fa-lock"></i></span></label>
+            <input #rePass formControlName="rePass" type="password" name="rePass" id="rePass" placeholder="******">
+        </p>
+
+        <p class="error" *ngIf="register.rePass.touched && register.rePass.errors?.valueMatch">Passwords don't match</p>
+
+        <p>
+            <button type="submit" [disabled]="form.invalid">Create Account</button>
+        </p>
+
+        <p class="text-center">
+            Have an account?
+            <a routerLink="/login">Log In</a>
+        </p>
+
+    </fieldset>
+</form>
