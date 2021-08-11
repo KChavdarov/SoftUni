@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserRoutingModule } from './user-routing.module';
 import { UserService } from './user.service';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,6 +17,7 @@ import { UserService } from './user.service';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     UserRoutingModule,
   ],
   providers: [
