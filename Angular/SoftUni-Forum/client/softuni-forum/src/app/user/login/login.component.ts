@@ -9,6 +9,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  serverError = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -16,9 +17,17 @@ export class LoginComponent {
     private router: Router) {}
 
   login(form: NgForm) {
-    const { username, password } = form.controls;
-    this.userService.login(username.value, password.value);
-    form.reset();
-    this.router.navigate([this.activatedRoute.snapshot.queryParams['redirectUrl'] || '/']);
+    const { email, password } = form.value;
+
+    this.userService.login({ email, password }).subscribe({
+      next: () => {
+        form.reset();
+        this.router.navigate([this.activatedRoute.snapshot.queryParams['redirectUrl'] || '/']);
+      },
+      error: (err) => {
+        this.serverError = err.error.message;
+        setTimeout(() => { this.serverError = ''; }, 3000);
+      }
+    });
   }
 }

@@ -1,16 +1,59 @@
-<div class="profile"><img src="/assets/img/profile.png" alt="default user">
+<ng-container *ngIf="!user">
+    Loading...
+</ng-container>
+<div *ngIf="user" class="profile"><img src="/assets/img/profile.png" alt="default user">
     <h3>User Info:</h3>
-    <div class="flex">
-        <p>Username: </p>
-        <p>Johny</p>
-    </div>
-    <div class="flex">
-        <p>Email: </p>
-        <p>john.doe@gmail.com</p>
-    </div>
-    <div class="flex">
-        <p>Phone: </p>
-        <p>+359 885 888 888</p>
-    </div>
-    <button class="edit-button">Edit</button>
+
+    <ng-container *ngIf="editMode">
+        <form #profileForm="ngForm" (ngSubmit)="updateProfile(profileForm)">
+            <div class="flex">
+                <p>Username: </p>
+                <input #username="ngModel" type="text" name="username" id="username" [ngModel]="user.username" required minlength="5">
+            </div>
+            <ng-container *ngIf="username.touched && username.invalid">
+                <p class="error" *ngIf="username.errors?.required">Username is required</p>
+                <p class="error" *ngIf="username.errors?.minlength">Username too short</p>
+            </ng-container>
+
+            <div class="flex">
+                <p>Email: </p>
+                <input #email="ngModel" type="email" name="email" id="email" [ngModel]="user.email" required [appCustomValidator]="emailValidator">
+            </div>
+            <ng-container *ngIf="email.touched && email.invalid">
+                <p class="error" *ngIf="email.errors?.required">Email is required</p>
+                <p class="error" *ngIf="email.errors?.invalidEmail">Please enter a valid email</p>
+            </ng-container>
+
+            <div class="flex">
+                <p>Phone: </p>
+                <div>
+                    <select #code="ngModel" name="code" id="code" class="tel" [ngModel]="user.tel?.slice(0,-6)|| codes[0]">
+                        <option *ngFor="let code of codes" [value]="code">+{{code.slice(2)}}</option>
+                    </select>
+                    <input #phone="ngModel" type="text" name="phone" id="phone" [ngModel]="user.tel?.slice(-6)">
+                </div>
+            </div>
+
+            <button (click)="toggleEdit()" class="red-button">Cancel</button>
+            <button class="green-button">Save</button>
+
+            <div class="error" *ngIf="serverError">{{serverError}}</div>
+        </form>
+    </ng-container>
+
+    <ng-container *ngIf="!editMode">
+        <div class="flex">
+            <p>Username: </p>
+            <p>{{user.username}}</p>
+        </div>
+        <div class="flex">
+            <p>Email: </p>
+            <p>{{user.email}}</p>
+        </div>
+        <div *ngIf="user.tel" class="flex">
+            <p>Phone: </p>
+            <p>{{user.tel}}</p>
+        </div>
+        <button (click)="toggleEdit()" class="edit-button">Edit</button>
+    </ng-container>
 </div>

@@ -2,7 +2,7 @@ export interface User {
     themes?: string[],
     posts?: string[],
     _id?: string,
-    tel: string,
+    tel?: string,
     email: string,
     username: string,
     password?: string,

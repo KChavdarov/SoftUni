@@ -4,10 +4,10 @@
         <h2>Login Form</h2>
 
         <p class="field field-icon">
-            <label for="username"><span><i class="fas fa-envelope"></i></span></label>
-            <input #username="ngModel" class="input-error" type="username" name="username" id="username" placeholder="username" ngModel required>
+            <label for="email"><span><i class="fas fa-envelope"></i></span></label>
+            <input #email="ngModel" class="input-error" type="email" name="email" id="email" placeholder="email" ngModel required>
         </p>
-        <p class="error" *ngIf="username.control.touched && username.control.errors?.required">Username is required</p>
+        <p class="error" *ngIf="email.control.touched && email.control.errors?.required">Email is required</p>
 
         <p class="field field-icon">
             <label for="password"><span><i class="fas fa-lock"></i></span></label>
@@ -15,6 +15,7 @@
         </p>
 
         <p class="error" *ngIf="password.control.touched && password.control.errors?.required">Password is required</p>
+        <p class="error" *ngIf="serverError">{{serverError}}</p>
 
         <button [disabled]="loginForm.invalid">Login</button>
 

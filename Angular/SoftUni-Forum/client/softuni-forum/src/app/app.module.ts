@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { ThemeModule } from './theme/theme.module';
 import { UserModule } from './user/user.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     CoreModule,
     UserModule,
     ThemeModule,
