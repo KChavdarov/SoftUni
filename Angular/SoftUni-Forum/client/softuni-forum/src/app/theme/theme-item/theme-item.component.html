@@ -37,8 +37,8 @@
     <div class="answer-comment">
         <p><span>currentUser</span> comment:</p>
         <div class="answer">
-            <form>
-                <textarea name="postText" id="comment" cols="30" rows="10"></textarea>
+            <form #postForm="ngForm" (ngSubmit)="createPost(postForm)">
+                <textarea name="postText" id="comment" cols="30" rows="10" ngModel required minlength="10"></textarea>
                 <button>Post</button>
             </form>
         </div>

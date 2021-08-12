@@ -5,7 +5,12 @@ function newPost(text, userId, themeId) {
         .then(post => {
             return Promise.all([
                 userModel.updateOne({ _id: userId }, { $push: { posts: post._id }, $addToSet: { themes: themeId } }),
-                themeModel.findByIdAndUpdate({ _id: themeId }, { $push: { posts: post._id }, $addToSet: { subscribers: userId } }, { new: true })
+                themeModel.findByIdAndUpdate({ _id: themeId }, { $push: { posts: post._id }, $addToSet: { subscribers: userId } }, { new: true }).populate({
+                    path: 'posts',
+                    populate: {
+                        path: 'userId'
+                    }
+                })
             ])
         })
 }
@@ -43,8 +48,7 @@ function editPost(req, res, next) {
         .then(updatedPost => {
             if (updatedPost) {
                 res.status(200).json(updatedPost);
-            }
-            else {
+            } else {
                 res.status(401).json({ message: `Not allowed!` });
             }
         })
@@ -56,10 +60,10 @@ function deletePost(req, res, next) {
     const { _id: userId } = req.user;
 
     Promise.all([
-        postModel.findOneAndDelete({ _id: postId, userId }),
-        userModel.findOneAndUpdate({ _id: userId }, { $pull: { posts: postId } }),
-        themeModel.findOneAndUpdate({ _id: themeId }, { $pull: { posts: postId } }),
-    ])
+            postModel.findOneAndDelete({ _id: postId, userId }),
+            userModel.findOneAndUpdate({ _id: userId }, { $pull: { posts: postId } }),
+            themeModel.findOneAndUpdate({ _id: themeId }, { $pull: { posts: postId } }),
+        ])
         .then(([deletedOne, _, __]) => {
             if (deletedOne) {
                 res.status(200).json(deletedOne)

@@ -8,6 +8,7 @@ import { AsideComponent } from './aside/aside.component';
 import { ThemeContainerComponent } from './theme-container/theme-container.component';
 import { SharedModule } from '../shared/shared.module';
 import { ThemeService } from './theme.service';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -21,6 +22,7 @@ import { ThemeService } from './theme.service';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     ThemeRoutingModule,
     SharedModule,
   ],

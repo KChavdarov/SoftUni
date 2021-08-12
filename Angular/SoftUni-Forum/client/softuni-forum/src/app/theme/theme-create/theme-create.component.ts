@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-theme-create',
   templateUrl: './theme-create.component.html',
   styleUrls: ['./theme-create.component.css']
 })
-export class ThemeCreateComponent implements OnInit {
+export class ThemeCreateComponent {
 
-  constructor() { }
+  constructor(private themeService: ThemeService, private router: Router) {}
 
-  ngOnInit(): void {
+  createTheme(form: NgForm) {
+    const { themeName, postText } = form.value;
+    this.themeService.createTheme({ themeName, postText }).subscribe(
+      () => this.router.navigate(['/themes'])
+    );
   }
-
 }
