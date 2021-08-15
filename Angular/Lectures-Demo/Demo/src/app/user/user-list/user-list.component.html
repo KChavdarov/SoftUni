@@ -1,8 +1,8 @@
 <input #search type="text">
 <button (click)="searchUsers(search)">Search</button>
 <div class="container">
-    <ul *ngIf="users">
+    <ul *ngIf="(users$ | async) as users">
         <app-user-list-item *ngFor="let user of users" [user]="user"></app-user-list-item>
     </ul>
-    <p *ngIf="!users">Loading ...</p>
+    <p *ngIf="!(users$ | async)">Loading ...</p>
 </div>

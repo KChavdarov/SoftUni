@@ -13,6 +13,8 @@
 </ng-container>
 <br>
 
+<p>{{data | getProp:[2,'test']}}</p>
+
 <ng-template [appMyIf]="isActive" let-data="data">
     <ng-container>
         ACTIVE-{{data}}
