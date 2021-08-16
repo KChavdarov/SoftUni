@@ -1,0 +1,8 @@
+<p>Count: {{count$ | async}}</p>
+<button (click)="incrementHandler()">Increment</button>
+<button (click)="decrementHandler()">Decrement</button>
+<button (click)="resetHandler()">Reset</button>
+<br>
+<p>{{value$ | async}}</p>
+<input #valueInput type="text">
+<button (click)="setValueHandler(valueInput)">Set value</button>
