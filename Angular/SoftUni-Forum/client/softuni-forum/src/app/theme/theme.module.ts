@@ -7,7 +7,6 @@ import { ThemeCreateComponent } from './theme-create/theme-create.component';
 import { AsideComponent } from './aside/aside.component';
 import { ThemeContainerComponent } from './theme-container/theme-container.component';
 import { SharedModule } from '../shared/shared.module';
-import { ThemeService } from './theme.service';
 import { FormsModule } from '@angular/forms';
 
 
@@ -26,11 +25,8 @@ import { FormsModule } from '@angular/forms';
     ThemeRoutingModule,
     SharedModule,
   ],
-  providers: [
-    ThemeService
-  ],
   exports: [
-    ThemeListComponent
+    ThemeListComponent,
   ]
 })
 export class ThemeModule {}

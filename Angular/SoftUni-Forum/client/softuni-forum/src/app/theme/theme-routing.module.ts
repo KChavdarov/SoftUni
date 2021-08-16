@@ -6,28 +6,23 @@ import { ThemeItemComponent } from './theme-item/theme-item.component';
 
 const routes: Routes = [
     {
-        path: 'themes',
-        children: [
-            {
-                path: '',
-                pathMatch: 'full',
-                component: ThemeContainerComponent
-            },
-            {
-                path: 'add-theme',
-                component: ThemeCreateComponent,
-                canActivate: [AuthActivate],
-                data: {
-                    authenticationRequired: true,
-                    redirectUrl: '/login'
-                }
-            },
-            {
-                path: ':themeId',
-                component: ThemeItemComponent
-            },
-        ],
-    }
+        path: '',
+        pathMatch: 'full',
+        component: ThemeContainerComponent
+    },
+    {
+        path: 'add-theme',
+        component: ThemeCreateComponent,
+        canActivate: [AuthActivate],
+        data: {
+            authenticationRequired: true,
+            redirectUrl: 'user/login'
+        }
+    },
+    {
+        path: ':themeId',
+        component: ThemeItemComponent
+    },
 ];
 
 export const ThemeRoutingModule = RouterModule.forChild(routes);

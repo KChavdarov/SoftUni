@@ -6,7 +6,7 @@
         <div class="mini-navbar">
             <ul *ngIf="isLogged">
                 <li>
-                    <a routerLink="profile">{{user?.username}}'s profile</a>
+                    <a routerLink="/user/profile">{{user?.username}}'s profile</a>
                 </li>
                 <li>
                     <a (click)="logout()">Logout</a>
@@ -14,10 +14,10 @@
             </ul>
             <ul *ngIf=" !isLogged">
                 <li>
-                    <a routerLink="/login">Login</a>
+                    <a routerLink="/user/login">Login</a>
                 </li>
                 <li>
-                    <a routerLink="/register">Register</a>
+                    <a routerLink="/user/register">Register</a>
                 </li>
             </ul>
         </div>
@@ -28,11 +28,12 @@
                 <a routerLink="/home">Home</a>
             </li>
             <li>
-                <a routerLink="/themes">Themes</a>
+                <a routerLink="/theme">Themes</a>
             </li>
             <li>
-                <a routerLink="/themes/add-theme">New Theme</a>
+                <a routerLink="/theme/add-theme">New Theme</a>
             </li>
         </ul>
     </nav>
+    <p *ngIf="errorMessage" class="notification error-message">{{errorMessage}}</p>
 </header>
