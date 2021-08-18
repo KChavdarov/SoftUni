@@ -6,23 +6,28 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { appReducer } from './+store/reducers';
 import { CounterComponent } from './counter/counter.component';
+import { reducers } from './+store';
+import { EffectsModule } from '@ngrx/effects';
+import { GlobalEffects } from './+store/effects';
+import { HttpClientModule } from '@angular/common/http';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent
+    CounterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({
-      state: appReducer,
-    }),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    HttpClientModule,
+    UserModule,
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([GlobalEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

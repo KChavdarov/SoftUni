@@ -1,0 +1,8 @@
+<ng-container *ngIf="!(isLoadingUsers$ | async) && (users$ | async) as users">
+    <h3>Users:</h3>
+    <ul *ngFor="let user of users">
+        <li>{{user.name}}</li>
+    </ul>
+</ng-container>
+<p *ngIf="(isLoadingUsers$ | async)">Loading ...</p>
+<button (click)="loadUsers()">Reload Users</button>`

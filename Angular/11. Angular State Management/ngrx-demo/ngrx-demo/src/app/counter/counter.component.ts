@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { AppState } from '../+store';
 import { decrementCounter, incrementCounter, resetCounter, setValue } from '../+store/actions';
-import { getCounter, getValue } from '../+store/selectors';
+import { selectGlobalCounter, selectGlobalValue } from '../+store/selectors';
 
 @Component({
   selector: 'app-counter',
@@ -10,13 +10,10 @@ import { getCounter, getValue } from '../+store/selectors';
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent {
-  count$: Observable<number>;
-  value$: Observable<any>;
+  count$ = this.store.select(selectGlobalCounter);
+  value$ = this.store.select(selectGlobalValue);
 
-  constructor(private store: Store) {
-    this.count$ = this.store.select(getCounter);
-    this.value$ = this.store.select(getValue);
-  }
+  constructor(private store: Store<AppState>) {}
 
   incrementHandler() {
     this.store.dispatch(incrementCounter());
@@ -29,7 +26,7 @@ export class CounterComponent {
   }
 
   setValueHandler(input: HTMLInputElement) {
-    this.store.dispatch(setValue(input.value));
+    this.store.dispatch(setValue({ value: input.value }));
     input.value = '';
   }
 }
