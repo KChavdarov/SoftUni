@@ -1,8 +1,13 @@
 <ng-container *ngIf="!(isLoadingUsers$ | async) && (users$ | async) as users">
     <h3>Users:</h3>
+    <app-user-details *ngIf="userId" [userId]="userId"></app-user-details>
     <ul *ngFor="let user of users">
-        <li>{{user.name}}</li>
+        <li>
+            {{user.name}}
+            <button (click)="showDetails(user.id)">show details</button>
+        </li>
     </ul>
+
 </ng-container>
 <p *ngIf="(isLoadingUsers$ | async)">Loading ...</p>
-<button (click)="loadUsers()">Reload Users</button>`
+<button (click)="loadUsers()">Reload Users</button>

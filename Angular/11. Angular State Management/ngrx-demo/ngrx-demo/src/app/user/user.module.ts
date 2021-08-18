@@ -5,12 +5,14 @@ import { StoreModule } from '@ngrx/store';
 import { reducers } from './+store';
 import { EffectsModule } from '@ngrx/effects';
 import { UserDetailsEffects, UserListEffects } from './+store/effects';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 
 
 @NgModule({
   declarations: [
-    UsersComponent
+    UsersComponent,
+    UserDetailsComponent
   ],
   imports: [
     CommonModule,

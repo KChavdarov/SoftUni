@@ -13,22 +13,3 @@ export const selectGlobalValue = createSelector(
     selectGlobal,
     (state: GlobalState) => state.value
 );
-export const selectGlobalUsers = createSelector(
-    selectGlobal,
-    (state: GlobalState) => state.users
-);
-
-
-
-
-
-
-
-
-// export function getCounter(state: any) {
-//     return state.global.counter;
-// }
-
-// export function getValue(state: any) {
-//     return state.global.value;
-// }

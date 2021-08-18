@@ -21,6 +21,7 @@ export const loadUsersCancel = createAction(
 /*- USER DETAILS-*/
 export const loadUserDetails = createAction(
     `${namespace} load user details`,
+    props<{ id: string; }>()
 );
 export const loadUserDetailsSuccess = createAction(
     `${namespace} load user details success`,

@@ -1,0 +1,4 @@
+<fieldset *ngIf="(user$ | async) as user">
+    <input type="text" disabled [value]="user.name">
+    <input type="text" disabled [value]="user.email">
+</fieldset>

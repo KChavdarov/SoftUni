@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, switchMap, takeUntil } from 'rxjs/operators';
+import { catchError, map, startWith, switchMap, takeUntil, takeWhile } from 'rxjs/operators';
 import { UserService } from '../user.service';
-import { loadUserDetails, loadUsers, loadUsersCancel, loadUsersError, loadUsersSuccess } from './actions';
+import { loadUserDetails, loadUserDetailsCancel, loadUserDetailsError, loadUserDetailsSuccess, loadUsers, loadUsersCancel, loadUsersError, loadUsersSuccess } from './actions';
 
 @Injectable()
 export class UserListEffects {
@@ -22,7 +22,11 @@ export class UserListEffects {
 export class UserDetailsEffects {
     loadUserDetails = createEffect(() => this.actions$.pipe(
         ofType(loadUserDetails),
-        switchMap(() => this.userService.loadUserDetails)
+        switchMap(({ id }) => this.userService.loadUserDetails(id).pipe(
+            takeUntil(this.actions$.pipe(ofType(loadUserDetailsCancel))),
+            map(user => loadUserDetailsSuccess({ user })),
+            catchError(error => [loadUserDetailsError({ error })])
+        ))
     ));
 
     constructor(private actions$: Actions, private userService: UserService) {}
