@@ -1,21 +1,16 @@
-import { RouterModule, Routes } from '@angular/router';
-import { MovieDetailsComponent } from './movie-details/movie-details.component';
-import { MoviesComponent } from './movies/movies.component';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: '/movies'
+    component: HomeComponent
   },
   {
     path: 'movies',
-    component: MoviesComponent
+    loadChildren: () => import('./movie/movie.module').then(m => m.MovieModule),
   },
-  {
-    path: 'movies/:id',
-    component: MovieDetailsComponent
-  }
 ];
 
-export const appRoutingModule = RouterModule.forRoot(routes);
+export const appRoutingModule = RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules });

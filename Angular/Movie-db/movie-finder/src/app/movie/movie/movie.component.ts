@@ -1,6 +1,7 @@
 import { EventEmitter } from '@angular/core';
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { Movie } from '../models/Movie';
+import { Movie } from '../../models/Movie';
+
 
 @Component({
   selector: 'app-movie',

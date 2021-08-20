@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { MovieDetails } from '../models/MovieDetails';
-import { MovieService } from '../services/movie.service';
+import { MovieDetails } from '../../models/MovieDetails';
+import { MovieService } from '../../services/movie.service';
 
 @Component({
   selector: 'app-movie-details',
@@ -10,6 +10,7 @@ import { MovieService } from '../services/movie.service';
   styleUrls: ['./movie-details.component.scss']
 })
 export class MovieDetailsComponent implements OnInit {
+  movie = this.route.snapshot.data.singleMovie;
   movie$!: Observable<MovieDetails>;
   movieId: string;
   movieId$!: Observable<string>;
@@ -19,9 +20,10 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe(({ id }) => {
-      this.movie$ = this.movieService.getMovie(id);
-    });
+    // const movieDetails = this.route.snapshot.data.singleMovie;
+    // this.route.params.subscribe(({ id }) => {
+    //   this.movie$ = this.movieService.getMovie(id);
+    // });
   }
 
 }

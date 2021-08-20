@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { MovieService } from '../services/movie.service';
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private movieService: MovieService) {}
 
   ngOnInit(): void {
+  }
+
+  searchMovies(form: NgForm) {
+    let { query } = form.value;
+    this.router.navigate(['movies', 'search'], { queryParams: { query } });
   }
 
 }
