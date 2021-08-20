@@ -1,0 +1,51 @@
+<h4 *ngIf="targetText">{{targetText}}</h4>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Popular Movies</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-2" *ngFor="let movie of popularMovies">
+                <app-movie [movie]="movie" (buttonClick)="buttonClickHandler($event)"></app-movie>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Now Playing</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class=" col-md-2" *ngFor="let movie of (theaterMovies$ | async)">
+                <app-movie [movie]="movie" (buttonClick)="buttonClickHandler($event)"></app-movie>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Popular Kids Movies</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class=" col-md-2" *ngFor="let movie of (popularKids$ | async)">
+                <app-movie [movie]="movie" (buttonClick)="buttonClickHandler($event)"></app-movie>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Best Drama Movies From Released This Year</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class=" col-md-2" *ngFor="let movie of (bestDrama$ | async)">
+                <app-movie [movie]="movie" (buttonClick)="buttonClickHandler($event)"></app-movie>
+            </div>
+        </div>
+    </div>
+</div>
