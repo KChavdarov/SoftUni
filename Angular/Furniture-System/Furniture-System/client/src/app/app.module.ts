@@ -14,8 +14,9 @@ import { CollapseDirective } from './navigation/collapse.directive';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './authentication/auth.service';
-import { ToastrModule } from 'ngx-toastr';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { jwtInterceptorProvider } from './jwt.interceptor';
+import { CanLoadFurniture } from './authentication/guards/furniture.guard';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { jwtInterceptorProvider } from './jwt.interceptor';
   ],
   providers: [
     AuthService,
-    jwtInterceptorProvider
+    jwtInterceptorProvider,
+    CanLoadFurniture,
   ],
   bootstrap: [AppComponent]
 })

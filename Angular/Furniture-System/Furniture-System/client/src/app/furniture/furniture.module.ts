@@ -5,13 +5,18 @@ import { FurnitureCreateComponent } from './furniture-create/furniture-create.co
 import { FurnitureDetailsComponent } from './furniture-details/furniture-details.component';
 import { FurnitureUserComponent } from './furniture-user/furniture-user.component';
 import { furnitureRoutingModule } from './furniture-routing.module';
+import { FurnitureService } from './furniture.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [FurnitureAllComponent, FurnitureCreateComponent, FurnitureDetailsComponent, FurnitureUserComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     furnitureRoutingModule
   ],
-  providers: [],
+  providers: [
+    FurnitureService,
+  ],
 })
 export class FurnitureModule {}

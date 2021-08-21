@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class AuthService {
-  private readonly loginUrl = 'http://localhost:5000/auth/login';
-  private readonly registerUrl = 'http://localhost:5000/auth/register';
+  private readonly loginUrl = environment.apiUrl + '/auth/login';
+  private readonly registerUrl = environment.apiUrl + '/auth/register';
 
   constructor(
-    private http : HttpClient
-  ) {  }
+    private http: HttpClient
+  ) {}
 
   register(body) {
     return this.http.post(this.registerUrl, body);

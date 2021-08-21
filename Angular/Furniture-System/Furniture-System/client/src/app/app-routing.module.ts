@@ -5,13 +5,14 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './authentication/signin/signin.component';
 import { SignupComponent } from './authentication/signup/signup.component';
+import { CanLoadFurniture } from './authentication/guards/furniture.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'furniture', loadChildren: () => import('./furniture/furniture.module').then(m => m.FurnitureModule) }
+  { path: 'furniture', loadChildren: () => import('./furniture/furniture.module').then(m => m.FurnitureModule) },
 ];
 
 @NgModule({

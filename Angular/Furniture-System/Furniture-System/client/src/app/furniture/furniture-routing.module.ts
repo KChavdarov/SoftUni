@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FurnitureAllComponent } from './furniture-all/furniture-all.component';
 import { FurnitureCreateComponent } from './furniture-create/furniture-create.component';
 import { FurnitureDetailsComponent } from './furniture-details/furniture-details.component';
+import { FurnitureUserComponent } from './furniture-user/furniture-user.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
         component: FurnitureCreateComponent
     },
     {
-        
+        path: 'user',
+        component: FurnitureUserComponent
     },
     {
         path: ':id',
