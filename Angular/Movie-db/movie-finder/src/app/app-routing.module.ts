@@ -11,6 +11,10 @@ const routes: Routes = [
     path: 'movies',
     loadChildren: () => import('./movie/movie.module').then(m => m.MovieModule),
   },
+  {
+    path: 'user',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+  },
 ];
 
 export const appRoutingModule = RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules });

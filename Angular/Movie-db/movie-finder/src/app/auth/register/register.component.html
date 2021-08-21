@@ -1,0 +1,112 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <h1 class="text-center">Registration Form</h1>
+            <pre>{{registerForm.value | json}}</pre>
+
+            <form #registerForm="ngForm" (ngSubmit)="registerHandler()">
+
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input #fullName="ngModel" name="fullName" class="form-control" placeholder="Full Name" ngModel required pattern="^[a-zA-Z]+ [a-zA-Z]+$">
+                </div>
+                <ng-container *ngIf="fullName.touched && fullName.invalid">
+                    <div class="alert alert-danger" *ngIf="fullName.errors?.required">Please enter your names</div>
+                    <div class="alert alert-danger" *ngIf="fullName.errors?.pattern">Names must consist of letters and be separated by space</div>
+                </ng-container>
+
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    </div>
+                    <input #email="ngModel" name="email" class="form-control" placeholder="Email Address" type="email" ngModel required email>
+                </div>
+                <ng-container *ngIf="email.touched && email.invalid">
+                    <div class="alert alert-danger" *ngIf="email.errors?.required">Please enter an email</div>
+                    <div class="alert alert-danger" *ngIf="email.errors?.email">Invalid email</div>
+                </ng-container>
+
+                <div #telephone="ngModelGroup" ngModelGroup="telephone" class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                    </div>
+                    <select #code="ngModel" name="code" class="custom-select" style="max-width: 120px;" ngModel required>
+                        <option value="" disabled selected>Please select you country code</option>
+                        <option *ngFor="let code of codes" [value]="code">{{code}}</option>
+                    </select>
+                    <input #phone="ngModel" name="phone" class="form-control" placeholder="Phone number" type="text" ngModel pattern="^\d{9}$" required>
+                </div>
+
+                <ng-container *ngIf="code.touched && code.invalid">
+                    <div class="alert alert-danger" *ngIf="code.errors?.required">Please enter area code</div>
+                </ng-container>
+
+                <ng-container *ngIf="phone.touched && phone.invalid">
+                    <div class="alert alert-danger" *ngIf="phone.errors?.required">Please enter your number</div>
+                    <div class="alert alert-danger" *ngIf="phone.errors?.pattern">Number must be 9 digits</div>
+                </ng-container>
+
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+                    </div>
+                    <select #jobTitle="ngModel" name="jobTitle" class="form-control" ngModel required>
+                        <option value="" disabled selected>Please select you job title</option>
+                        <option value="Designer">Designer</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Accounting">Accounting</option>
+                    </select>
+                </div>
+                <ng-container *ngIf="jobTitle.touched && jobTitle.invalid">
+                    <div class="alert alert-danger" *ngIf="jobTitle.errors?.required">Please enter your job title</div>
+                </ng-container>
+
+                <ng-container #passwords="ngModelGroup" ngModelGroup="passwords" appPasswordMismatch>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        <input [class.passwordError]="confirmPassword.touched && password.touched && passwords.invalid" #password="ngModel" name="password" class="form-control" placeholder="Create password" type="password" ngModel required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{3,16}">
+                    </div>
+                    <ng-container *ngIf="password.touched && password.invalid">
+                        <div class="alert alert-danger" *ngIf="password.errors?.required">Please enter your password</div>
+                        <div class="alert alert-danger" *ngIf="password.errors?.pattern">Password contain letters and numbers</div>
+                    </ng-container>
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        <input [class.passwordError]="confirmPassword.touched && password.touched && passwords.invalid" #confirmPassword="ngModel" name="confirmPassword" class="form-control" placeholder="Repeat password" type="password" ngModel required>
+                    </div>
+                    <ng-container *ngIf="confirmPassword.touched && password.touched && passwords.invalid">
+                        <div class="alert alert-danger" *ngIf="passwords.errors?.passwordMismatch">Passwords don't match</div>
+                    </ng-container>
+                </ng-container>
+
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input #imageUrl="ngModel" name="imageUrl" class="form-control" placeholder="http://..." ngModel required appImageUrl>
+                </div>
+                <ng-container *ngIf="imageUrl.touched && imageUrl.invalid">
+                    <div class="alert alert-danger" *ngIf="imageUrl.errors?.required">Please enter image URL</div>
+                    <div class="alert alert-danger" *ngIf="imageUrl.errors?.invalidUrl">URL target image must be JPEG or PNG format</div>
+                </ng-container>
+
+
+                <div class="form-group">
+                    <button [disabled]="registerForm.invalid" type="submit" class="btn btn-primary btn-block"> Create Account </button>
+                </div>
+
+                <p class="text-center">Have an account? <a href="">Log In</a> </p>
+
+            </form>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>
