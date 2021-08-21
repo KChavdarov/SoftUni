@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -13,6 +14,8 @@ import { CollapseDirective } from './navigation/collapse.directive';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './authentication/auth.service';
+import { ToastrModule } from 'ngx-toastr';
+import { jwtInterceptorProvider } from './jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,11 +31,14 @@ import { AuthService } from './authentication/auth.service';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
   ],
-  providers: [ 
-    AuthService
+  providers: [
+    AuthService,
+    jwtInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
