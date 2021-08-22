@@ -7,9 +7,11 @@ import { FurnitureUserComponent } from './furniture-user/furniture-user.componen
 import { furnitureRoutingModule } from './furniture-routing.module';
 import { FurnitureService } from './furniture.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FurnitureEditComponent } from './furniture-edit/furniture-edit.component';
+import { CanActivateAdmin } from '../authentication/guards/admin.guard';
 
 @NgModule({
-  declarations: [FurnitureAllComponent, FurnitureCreateComponent, FurnitureDetailsComponent, FurnitureUserComponent],
+  declarations: [FurnitureAllComponent, FurnitureCreateComponent, FurnitureDetailsComponent, FurnitureUserComponent, FurnitureEditComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -17,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   providers: [
     FurnitureService,
+    CanActivateAdmin,
   ],
 })
 export class FurnitureModule {}

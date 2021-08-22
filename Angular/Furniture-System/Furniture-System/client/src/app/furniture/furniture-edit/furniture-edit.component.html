@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row space-top">
+      <div class="col-md-12">
+          <h1>Edit Furniture</h1>
+          <p>Please fill all fields.</p>
+      </div>
+  </div>
+  <form *ngIf="form" [formGroup]="form" (ngSubmit)="formHandler()">
+      <div class="row space-top">
+          <div class="col-md-4">
+              <div class="form-group">
+                  <label class="form-control-label" for="new-make">Make</label>
+                  <input class="form-control" id="new-make" type="text" formControlName="make">
+              </div>
+
+              <ng-container *ngIf="f.make.touched && f.make.invalid">
+                  <div class="alert alert-danger" *ngIf="f.make.errors?.required">Please enter make</div>
+                  <div class="alert alert-danger" *ngIf="f.make.errors?.minlength">Make must be at least {{f.make.errors?.minlength.requiredLength}} characters</div>
+              </ng-container>
+
+              <div class="form-group has-success">
+                  <label class="form-control-label" for="new-model">Model</label>
+                  <input class="form-control is-valid" id="new-model" type="text" formControlName="model">
+              </div>
+
+              <ng-container *ngIf="f.model.touched && f.model.invalid">
+                  <div class="alert alert-danger" *ngIf="f.model.errors?.required">Please enter model</div>
+                  <div class="alert alert-danger" *ngIf="f.model.errors?.minlength">Model must be at least {{f.model.errors?.minlength.requiredLength}} characters</div>
+              </ng-container>
+
+              <div class="form-group has-danger">
+                  <label class="form-control-label" for="new-year">Year</label>
+                  <input class="form-control is-invalid" id="new-year" type="number" formControlName="year">
+              </div>
+
+              <ng-container *ngIf="f.year.touched && f.year.invalid">
+                  <div class="alert alert-danger" *ngIf="f.year.errors?.required">Please enter year</div>
+                  <div class="alert alert-danger" *ngIf="f.year.errors?.min || f.year.errors?.max">Year must be between 1950 and 2050</div>
+              </ng-container>
+
+              <div class="form-group">
+                  <label class="form-control-label" for="new-description">Description</label>
+                  <input class="form-control" id="new-description" type="text" formControlName="description">
+              </div>
+
+              <ng-container *ngIf="f.description.touched && f.description.invalid">
+                  <div class="alert alert-danger" *ngIf="f.description.errors?.required">Please enter description</div>
+                  <div class="alert alert-danger" *ngIf="f.description.errors?.minlength">Description must be at least {{f.description.errors?.minlength.requiredLength}} characters</div>
+              </ng-container>
+
+          </div>
+          <div class="col-md-4">
+              <div class="form-group">
+                  <label class="form-control-label" for="new-price">Price</label>
+                  <input class="form-control" id="new-price" type="number" formControlName="price">
+              </div>
+
+              <ng-container *ngIf="f.price.touched && f.price.invalid">
+                  <div class="alert alert-danger" *ngIf="f.price.errors?.required">Please enter price</div>
+                  <div class="alert alert-danger" *ngIf="f.price.errors?.min">Price must be at least 0.1</div>
+              </ng-container>
+
+              <div class="form-group">
+                  <label class="form-control-label" for="new-image">Image</label>
+                  <input class="form-control" id="new-image" type="text" formControlName="image">
+              </div>
+
+              <ng-container *ngIf="f.image.touched && f.image.invalid">
+                  <div class="alert alert-danger" *ngIf="f.image.errors?.required">Please enter image URL</div>
+              </ng-container>
+
+              <div class="form-group">
+                  <label class="form-control-label" for="new-material">Material (optional)</label>
+                  <input class="form-control" id="new-material" type="text" formControlName="material">
+              </div>
+              <input type="submit" class="btn btn-primary" value="Edit" [disabled]="form.invalid" />
+          </div>
+      </div>
+  </form>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FurnitureService } from '../furniture.service';
@@ -8,7 +8,7 @@ import { FurnitureService } from '../furniture.service';
   templateUrl: './furniture-create.component.html',
   styleUrls: ['./furniture-create.component.css']
 })
-export class FurnitureCreateComponent implements OnInit {
+export class FurnitureCreateComponent {
   form: FormGroup;
 
   get f() {
@@ -25,9 +25,6 @@ export class FurnitureCreateComponent implements OnInit {
       image: [null, Validators.required],
       material: null
     });
-  }
-
-  ngOnInit() {
   }
 
   formHandler() {

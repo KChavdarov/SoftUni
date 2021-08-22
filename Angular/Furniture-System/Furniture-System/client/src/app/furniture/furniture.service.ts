@@ -10,6 +10,7 @@ const routes = {
   all: environment.apiUrl + '/furniture/all',
   user: environment.apiUrl + '/furniture/user',
   delete: environment.apiUrl + '/furniture/delete/',
+  edit: environment.apiUrl + '/furniture/edit/'
 };
 
 @Injectable({
@@ -34,6 +35,10 @@ export class FurnitureService {
   getMyFurniture() {
     return this.http.get<Furniture[]>(routes.user);
   }
+
+  editFurniture(id: string, data: Furniture) {
+    return this.http.put(routes.edit + id, data);
+  };
 
   deleteFurniture(id: string) {
     return this.http.delete(routes.delete + id);

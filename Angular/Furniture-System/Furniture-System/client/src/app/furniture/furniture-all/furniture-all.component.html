@@ -20,6 +20,11 @@
                             <div class="pull-right">
                                 <a [routerLink]="['/furniture', item._id]" class="btn btn-info">Details</a>
                             </div>
+                            <div class="pull-right" *ngIf="isAdmin">
+                                <a [routerLink]="['/furniture','edit', item._id]" class="btn btn-info">Edit</a>
+                                <a (click)="deleteFurniture()" class="btn btn-danger">Delete</a>
+                            </div>
+
                         </blockquote>
                     </div>
                 </div>
