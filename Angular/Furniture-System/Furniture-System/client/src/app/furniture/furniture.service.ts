@@ -27,8 +27,15 @@ export class FurnitureService {
     return this.http.get<Furniture[]>(routes.all);
   };
 
-createFurniture(data: any): Observable < Furniture > {
-  return this.http.post<Furniture>(routes.create, data);
-}
+  createFurniture(data: any): Observable<Furniture> {
+    return this.http.post<Furniture>(routes.create, data);
+  }
 
+  getMyFurniture() {
+    return this.http.get<Furniture[]>(routes.user);
+  }
+
+  deleteFurniture(id: string) {
+    return this.http.delete(routes.delete + id);
+  }
 }
