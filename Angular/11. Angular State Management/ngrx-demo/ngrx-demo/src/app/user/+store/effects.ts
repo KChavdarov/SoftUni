@@ -14,7 +14,7 @@ export class UserListEffects {
             catchError(error => [loadUsersError({ error })])
         ))
     ));
-
+            
     constructor(private actions$: Actions, private userService: UserService) {}
 }
 
