@@ -1,0 +1,7 @@
+li.toDoItem {
+    color: red;
+}
+
+.toDoItem.done {
+    text-decoration: line-through;
+}

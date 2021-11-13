@@ -1,25 +1,60 @@
-import {useState} from 'react';
-import {ToDoListItem} from '../ToDoListItem';
-import {Counter} from './Counter';
-
-let oneTask = 'Finish all tasks';
+import {useState, useEffect} from 'react';
+import {ToDoItem} from './ToDoItem';
+import * as api from '../services/toDoService';
 
 export function ToDoList() {
-    const [tasks] = useState(['Clean your room', 'Go shopping', 'Do stuff']);
-    const [count, updateCount] = useState(0);
+    const [todos, setTodos] = useState([]);
 
-    function onBtnClick() {
-        updateCount((state) => state + 1);
+    useEffect(() => {
+        console.log('mounted list');
+        (async () => {
+            const data = await api.getToDos();
+            setTodos(data);
+        })();
+    }, []);
+
+    console.log('rendered list');
+
+    async function onInputBlur(event) {
+        let data = {
+            text: event.target.value,
+            isDone: false,
+        };
+        event.target.value = '';
+        const todo = await api.createToDo(data);
+
+        setTodos((todos) => [...todos, todo]);
+    }
+
+    async function toDoItemDeleteHandler(id) {
+        await api.deleteToDo(id);
+        setTodos(todos => todos.filter(t => t._id !== id));
+    }
+
+    async function toggleDone(todo) {
+        const data = Object.assign({}, todo, {isDone: !todo.isDone});
+        const updated = await api.updateToDo(todo.id, data);
+
+        setTodos(todos => todos.map(t => {
+            if (t._id === updated.id) {
+                return updated;
+            }
+            return t;
+        }));
     }
 
     return (
         <>
+            <input type="text" onBlur={onInputBlur} />
             <ul>
-                {tasks.map((t, i) => (<ToDoListItem key={i} index={i} >{t}</ToDoListItem>))}
-                <ToDoListItem person={{name: 'Pesho', age: 32}}>{oneTask}</ToDoListItem>
+                {todos.map((todo) =>
+                    <ToDoItem
+                        key={todo._id}
+                        todo={todo}
+                        onDelete={(event) => {event.stopPropagation(); toDoItemDeleteHandler(todo._id);}}
+                        toggleDone={() => toggleDone(todo)}
+                    />)}
             </ul>
-            <Counter>{count}</Counter>
-            <button onClick={onBtnClick}>+</button>
         </>
     );
 }
