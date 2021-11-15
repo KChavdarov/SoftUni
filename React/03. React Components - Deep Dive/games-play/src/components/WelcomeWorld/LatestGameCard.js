@@ -1,4 +1,13 @@
-export function LatestGameCard({game}) {
+export function LatestGameCard({game, navigator}) {
+    function redirectHandler(event) {
+        if (event && event.target.tagName === 'A') {
+            event.preventDefault();
+            const url = new URL(event.target.href);
+            const [name, id] = url.pathname.split('/').filter(a => a);
+            navigator(name, id);
+        }
+    }
+
     return (
         <div className="game">
             <div className="image-wrap">
@@ -9,7 +18,7 @@ export function LatestGameCard({game}) {
                 <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
             </div>
             <div className="data-buttons">
-                <a href={`/details/${game._id}`} className="btn details-btn">Details</a>
+                <a href={`/details/${game._id}`} onClick={redirectHandler} className="btn details-btn">Details</a>
             </div>
         </div>
     );
