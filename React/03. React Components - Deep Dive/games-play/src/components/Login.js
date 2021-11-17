@@ -1,9 +1,15 @@
 import {NavLink} from 'react-router-dom';
 
-export function Login() {
+export function Login({history}) {
+
+    function onLoginFormSubmit(event) {
+        event.preventDefault();
+        history.push('/');
+    }
+
     return (
         <section id="login-page" className="auth">
-            <form id="login">
+            <form id="login" onSubmit={onLoginFormSubmit}>
 
                 <div className="container">
                     <div className="brand-logo"></div>

@@ -1,9 +1,14 @@
 import {NavLink} from 'react-router-dom';
 
-export function Register() {
+export function Register({history}) {
+    function onRegisterFormSubmit(event) {
+        event.preventDefault();
+        history.push('/');
+    }
+
     return (
         <section id="register-page" className="content auth">
-            <form id="register">
+            <form id="register" onSubmit={onRegisterFormSubmit} >
                 <div className="container">
                     <div className="brand-logo"></div>
                     <h1>Register</h1>
