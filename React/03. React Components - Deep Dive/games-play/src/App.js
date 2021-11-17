@@ -1,5 +1,5 @@
 import './App.css';
-import {useState} from 'react';
+import {Route} from 'react-router';
 import {Header} from './components/Header';
 import {WelcomeWorld} from './components/WelcomeWorld/WelcomeWorld';
 import {Login} from './components/Login';
@@ -12,31 +12,22 @@ import {ErrorPage} from './components/Error';
 
 
 function App() {
-  let [page, setPage] = useState({name: 'home'});
-
-  const routes = {
-    home: () => <WelcomeWorld navigator={navigator} />,
-    'welcome-world': () => <WelcomeWorld navigator={navigator} />,
-    login: () => <Login />,
-    register: () => <Register />,
-    create: () => <GameCreate />,
-    edit: (id) => <GameEdit id={id} navigator={navigator} />,
-    details: (id) => <GameDetails id={id} navigator={navigator} />,
-    catalogue: () => <GameCatalogue navigator={navigator} />,
-    error: () => <ErrorPage />
-  };
-
-  function navigator(name, id) {
-    setPage(() => ({name, id}));
-  }
-
   return (
     <div className="App">
       <div id="box">
         <Header navigator={navigator} />
 
         <main id="main-content">
-          {(routes[page.name] || routes['error'])(page.id)}
+          <Route path="/" exact component={WelcomeWorld} />
+          <Route path="/home" exact component={WelcomeWorld} />
+          <Route path="/welcome-world" exact component={WelcomeWorld} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/games" exact component={GameCatalogue} />
+          <Route path="/games/:id" component={GameDetails} />
+          <Route path="/create" component={GameCreate} />
+          <Route path="/edit/:id" component={GameEdit} />
+          <Route path="/error" component={ErrorPage} />
         </main>
 
       </div>
