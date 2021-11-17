@@ -1,13 +1,6 @@
-export function LatestGameCard({game, navigator}) {
-    function redirectHandler(event) {
-        if (event && event.target.tagName === 'A') {
-            event.preventDefault();
-            const url = new URL(event.target.href);
-            const [name, id] = url.pathname.split('/').filter(a => a);
-            navigator(name, id);
-        }
-    }
+import {Link} from 'react-router-dom';
 
+export function LatestGameCard({game}) {
     return (
         <div className="game">
             <div className="image-wrap">
@@ -18,7 +11,7 @@ export function LatestGameCard({game, navigator}) {
                 <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
             </div>
             <div className="data-buttons">
-                <a href={`/details/${game._id}`} onClick={redirectHandler} className="btn details-btn">Details</a>
+                <Link to={`/games/${game._id}`} className="btn details-btn">Details</Link>
             </div>
         </div>
     );

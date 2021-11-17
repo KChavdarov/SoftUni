@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react';
+import {NavLink} from 'react-router-dom';
 import {getAll} from '../services/gameService';
 
-export function GameCatalogue({navigator}) {
+export function GameCatalogue({history}) {
     const [state, setState] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -18,16 +19,7 @@ export function GameCatalogue({navigator}) {
             setIsLoading(false);
         } catch (error) {
             console.error(error);
-            navigator('error');
-        }
-    }
-
-    function redirectHandler(event) {
-        if (event && event.target.tagName === 'A') {
-            event.preventDefault();
-            const url = new URL(event.target.href);
-            const [name, id] = url.pathname.split('/').filter(a => a);
-            navigator(name, id);
+            history.push('/error');
         }
     }
 
@@ -39,7 +31,7 @@ export function GameCatalogue({navigator}) {
                         <img src={game.imageUrl} />
                         <h6>{game.category}</h6>
                         <h2>{game.title}</h2>
-                        <a href={`/details/${game._id}`} onClick={redirectHandler} className="details-button">Details</a>
+                        <NavLink to={`/games/${game._id}`} className="details-button">Details</NavLink>
                     </div>
                 </div>
             ))

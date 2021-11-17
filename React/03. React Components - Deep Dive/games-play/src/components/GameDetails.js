@@ -1,9 +1,12 @@
 import {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import {getOne} from '../services/gameService';
 
-export function GameDetails({id, navigator}) {
+export function GameDetails({match}) {
     const [game, setGame] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    
+    const id = match.params.id;
 
     useEffect(() => {
         setIsLoading(true);
@@ -19,15 +22,6 @@ export function GameDetails({id, navigator}) {
         } catch (error) {
             navigator('error');
             console.error(error);
-        }
-    }
-
-    function redirectHandler(event) {
-        if (event && event.target.tagName === 'A') {
-            event.preventDefault();
-            const url = new URL(event.target.href);
-            const [name, id] = url.pathname.split('/').filter(a => a);
-            navigator(name, id);
         }
     }
 
@@ -56,9 +50,9 @@ export function GameDetails({id, navigator}) {
                     <p className="no-comment">No comments.</p>
                 </div>
 
-                <div className="buttons" onClick={redirectHandler}>
-                    <a href={`/edit/${id}`} className="button">Edit</a>
-                    <a href={`/delete/${id}`} className="button">Delete</a>
+                <div className="buttons">
+                    <Link to={`/edit/${id}`} className="button">Edit</Link>
+                    <Link to={`/delete/${id}`} className="button">Delete</Link>
                 </div>
             </div>
 

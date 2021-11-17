@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import {getAll} from '../../services/gameService';
 import {LatestGameCard} from './LatestGameCard';
 
-export function WelcomeWorld({navigator}) {
+export function WelcomeWorld({history}) {
     const [state, setState] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -22,7 +22,7 @@ export function WelcomeWorld({navigator}) {
     }, []);
 
     const content = state.length > 0
-        ? state.map(game => <LatestGameCard navigator={navigator} key={game._id} game={game} />)
+        ? state.map(game => <LatestGameCard key={game._id} game={game} />)
         : <p className="no-articles">No games yet</p>;
 
     return (

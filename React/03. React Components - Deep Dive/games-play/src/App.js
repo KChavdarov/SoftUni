@@ -20,7 +20,6 @@ function App() {
         <main id="main-content">
           <Route path="/" exact component={WelcomeWorld} />
           <Route path="/home" exact component={WelcomeWorld} />
-          <Route path="/welcome-world" exact component={WelcomeWorld} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/games" exact component={GameCatalogue} />
