@@ -5,14 +5,14 @@ export function Header() {
         <header>
             <h1><NavLink className="home" to="/">GamesPlay</NavLink></h1>
             <nav>
-                <NavLink to="/games">All games</NavLink>
+                <NavLink activeClassName="active-nav" to="/games">All games</NavLink>
                 <div id="user">
-                    <NavLink to="/create">Create Game</NavLink>
-                    <NavLink to="#">Logout</NavLink>
+                    <NavLink activeClassName="active-nav" to="/create">Create Game</NavLink>
+                    <NavLink to="/logout">Logout</NavLink>
                 </div>
                 <div id="guest">
-                    <NavLink to="/login">Login</NavLink>
-                    <NavLink to="/register">Register</NavLink>
+                    <NavLink activeClassName="active-nav" to="/login">Login</NavLink>
+                    <NavLink activeClassName="active-nav" to="/register">Register</NavLink>
                 </div>
             </nav>
         </header>

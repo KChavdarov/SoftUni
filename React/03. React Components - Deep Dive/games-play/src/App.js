@@ -1,5 +1,5 @@
 import './App.css';
-import {Route} from 'react-router';
+import {Redirect, Route} from 'react-router';
 import {Header} from './components/Header';
 import {WelcomeWorld} from './components/WelcomeWorld/WelcomeWorld';
 import {Login} from './components/Login';
@@ -22,6 +22,7 @@ function App() {
           <Route path="/home" exact component={WelcomeWorld} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/logout" render={() => <Redirect to="/login" />} />
           <Route path="/games" exact component={GameCatalogue} />
           <Route path="/games/:id" component={GameDetails} />
           <Route path="/create" component={GameCreate} />
