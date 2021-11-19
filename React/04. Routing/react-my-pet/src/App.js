@@ -5,22 +5,36 @@ import {Login} from './components/Login';
 import {Create} from './components/pets/Create';
 import {MyPets} from './components/pets/MyPets';
 import {Register} from './components/Register';
+import {Dashboard} from './components/pets/Dashboard';
+import {Details} from './components/pets/Details';
+import {Route, BrowserRouter, Routes, Navigate} from 'react-router-dom';
 
 function App() {
     return (
-        <div id="container">
-            <Header />
-            <main id="site-content">
-                <Home />
-                <Login />
-                <Register />
-                <Create />
-                <MyPets />
-            </main>
-            <footer id="site-footer">
-                <p>@PetMyPet</p>
-            </footer>
-        </div>
+        <BrowserRouter>
+            <div id="container">
+                <Header />
+
+                <main id="site-content">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/pets">
+                            <Route path="" element={<Navigate to="dashboard" />} />
+                            <Route path="dashboard" element={<Dashboard />} />
+                            <Route path="details" element={<Details />} />
+                            <Route path="create" element={<Create />} />
+                            <Route path="my-pets" element={<MyPets />} />
+                        </Route>
+                    </Routes>
+                </main>
+
+                <footer id="site-footer">
+                    <p>@PetMyPet</p>
+                </footer>
+            </div>
+        </BrowserRouter>
     );
 }
 
