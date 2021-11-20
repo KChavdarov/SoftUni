@@ -11,3 +11,15 @@ export async function getOne(id) {
     const data = await response.json();
     return data;
 }
+
+export async function createOne(data) {
+    const options = {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(data),
+    };
+    const response = await fetch(API_URL + '/pets', options);
+    return await response.json();
+}

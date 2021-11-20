@@ -10,7 +10,7 @@ export function Pet({pet}) {
             <div className="pet-info">
                 <a href="#"><button className="button"><i className="fas fa-heart"></i> Pet</button></a>
                 <Link to={`/pets/details/${pet._id}`}><button className="button">Details</button></Link>
-                <i className="fas fa-heart"></i> <span> 2</span>
+                <i className="fas fa-heart"></i> <span> {pet.likes}</span>
             </div>
         </section >
     );
