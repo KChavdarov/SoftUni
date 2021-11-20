@@ -1,28 +1,36 @@
-export function Header() {
+import {NavLink} from 'react-router-dom';
+
+export function Header({username, isAuthenticated, logout}) {
+
+    const guestNav = (
+        <section className="navbar-anonymous">
+            <ul>
+                <li><NavLink to="/register"><i className="fas fa-user-plus"></i> Register</NavLink></li>
+                <li><NavLink to="/login"><i className="fas fa-sign-in-alt"></i> Login</NavLink></li>
+            </ul>
+        </section>
+    );
+
+    const userNav = (
+        <section className="navbar-dashboard">
+            <div className="first-bar">
+                <NavLink to="/pets">Dashboard</NavLink>
+                <NavLink className="button" to="/pets/my-pets">My Pets</NavLink>
+                <NavLink className="button" to="/pets/create">Add Pet</NavLink>
+            </div>
+            <div className="second-bar">
+                <ul>
+                    <li>Welcome, {username}!</li>
+                    <li><a onClick={logout} ><i className="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+        </section>
+    );
 
     return (
         <header id="site-header">
             <nav className="navbar">
-
-                <section className="navbar-dashboard">
-                    <div className="first-bar">
-                        <a href="#">Dashboard</a>
-                        <a className="button" href="#">My Pets</a>
-                        <a className="button" href="#">Add Pet</a>
-                    </div>
-                    <div className="second-bar">
-                        <ul>
-                            <li>Welcome, username!</li>
-                            <li><a href="#"><i className="fas fa-sign-out-alt"></i> Logout</a></li>
-                        </ul>
-                    </div>
-                </section>
-                <section className="navbar-anonymous">
-                    <ul>
-                        <li><a href="#"><i className="fas fa-user-plus"></i> Register</a></li>
-                        <li><a href="#"><i className="fas fa-sign-in-alt"></i> Login</a></li>
-                    </ul>
-                </section>
+                {isAuthenticated ? userNav : guestNav}
             </nav>
         </header>
     );
