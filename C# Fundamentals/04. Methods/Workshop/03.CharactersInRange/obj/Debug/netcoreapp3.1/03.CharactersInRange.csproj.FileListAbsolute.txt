@@ -1,0 +1,14 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\03.CharactersInRange\bin\Debug\netcoreapp3.1\03.CharactersInRange.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\03.CharactersInRange\bin\Debug\netcoreapp3.1\03.CharactersInRange.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\03.CharactersInRange\bin\Debug\netcoreapp3.1\03.CharactersInRange.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\03.CharactersInRange\bin\Debug\netcoreapp3.1\03.CharactersInRange.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\03.CharactersInRange\bin\Debug\netcoreapp3.1\03.CharactersInRange.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\03.CharactersInRange\bin\Debug\netcoreapp3.1\03.CharactersInRange.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\03.CharactersInRange\obj\Debug\netcoreapp3.1\03.CharactersInRange.csproj.AssemblyReference.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\03.CharactersInRange\obj\Debug\netcoreapp3.1\03.CharactersInRange.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\03.CharactersInRange\obj\Debug\netcoreapp3.1\03.CharactersInRange.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\03.CharactersInRange\obj\Debug\netcoreapp3.1\03.CharactersInRange.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\03.CharactersInRange\obj\Debug\netcoreapp3.1\03.CharactersInRange.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\03.CharactersInRange\obj\Debug\netcoreapp3.1\03.CharactersInRange.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\03.CharactersInRange\obj\Debug\netcoreapp3.1\03.CharactersInRange.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\03.CharactersInRange\obj\Debug\netcoreapp3.1\03.CharactersInRange.genruntimeconfig.cache

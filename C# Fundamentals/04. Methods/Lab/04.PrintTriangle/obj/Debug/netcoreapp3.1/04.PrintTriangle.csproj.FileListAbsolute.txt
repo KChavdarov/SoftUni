@@ -1,0 +1,14 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\Lab\04.PrintTriangle\bin\Debug\netcoreapp3.1\04.PrintTriangle.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\Lab\04.PrintTriangle\bin\Debug\netcoreapp3.1\04.PrintTriangle.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\Lab\04.PrintTriangle\bin\Debug\netcoreapp3.1\04.PrintTriangle.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\Lab\04.PrintTriangle\bin\Debug\netcoreapp3.1\04.PrintTriangle.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\Lab\04.PrintTriangle\bin\Debug\netcoreapp3.1\04.PrintTriangle.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\Lab\04.PrintTriangle\bin\Debug\netcoreapp3.1\04.PrintTriangle.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\Lab\04.PrintTriangle\obj\Debug\netcoreapp3.1\04.PrintTriangle.csproj.AssemblyReference.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\Lab\04.PrintTriangle\obj\Debug\netcoreapp3.1\04.PrintTriangle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\Lab\04.PrintTriangle\obj\Debug\netcoreapp3.1\04.PrintTriangle.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\Lab\04.PrintTriangle\obj\Debug\netcoreapp3.1\04.PrintTriangle.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\Lab\04.PrintTriangle\obj\Debug\netcoreapp3.1\04.PrintTriangle.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\Lab\04.PrintTriangle\obj\Debug\netcoreapp3.1\04.PrintTriangle.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\Lab\04.PrintTriangle\obj\Debug\netcoreapp3.1\04.PrintTriangle.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\Lab\04.PrintTriangle\obj\Debug\netcoreapp3.1\04.PrintTriangle.genruntimeconfig.cache

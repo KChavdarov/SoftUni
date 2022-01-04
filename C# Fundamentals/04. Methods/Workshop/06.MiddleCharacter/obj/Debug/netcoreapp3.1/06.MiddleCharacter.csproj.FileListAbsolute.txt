@@ -1,0 +1,14 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\06.MiddleCharacter\bin\Debug\netcoreapp3.1\06.MiddleCharacter.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\06.MiddleCharacter\bin\Debug\netcoreapp3.1\06.MiddleCharacter.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\06.MiddleCharacter\bin\Debug\netcoreapp3.1\06.MiddleCharacter.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\06.MiddleCharacter\bin\Debug\netcoreapp3.1\06.MiddleCharacter.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\06.MiddleCharacter\bin\Debug\netcoreapp3.1\06.MiddleCharacter.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\06.MiddleCharacter\bin\Debug\netcoreapp3.1\06.MiddleCharacter.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\06.MiddleCharacter\obj\Debug\netcoreapp3.1\06.MiddleCharacter.csproj.AssemblyReference.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\06.MiddleCharacter\obj\Debug\netcoreapp3.1\06.MiddleCharacter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\06.MiddleCharacter\obj\Debug\netcoreapp3.1\06.MiddleCharacter.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\06.MiddleCharacter\obj\Debug\netcoreapp3.1\06.MiddleCharacter.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\06.MiddleCharacter\obj\Debug\netcoreapp3.1\06.MiddleCharacter.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\06.MiddleCharacter\obj\Debug\netcoreapp3.1\06.MiddleCharacter.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\06.MiddleCharacter\obj\Debug\netcoreapp3.1\06.MiddleCharacter.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\04. Methods\02.VowelsCount\06.MiddleCharacter\obj\Debug\netcoreapp3.1\06.MiddleCharacter.genruntimeconfig.cache
