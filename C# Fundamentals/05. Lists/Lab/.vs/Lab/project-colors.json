@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0a1571df-a747-4a04-ba94-686d4c004f3c": {
+      "ProjectGuid": "0a1571df-a747-4a04-ba94-686d4c004f3c",
+      "DisplayName": "01.SumAdjacentEqualNumbers",
+      "ColorIndex": 0
+    },
+    "9ab78d91-17a4-419f-a5fd-c7cc08ad0707": {
+      "ProjectGuid": "9ab78d91-17a4-419f-a5fd-c7cc08ad0707",
+      "DisplayName": "02.GaussTrick",
+      "ColorIndex": 1
+    },
+    "fceade91-acb0-43cc-8924-4eec3e3cfd2a": {
+      "ProjectGuid": "fceade91-acb0-43cc-8924-4eec3e3cfd2a",
+      "DisplayName": "03.MergingLists",
+      "ColorIndex": 2
+    },
+    "62eb6adc-836a-46b2-8ca0-1e7ef5b44061": {
+      "ProjectGuid": "62eb6adc-836a-46b2-8ca0-1e7ef5b44061",
+      "DisplayName": "05.RemoveNegativesAndReverse",
+      "ColorIndex": 3
+    },
+    "678b7bba-51eb-4af9-b16f-1a6772e86c77": {
+      "ProjectGuid": "678b7bba-51eb-4af9-b16f-1a6772e86c77",
+      "DisplayName": "04.ListOfProducts",
+      "ColorIndex": 4
+    },
+    "3e314dc7-c044-4d17-a27d-8188248f7085": {
+      "ProjectGuid": "3e314dc7-c044-4d17-a27d-8188248f7085",
+      "DisplayName": "06. List Manipulation Basics",
+      "ColorIndex": 5
+    },
+    "de9b8362-66ce-4f66-b310-6b2beb832460": {
+      "ProjectGuid": "de9b8362-66ce-4f66-b310-6b2beb832460",
+      "DisplayName": "07. List Manipulation Advanced",
+      "ColorIndex": 6
+    }
+  },
+  "NextColorIndex": 7
+}
