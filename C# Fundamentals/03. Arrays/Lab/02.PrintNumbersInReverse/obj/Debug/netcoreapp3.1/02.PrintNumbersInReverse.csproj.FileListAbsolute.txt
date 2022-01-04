@@ -1,0 +1,14 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\02.PrintNumbersInReverse\bin\Debug\netcoreapp3.1\02.PrintNumbersInReverse.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\02.PrintNumbersInReverse\bin\Debug\netcoreapp3.1\02.PrintNumbersInReverse.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\02.PrintNumbersInReverse\bin\Debug\netcoreapp3.1\02.PrintNumbersInReverse.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\02.PrintNumbersInReverse\bin\Debug\netcoreapp3.1\02.PrintNumbersInReverse.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\02.PrintNumbersInReverse\bin\Debug\netcoreapp3.1\02.PrintNumbersInReverse.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\02.PrintNumbersInReverse\bin\Debug\netcoreapp3.1\02.PrintNumbersInReverse.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\02.PrintNumbersInReverse\obj\Debug\netcoreapp3.1\02.PrintNumbersInReverse.csproj.AssemblyReference.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\02.PrintNumbersInReverse\obj\Debug\netcoreapp3.1\02.PrintNumbersInReverse.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\02.PrintNumbersInReverse\obj\Debug\netcoreapp3.1\02.PrintNumbersInReverse.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\02.PrintNumbersInReverse\obj\Debug\netcoreapp3.1\02.PrintNumbersInReverse.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\02.PrintNumbersInReverse\obj\Debug\netcoreapp3.1\02.PrintNumbersInReverse.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\02.PrintNumbersInReverse\obj\Debug\netcoreapp3.1\02.PrintNumbersInReverse.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\02.PrintNumbersInReverse\obj\Debug\netcoreapp3.1\02.PrintNumbersInReverse.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\02.PrintNumbersInReverse\obj\Debug\netcoreapp3.1\02.PrintNumbersInReverse.genruntimeconfig.cache

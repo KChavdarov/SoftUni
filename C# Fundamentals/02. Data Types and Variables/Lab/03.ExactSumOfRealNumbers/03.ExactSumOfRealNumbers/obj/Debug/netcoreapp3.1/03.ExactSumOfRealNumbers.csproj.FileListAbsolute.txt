@@ -1,0 +1,14 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\03.ExactSumOfRealNumbers\03.ExactSumOfRealNumbers\bin\Debug\netcoreapp3.1\03.ExactSumOfRealNumbers.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\03.ExactSumOfRealNumbers\03.ExactSumOfRealNumbers\bin\Debug\netcoreapp3.1\03.ExactSumOfRealNumbers.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\03.ExactSumOfRealNumbers\03.ExactSumOfRealNumbers\bin\Debug\netcoreapp3.1\03.ExactSumOfRealNumbers.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\03.ExactSumOfRealNumbers\03.ExactSumOfRealNumbers\bin\Debug\netcoreapp3.1\03.ExactSumOfRealNumbers.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\03.ExactSumOfRealNumbers\03.ExactSumOfRealNumbers\bin\Debug\netcoreapp3.1\03.ExactSumOfRealNumbers.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\03.ExactSumOfRealNumbers\03.ExactSumOfRealNumbers\bin\Debug\netcoreapp3.1\03.ExactSumOfRealNumbers.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\03.ExactSumOfRealNumbers\03.ExactSumOfRealNumbers\obj\Debug\netcoreapp3.1\03.ExactSumOfRealNumbers.csproj.AssemblyReference.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\03.ExactSumOfRealNumbers\03.ExactSumOfRealNumbers\obj\Debug\netcoreapp3.1\03.ExactSumOfRealNumbers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\03.ExactSumOfRealNumbers\03.ExactSumOfRealNumbers\obj\Debug\netcoreapp3.1\03.ExactSumOfRealNumbers.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\03.ExactSumOfRealNumbers\03.ExactSumOfRealNumbers\obj\Debug\netcoreapp3.1\03.ExactSumOfRealNumbers.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\03.ExactSumOfRealNumbers\03.ExactSumOfRealNumbers\obj\Debug\netcoreapp3.1\03.ExactSumOfRealNumbers.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\03.ExactSumOfRealNumbers\03.ExactSumOfRealNumbers\obj\Debug\netcoreapp3.1\03.ExactSumOfRealNumbers.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\03.ExactSumOfRealNumbers\03.ExactSumOfRealNumbers\obj\Debug\netcoreapp3.1\03.ExactSumOfRealNumbers.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\03.ExactSumOfRealNumbers\03.ExactSumOfRealNumbers\obj\Debug\netcoreapp3.1\03.ExactSumOfRealNumbers.genruntimeconfig.cache

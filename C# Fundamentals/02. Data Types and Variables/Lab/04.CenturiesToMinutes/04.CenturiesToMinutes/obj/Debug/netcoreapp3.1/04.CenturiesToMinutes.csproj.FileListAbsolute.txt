@@ -1,0 +1,13 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\04.CenturiesToMinutes\04.CenturiesToMinutes\bin\Debug\netcoreapp3.1\04.CenturiesToMinutes.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\04.CenturiesToMinutes\04.CenturiesToMinutes\bin\Debug\netcoreapp3.1\04.CenturiesToMinutes.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\04.CenturiesToMinutes\04.CenturiesToMinutes\bin\Debug\netcoreapp3.1\04.CenturiesToMinutes.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\04.CenturiesToMinutes\04.CenturiesToMinutes\bin\Debug\netcoreapp3.1\04.CenturiesToMinutes.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\04.CenturiesToMinutes\04.CenturiesToMinutes\bin\Debug\netcoreapp3.1\04.CenturiesToMinutes.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\04.CenturiesToMinutes\04.CenturiesToMinutes\bin\Debug\netcoreapp3.1\04.CenturiesToMinutes.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\04.CenturiesToMinutes\04.CenturiesToMinutes\obj\Debug\netcoreapp3.1\04.CenturiesToMinutes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\04.CenturiesToMinutes\04.CenturiesToMinutes\obj\Debug\netcoreapp3.1\04.CenturiesToMinutes.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\04.CenturiesToMinutes\04.CenturiesToMinutes\obj\Debug\netcoreapp3.1\04.CenturiesToMinutes.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\04.CenturiesToMinutes\04.CenturiesToMinutes\obj\Debug\netcoreapp3.1\04.CenturiesToMinutes.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\04.CenturiesToMinutes\04.CenturiesToMinutes\obj\Debug\netcoreapp3.1\04.CenturiesToMinutes.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\04.CenturiesToMinutes\04.CenturiesToMinutes\obj\Debug\netcoreapp3.1\04.CenturiesToMinutes.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\04.CenturiesToMinutes\04.CenturiesToMinutes\obj\Debug\netcoreapp3.1\04.CenturiesToMinutes.genruntimeconfig.cache

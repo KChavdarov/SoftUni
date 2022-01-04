@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "dbfb707b-4489-4634-9311-2816f623ca18": {
+      "ProjectGuid": "dbfb707b-4489-4634-9311-2816f623ca18",
+      "DisplayName": "02.SumDigits",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

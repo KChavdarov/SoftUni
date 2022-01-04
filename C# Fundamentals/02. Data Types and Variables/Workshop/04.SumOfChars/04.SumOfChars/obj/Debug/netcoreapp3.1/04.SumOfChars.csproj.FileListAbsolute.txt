@@ -1,0 +1,13 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\04.SumOfChars\04.SumOfChars\bin\Debug\netcoreapp3.1\04.SumOfChars.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\04.SumOfChars\04.SumOfChars\bin\Debug\netcoreapp3.1\04.SumOfChars.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\04.SumOfChars\04.SumOfChars\bin\Debug\netcoreapp3.1\04.SumOfChars.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\04.SumOfChars\04.SumOfChars\bin\Debug\netcoreapp3.1\04.SumOfChars.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\04.SumOfChars\04.SumOfChars\bin\Debug\netcoreapp3.1\04.SumOfChars.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\04.SumOfChars\04.SumOfChars\bin\Debug\netcoreapp3.1\04.SumOfChars.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\04.SumOfChars\04.SumOfChars\obj\Debug\netcoreapp3.1\04.SumOfChars.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\04.SumOfChars\04.SumOfChars\obj\Debug\netcoreapp3.1\04.SumOfChars.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\04.SumOfChars\04.SumOfChars\obj\Debug\netcoreapp3.1\04.SumOfChars.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\04.SumOfChars\04.SumOfChars\obj\Debug\netcoreapp3.1\04.SumOfChars.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\04.SumOfChars\04.SumOfChars\obj\Debug\netcoreapp3.1\04.SumOfChars.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\04.SumOfChars\04.SumOfChars\obj\Debug\netcoreapp3.1\04.SumOfChars.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\04.SumOfChars\04.SumOfChars\obj\Debug\netcoreapp3.1\04.SumOfChars.genruntimeconfig.cache

@@ -1,0 +1,13 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\05.SumEvenNumbers\bin\Debug\netcoreapp3.1\05.SumEvenNumbers.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\05.SumEvenNumbers\bin\Debug\netcoreapp3.1\05.SumEvenNumbers.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\05.SumEvenNumbers\bin\Debug\netcoreapp3.1\05.SumEvenNumbers.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\05.SumEvenNumbers\bin\Debug\netcoreapp3.1\05.SumEvenNumbers.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\05.SumEvenNumbers\bin\Debug\netcoreapp3.1\05.SumEvenNumbers.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\05.SumEvenNumbers\bin\Debug\netcoreapp3.1\05.SumEvenNumbers.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\05.SumEvenNumbers\obj\Debug\netcoreapp3.1\05.SumEvenNumbers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\05.SumEvenNumbers\obj\Debug\netcoreapp3.1\05.SumEvenNumbers.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\05.SumEvenNumbers\obj\Debug\netcoreapp3.1\05.SumEvenNumbers.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\05.SumEvenNumbers\obj\Debug\netcoreapp3.1\05.SumEvenNumbers.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\05.SumEvenNumbers\obj\Debug\netcoreapp3.1\05.SumEvenNumbers.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\05.SumEvenNumbers\obj\Debug\netcoreapp3.1\05.SumEvenNumbers.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\05.SumEvenNumbers\obj\Debug\netcoreapp3.1\05.SumEvenNumbers.genruntimeconfig.cache

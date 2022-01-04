@@ -1,0 +1,14 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\06.ReversedChars\06.ReversedChars\bin\Debug\netcoreapp3.1\06.ReversedChars.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\06.ReversedChars\06.ReversedChars\bin\Debug\netcoreapp3.1\06.ReversedChars.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\06.ReversedChars\06.ReversedChars\bin\Debug\netcoreapp3.1\06.ReversedChars.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\06.ReversedChars\06.ReversedChars\bin\Debug\netcoreapp3.1\06.ReversedChars.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\06.ReversedChars\06.ReversedChars\bin\Debug\netcoreapp3.1\06.ReversedChars.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\06.ReversedChars\06.ReversedChars\bin\Debug\netcoreapp3.1\06.ReversedChars.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\06.ReversedChars\06.ReversedChars\obj\Debug\netcoreapp3.1\06.ReversedChars.csproj.AssemblyReference.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\06.ReversedChars\06.ReversedChars\obj\Debug\netcoreapp3.1\06.ReversedChars.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\06.ReversedChars\06.ReversedChars\obj\Debug\netcoreapp3.1\06.ReversedChars.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\06.ReversedChars\06.ReversedChars\obj\Debug\netcoreapp3.1\06.ReversedChars.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\06.ReversedChars\06.ReversedChars\obj\Debug\netcoreapp3.1\06.ReversedChars.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\06.ReversedChars\06.ReversedChars\obj\Debug\netcoreapp3.1\06.ReversedChars.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\06.ReversedChars\06.ReversedChars\obj\Debug\netcoreapp3.1\06.ReversedChars.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\06.ReversedChars\06.ReversedChars\obj\Debug\netcoreapp3.1\06.ReversedChars.genruntimeconfig.cache

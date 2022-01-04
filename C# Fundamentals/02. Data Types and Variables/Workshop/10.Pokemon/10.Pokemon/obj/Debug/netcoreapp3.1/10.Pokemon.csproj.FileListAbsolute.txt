@@ -1,0 +1,13 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\10.Pokemon\10.Pokemon\bin\Debug\netcoreapp3.1\10.Pokemon.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\10.Pokemon\10.Pokemon\bin\Debug\netcoreapp3.1\10.Pokemon.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\10.Pokemon\10.Pokemon\bin\Debug\netcoreapp3.1\10.Pokemon.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\10.Pokemon\10.Pokemon\bin\Debug\netcoreapp3.1\10.Pokemon.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\10.Pokemon\10.Pokemon\bin\Debug\netcoreapp3.1\10.Pokemon.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\10.Pokemon\10.Pokemon\bin\Debug\netcoreapp3.1\10.Pokemon.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\10.Pokemon\10.Pokemon\obj\Debug\netcoreapp3.1\10.Pokemon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\10.Pokemon\10.Pokemon\obj\Debug\netcoreapp3.1\10.Pokemon.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\10.Pokemon\10.Pokemon\obj\Debug\netcoreapp3.1\10.Pokemon.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\10.Pokemon\10.Pokemon\obj\Debug\netcoreapp3.1\10.Pokemon.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\10.Pokemon\10.Pokemon\obj\Debug\netcoreapp3.1\10.Pokemon.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\10.Pokemon\10.Pokemon\obj\Debug\netcoreapp3.1\10.Pokemon.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\10.Pokemon\10.Pokemon\obj\Debug\netcoreapp3.1\10.Pokemon.genruntimeconfig.cache

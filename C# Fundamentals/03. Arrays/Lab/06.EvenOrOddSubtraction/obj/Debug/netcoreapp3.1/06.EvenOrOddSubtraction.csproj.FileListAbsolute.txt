@@ -1,0 +1,13 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\06.EvenOrOddSubtraction\bin\Debug\netcoreapp3.1\06.EvenOrOddSubtraction.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\06.EvenOrOddSubtraction\bin\Debug\netcoreapp3.1\06.EvenOrOddSubtraction.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\06.EvenOrOddSubtraction\bin\Debug\netcoreapp3.1\06.EvenOrOddSubtraction.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\06.EvenOrOddSubtraction\bin\Debug\netcoreapp3.1\06.EvenOrOddSubtraction.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\06.EvenOrOddSubtraction\bin\Debug\netcoreapp3.1\06.EvenOrOddSubtraction.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\06.EvenOrOddSubtraction\bin\Debug\netcoreapp3.1\06.EvenOrOddSubtraction.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\06.EvenOrOddSubtraction\obj\Debug\netcoreapp3.1\06.EvenOrOddSubtraction.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\06.EvenOrOddSubtraction\obj\Debug\netcoreapp3.1\06.EvenOrOddSubtraction.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\06.EvenOrOddSubtraction\obj\Debug\netcoreapp3.1\06.EvenOrOddSubtraction.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\06.EvenOrOddSubtraction\obj\Debug\netcoreapp3.1\06.EvenOrOddSubtraction.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\06.EvenOrOddSubtraction\obj\Debug\netcoreapp3.1\06.EvenOrOddSubtraction.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\06.EvenOrOddSubtraction\obj\Debug\netcoreapp3.1\06.EvenOrOddSubtraction.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Workshop\Lab\06.EvenOrOddSubtraction\obj\Debug\netcoreapp3.1\06.EvenOrOddSubtraction.genruntimeconfig.cache

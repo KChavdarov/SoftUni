@@ -1,0 +1,13 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\08.TownInfo\08.TownInfo\bin\Debug\netcoreapp3.1\08.TownInfo.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\08.TownInfo\08.TownInfo\bin\Debug\netcoreapp3.1\08.TownInfo.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\08.TownInfo\08.TownInfo\bin\Debug\netcoreapp3.1\08.TownInfo.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\08.TownInfo\08.TownInfo\bin\Debug\netcoreapp3.1\08.TownInfo.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\08.TownInfo\08.TownInfo\bin\Debug\netcoreapp3.1\08.TownInfo.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\08.TownInfo\08.TownInfo\bin\Debug\netcoreapp3.1\08.TownInfo.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\08.TownInfo\08.TownInfo\obj\Debug\netcoreapp3.1\08.TownInfo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\08.TownInfo\08.TownInfo\obj\Debug\netcoreapp3.1\08.TownInfo.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\08.TownInfo\08.TownInfo\obj\Debug\netcoreapp3.1\08.TownInfo.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\08.TownInfo\08.TownInfo\obj\Debug\netcoreapp3.1\08.TownInfo.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\08.TownInfo\08.TownInfo\obj\Debug\netcoreapp3.1\08.TownInfo.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\08.TownInfo\08.TownInfo\obj\Debug\netcoreapp3.1\08.TownInfo.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\08.TownInfo\08.TownInfo\obj\Debug\netcoreapp3.1\08.TownInfo.genruntimeconfig.cache

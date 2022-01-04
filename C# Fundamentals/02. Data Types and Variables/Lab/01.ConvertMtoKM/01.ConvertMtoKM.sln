@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.ConvertMtoKM", "01.ConvertMtoKM\01.ConvertMtoKM.csproj", "{D3418E08-B97F-4338-9579-F46C817745FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3418E08-B97F-4338-9579-F46C817745FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3418E08-B97F-4338-9579-F46C817745FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3418E08-B97F-4338-9579-F46C817745FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3418E08-B97F-4338-9579-F46C817745FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64B302B8-A738-4BF2-AC06-778585EB1E39}
+	EndGlobalSection
+EndGlobal

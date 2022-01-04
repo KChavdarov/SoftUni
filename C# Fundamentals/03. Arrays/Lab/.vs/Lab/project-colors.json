@@ -1,0 +1,46 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a5eb0531-886a-49af-bd3b-cad63c051163": {
+      "ProjectGuid": "a5eb0531-886a-49af-bd3b-cad63c051163",
+      "DisplayName": "01.DayOfWeek",
+      "ColorIndex": 0
+    },
+    "ef61a463-d077-4757-b78e-eadeb2161cb1": {
+      "ProjectGuid": "ef61a463-d077-4757-b78e-eadeb2161cb1",
+      "DisplayName": "02.PrintNumbersInReverse",
+      "ColorIndex": 1
+    },
+    "80a4d620-eb09-469e-9551-f0e33e4f31d9": {
+      "ProjectGuid": "80a4d620-eb09-469e-9551-f0e33e4f31d9",
+      "DisplayName": "03.RoundingNumbers",
+      "ColorIndex": 2
+    },
+    "3256e738-5d33-4285-bb87-8c3349d84a04": {
+      "ProjectGuid": "3256e738-5d33-4285-bb87-8c3349d84a04",
+      "DisplayName": "04.ReverseArrayOfStrings",
+      "ColorIndex": 3
+    },
+    "283939f9-b52e-445d-a756-add801de24f8": {
+      "ProjectGuid": "283939f9-b52e-445d-a756-add801de24f8",
+      "DisplayName": "05.SumEvenNumbers",
+      "ColorIndex": 4
+    },
+    "33caa274-27aa-4041-90de-6843c8ea3458": {
+      "ProjectGuid": "33caa274-27aa-4041-90de-6843c8ea3458",
+      "DisplayName": "06.EvenOrOddSubtraction",
+      "ColorIndex": 5
+    },
+    "f7e6b4f1-4371-4c51-a2f6-1621b8565c22": {
+      "ProjectGuid": "f7e6b4f1-4371-4c51-a2f6-1621b8565c22",
+      "DisplayName": "07.EqualArrays",
+      "ColorIndex": 6
+    },
+    "51d32b03-05ab-4611-a4e3-d4bfacf3c1eb": {
+      "ProjectGuid": "51d32b03-05ab-4611-a4e3-d4bfacf3c1eb",
+      "DisplayName": "08.CondenseArrayToNumber",
+      "ColorIndex": 7
+    }
+  },
+  "NextColorIndex": 8
+}

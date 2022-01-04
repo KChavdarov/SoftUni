@@ -1,0 +1,14 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\10.Ladybug\bin\Debug\netcoreapp3.1\10.Ladybug.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\10.Ladybug\bin\Debug\netcoreapp3.1\10.Ladybug.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\10.Ladybug\bin\Debug\netcoreapp3.1\10.Ladybug.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\10.Ladybug\bin\Debug\netcoreapp3.1\10.Ladybug.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\10.Ladybug\bin\Debug\netcoreapp3.1\10.Ladybug.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\10.Ladybug\bin\Debug\netcoreapp3.1\10.Ladybug.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\10.Ladybug\obj\Debug\netcoreapp3.1\10.Ladybug.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\10.Ladybug\obj\Debug\netcoreapp3.1\10.Ladybug.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\10.Ladybug\obj\Debug\netcoreapp3.1\10.Ladybug.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\10.Ladybug\obj\Debug\netcoreapp3.1\10.Ladybug.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\10.Ladybug\obj\Debug\netcoreapp3.1\10.Ladybug.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\10.Ladybug\obj\Debug\netcoreapp3.1\10.Ladybug.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\10.Ladybug\obj\Debug\netcoreapp3.1\10.Ladybug.genruntimeconfig.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\10.Ladybug\obj\Debug\netcoreapp3.1\10.Ladybug.csproj.AssemblyReference.cache

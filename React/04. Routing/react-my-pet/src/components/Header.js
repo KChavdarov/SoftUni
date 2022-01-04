@@ -5,8 +5,8 @@ export function Header({username, isAuthenticated, logout}) {
     const guestNav = (
         <section className="navbar-anonymous">
             <ul>
-                <li><NavLink to="/register"><i className="fas fa-user-plus"></i> Register</NavLink></li>
-                <li><NavLink to="/login"><i className="fas fa-sign-in-alt"></i> Login</NavLink></li>
+                <li><NavLink className={(navData => navData.isActive ? 'active-nav' : '')} to="/register"><i className="fas fa-user-plus"></i> Register</NavLink></li>
+                <li><NavLink className={(navData => navData.isActive ? 'active-nav' : '')} to="/login"><i className="fas fa-sign-in-alt"></i> Login</NavLink></li>
             </ul>
         </section>
     );
@@ -15,8 +15,8 @@ export function Header({username, isAuthenticated, logout}) {
         <section className="navbar-dashboard">
             <div className="first-bar">
                 <NavLink to="/pets">Dashboard</NavLink>
-                <NavLink className="button" to="/pets/my-pets">My Pets</NavLink>
-                <NavLink className="button" to="/pets/create">Add Pet</NavLink>
+                <NavLink className={(navData => navData.isActive ? 'active-nav button' : 'button')} to="/pets/my-pets">My Pets</NavLink>
+                <NavLink className={(navData => navData.isActive ? 'active-nav button' : 'button')} to="/pets/create">Add Pet</NavLink>
             </div>
             <div className="second-bar">
                 <ul>

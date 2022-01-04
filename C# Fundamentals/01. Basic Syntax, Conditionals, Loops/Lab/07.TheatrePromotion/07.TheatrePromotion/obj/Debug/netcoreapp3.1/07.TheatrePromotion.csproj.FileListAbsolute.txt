@@ -1,0 +1,13 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\07.TheatrePromotion\07.TheatrePromotion\bin\Debug\netcoreapp3.1\07.TheatrePromotion.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\07.TheatrePromotion\07.TheatrePromotion\bin\Debug\netcoreapp3.1\07.TheatrePromotion.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\07.TheatrePromotion\07.TheatrePromotion\bin\Debug\netcoreapp3.1\07.TheatrePromotion.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\07.TheatrePromotion\07.TheatrePromotion\bin\Debug\netcoreapp3.1\07.TheatrePromotion.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\07.TheatrePromotion\07.TheatrePromotion\bin\Debug\netcoreapp3.1\07.TheatrePromotion.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\07.TheatrePromotion\07.TheatrePromotion\bin\Debug\netcoreapp3.1\07.TheatrePromotion.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\07.TheatrePromotion\07.TheatrePromotion\obj\Debug\netcoreapp3.1\07.TheatrePromotion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\07.TheatrePromotion\07.TheatrePromotion\obj\Debug\netcoreapp3.1\07.TheatrePromotion.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\07.TheatrePromotion\07.TheatrePromotion\obj\Debug\netcoreapp3.1\07.TheatrePromotion.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\07.TheatrePromotion\07.TheatrePromotion\obj\Debug\netcoreapp3.1\07.TheatrePromotion.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\07.TheatrePromotion\07.TheatrePromotion\obj\Debug\netcoreapp3.1\07.TheatrePromotion.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\07.TheatrePromotion\07.TheatrePromotion\obj\Debug\netcoreapp3.1\07.TheatrePromotion.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\07.TheatrePromotion\07.TheatrePromotion\obj\Debug\netcoreapp3.1\07.TheatrePromotion.genruntimeconfig.cache

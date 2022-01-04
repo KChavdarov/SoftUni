@@ -1,0 +1,14 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\01.ConvertMtoKM\01.ConvertMtoKM\bin\Debug\netcoreapp3.1\01.ConvertMtoKM.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\01.ConvertMtoKM\01.ConvertMtoKM\bin\Debug\netcoreapp3.1\01.ConvertMtoKM.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\01.ConvertMtoKM\01.ConvertMtoKM\bin\Debug\netcoreapp3.1\01.ConvertMtoKM.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\01.ConvertMtoKM\01.ConvertMtoKM\bin\Debug\netcoreapp3.1\01.ConvertMtoKM.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\01.ConvertMtoKM\01.ConvertMtoKM\bin\Debug\netcoreapp3.1\01.ConvertMtoKM.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\01.ConvertMtoKM\01.ConvertMtoKM\bin\Debug\netcoreapp3.1\01.ConvertMtoKM.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\01.ConvertMtoKM\01.ConvertMtoKM\obj\Debug\netcoreapp3.1\01.ConvertMtoKM.csproj.AssemblyReference.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\01.ConvertMtoKM\01.ConvertMtoKM\obj\Debug\netcoreapp3.1\01.ConvertMtoKM.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\01.ConvertMtoKM\01.ConvertMtoKM\obj\Debug\netcoreapp3.1\01.ConvertMtoKM.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\01.ConvertMtoKM\01.ConvertMtoKM\obj\Debug\netcoreapp3.1\01.ConvertMtoKM.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\01.ConvertMtoKM\01.ConvertMtoKM\obj\Debug\netcoreapp3.1\01.ConvertMtoKM.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\01.ConvertMtoKM\01.ConvertMtoKM\obj\Debug\netcoreapp3.1\01.ConvertMtoKM.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\01.ConvertMtoKM\01.ConvertMtoKM\obj\Debug\netcoreapp3.1\01.ConvertMtoKM.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\01.ConvertMtoKM\01.ConvertMtoKM\obj\Debug\netcoreapp3.1\01.ConvertMtoKM.genruntimeconfig.cache

@@ -1,0 +1,13 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\Workshop\05.Login\05.Login\bin\Debug\netcoreapp3.1\05.Login.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\Workshop\05.Login\05.Login\bin\Debug\netcoreapp3.1\05.Login.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\Workshop\05.Login\05.Login\bin\Debug\netcoreapp3.1\05.Login.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\Workshop\05.Login\05.Login\bin\Debug\netcoreapp3.1\05.Login.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\Workshop\05.Login\05.Login\bin\Debug\netcoreapp3.1\05.Login.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\Workshop\05.Login\05.Login\bin\Debug\netcoreapp3.1\05.Login.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\Workshop\05.Login\05.Login\obj\Debug\netcoreapp3.1\05.Login.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\Workshop\05.Login\05.Login\obj\Debug\netcoreapp3.1\05.Login.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\Workshop\05.Login\05.Login\obj\Debug\netcoreapp3.1\05.Login.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\Workshop\05.Login\05.Login\obj\Debug\netcoreapp3.1\05.Login.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\Workshop\05.Login\05.Login\obj\Debug\netcoreapp3.1\05.Login.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\Workshop\05.Login\05.Login\obj\Debug\netcoreapp3.1\05.Login.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\Workshop\05.Login\05.Login\obj\Debug\netcoreapp3.1\05.Login.genruntimeconfig.cache

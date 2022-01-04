@@ -1,0 +1,13 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\07.ConcatNames\07.ConcatNames\bin\Debug\netcoreapp3.1\07.ConcatNames.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\07.ConcatNames\07.ConcatNames\bin\Debug\netcoreapp3.1\07.ConcatNames.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\07.ConcatNames\07.ConcatNames\bin\Debug\netcoreapp3.1\07.ConcatNames.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\07.ConcatNames\07.ConcatNames\bin\Debug\netcoreapp3.1\07.ConcatNames.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\07.ConcatNames\07.ConcatNames\bin\Debug\netcoreapp3.1\07.ConcatNames.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\07.ConcatNames\07.ConcatNames\bin\Debug\netcoreapp3.1\07.ConcatNames.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\07.ConcatNames\07.ConcatNames\obj\Debug\netcoreapp3.1\07.ConcatNames.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\07.ConcatNames\07.ConcatNames\obj\Debug\netcoreapp3.1\07.ConcatNames.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\07.ConcatNames\07.ConcatNames\obj\Debug\netcoreapp3.1\07.ConcatNames.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\07.ConcatNames\07.ConcatNames\obj\Debug\netcoreapp3.1\07.ConcatNames.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\07.ConcatNames\07.ConcatNames\obj\Debug\netcoreapp3.1\07.ConcatNames.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\07.ConcatNames\07.ConcatNames\obj\Debug\netcoreapp3.1\07.ConcatNames.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\07.ConcatNames\07.ConcatNames\obj\Debug\netcoreapp3.1\07.ConcatNames.genruntimeconfig.cache

@@ -1,0 +1,14 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\11.RefactorPyramidVolume\11.RefactorPyramidVolume\bin\Debug\netcoreapp3.1\11.RefactorPyramidVolume.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\11.RefactorPyramidVolume\11.RefactorPyramidVolume\bin\Debug\netcoreapp3.1\11.RefactorPyramidVolume.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\11.RefactorPyramidVolume\11.RefactorPyramidVolume\bin\Debug\netcoreapp3.1\11.RefactorPyramidVolume.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\11.RefactorPyramidVolume\11.RefactorPyramidVolume\bin\Debug\netcoreapp3.1\11.RefactorPyramidVolume.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\11.RefactorPyramidVolume\11.RefactorPyramidVolume\bin\Debug\netcoreapp3.1\11.RefactorPyramidVolume.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\11.RefactorPyramidVolume\11.RefactorPyramidVolume\bin\Debug\netcoreapp3.1\11.RefactorPyramidVolume.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\11.RefactorPyramidVolume\11.RefactorPyramidVolume\obj\Debug\netcoreapp3.1\11.RefactorPyramidVolume.csproj.AssemblyReference.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\11.RefactorPyramidVolume\11.RefactorPyramidVolume\obj\Debug\netcoreapp3.1\11.RefactorPyramidVolume.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\11.RefactorPyramidVolume\11.RefactorPyramidVolume\obj\Debug\netcoreapp3.1\11.RefactorPyramidVolume.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\11.RefactorPyramidVolume\11.RefactorPyramidVolume\obj\Debug\netcoreapp3.1\11.RefactorPyramidVolume.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\11.RefactorPyramidVolume\11.RefactorPyramidVolume\obj\Debug\netcoreapp3.1\11.RefactorPyramidVolume.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\11.RefactorPyramidVolume\11.RefactorPyramidVolume\obj\Debug\netcoreapp3.1\11.RefactorPyramidVolume.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\11.RefactorPyramidVolume\11.RefactorPyramidVolume\obj\Debug\netcoreapp3.1\11.RefactorPyramidVolume.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\02. Data Types and Variables\Lab\11.RefactorPyramidVolume\11.RefactorPyramidVolume\obj\Debug\netcoreapp3.1\11.RefactorPyramidVolume.genruntimeconfig.cache

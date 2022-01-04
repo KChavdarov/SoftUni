@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "35c1335f-7905-49c0-bcea-dba8f719eb3b": {
+      "ProjectGuid": "35c1335f-7905-49c0-bcea-dba8f719eb3b",
+      "DisplayName": "04.PrintAndSum",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

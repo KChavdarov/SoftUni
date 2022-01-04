@@ -1,0 +1,14 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\04.ArrayRotation\bin\Debug\netcoreapp3.1\04.ArrayRotation.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\04.ArrayRotation\bin\Debug\netcoreapp3.1\04.ArrayRotation.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\04.ArrayRotation\bin\Debug\netcoreapp3.1\04.ArrayRotation.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\04.ArrayRotation\bin\Debug\netcoreapp3.1\04.ArrayRotation.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\04.ArrayRotation\bin\Debug\netcoreapp3.1\04.ArrayRotation.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\04.ArrayRotation\bin\Debug\netcoreapp3.1\04.ArrayRotation.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\04.ArrayRotation\obj\Debug\netcoreapp3.1\04.ArrayRotation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\04.ArrayRotation\obj\Debug\netcoreapp3.1\04.ArrayRotation.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\04.ArrayRotation\obj\Debug\netcoreapp3.1\04.ArrayRotation.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\04.ArrayRotation\obj\Debug\netcoreapp3.1\04.ArrayRotation.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\04.ArrayRotation\obj\Debug\netcoreapp3.1\04.ArrayRotation.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\04.ArrayRotation\obj\Debug\netcoreapp3.1\04.ArrayRotation.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\04.ArrayRotation\obj\Debug\netcoreapp3.1\04.ArrayRotation.genruntimeconfig.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\03. Arrays\Workshop\04.ArrayRotation\obj\Debug\netcoreapp3.1\04.ArrayRotation.csproj.AssemblyReference.cache

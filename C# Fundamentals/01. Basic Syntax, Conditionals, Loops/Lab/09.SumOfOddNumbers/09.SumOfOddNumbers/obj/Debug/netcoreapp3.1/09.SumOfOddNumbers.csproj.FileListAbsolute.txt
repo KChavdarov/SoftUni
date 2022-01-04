@@ -1,0 +1,13 @@
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\09.SumOfOddNumbers\09.SumOfOddNumbers\bin\Debug\netcoreapp3.1\09.SumOfOddNumbers.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\09.SumOfOddNumbers\09.SumOfOddNumbers\bin\Debug\netcoreapp3.1\09.SumOfOddNumbers.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\09.SumOfOddNumbers\09.SumOfOddNumbers\bin\Debug\netcoreapp3.1\09.SumOfOddNumbers.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\09.SumOfOddNumbers\09.SumOfOddNumbers\bin\Debug\netcoreapp3.1\09.SumOfOddNumbers.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\09.SumOfOddNumbers\09.SumOfOddNumbers\bin\Debug\netcoreapp3.1\09.SumOfOddNumbers.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\09.SumOfOddNumbers\09.SumOfOddNumbers\bin\Debug\netcoreapp3.1\09.SumOfOddNumbers.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\09.SumOfOddNumbers\09.SumOfOddNumbers\obj\Debug\netcoreapp3.1\09.SumOfOddNumbers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\09.SumOfOddNumbers\09.SumOfOddNumbers\obj\Debug\netcoreapp3.1\09.SumOfOddNumbers.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\09.SumOfOddNumbers\09.SumOfOddNumbers\obj\Debug\netcoreapp3.1\09.SumOfOddNumbers.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\09.SumOfOddNumbers\09.SumOfOddNumbers\obj\Debug\netcoreapp3.1\09.SumOfOddNumbers.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\09.SumOfOddNumbers\09.SumOfOddNumbers\obj\Debug\netcoreapp3.1\09.SumOfOddNumbers.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\09.SumOfOddNumbers\09.SumOfOddNumbers\obj\Debug\netcoreapp3.1\09.SumOfOddNumbers.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\09.SumOfOddNumbers\09.SumOfOddNumbers\obj\Debug\netcoreapp3.1\09.SumOfOddNumbers.genruntimeconfig.cache
