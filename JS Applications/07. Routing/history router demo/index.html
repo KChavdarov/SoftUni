@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script.js"></script>
+    <title>History routing demo</title>
+</head>
+
+<body>
+    <h1>Welcome to the history routing demo</h1>
+    <nav>
+        <a href="/home">Home</a>
+        <a href="/catalog">Catalog</a>
+        <a href="/about">About us</a>
+    </nav>
+    <main>
+        <h2>Home page</h2>
+        <p>Home page content</p>
+    </main>
+
+    <script>
+        const pages = {
+            '/home': '<h2>Home page</h2><p>Home page content</p>',
+            '/catalog': '<h2>Catalog page</h2><p>List of recent articles <a href="/catalog/123">Article 123</a></p>',
+            '/about': '<h2>About us</h2><p>Contact information</p>',
+            '/catalog/123': '<h2>Article 123</h2><p>Detailed information about article 123</p>'
+        }
+        const defaultPage = '<h2>404</h2><p>Page not found</p>'
+
+        const main = document.querySelector('main');
+
+        document.body.addEventListener('click', event => {
+            if (event.target.tagName == 'A') {
+                console.log('asd');
+                event.preventDefault();
+                window.history.pushState({}, '', (event.target.href));
+                update();
+            }
+        })
+
+
+        window.addEventListener('popstate', update)
+
+        update()
+
+        function update() {
+            const pathname = window.location.pathname;
+            main.innerHTML = pages[pathname] || defaultPage;
+        }
+    </script>
+</body>
+
+</html>

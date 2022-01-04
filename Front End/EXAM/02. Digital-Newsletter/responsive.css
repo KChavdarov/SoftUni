@@ -1,0 +1,52 @@
+/* TODO: Add media queries */
+
+@media (max-width:884px) {
+
+    main {
+        padding: 0 2rem;
+    }
+
+    .newsletter-intro {
+        padding: 1em 0;
+    }
+
+    .newsletter-boxes {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .newsletter-boxe {
+        margin: 1.5em 1em
+    }
+
+    .newsletter-bottom {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 3em;
+        margin-bottom: 3em;
+    }
+
+
+    .newsletter-bottom hr {
+        margin: 2em 1em;
+    }
+
+    .newsletter-bottom h4 {
+        text-align: left;
+        margin: 1em;
+
+    }
+
+    .newsletter-bottom-content {
+        margin: 0;
+    }
+
+   
+    .newsletter-bottom-content-links, .newsletter-bottom-content p {
+        text-align: left;
+    }
+
+    .bottom-logo {
+        width: 25%;
+    }
+}

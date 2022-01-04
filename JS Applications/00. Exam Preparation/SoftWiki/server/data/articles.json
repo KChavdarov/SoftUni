@@ -1,0 +1,34 @@
+{
+    "1": {
+        "_id": 1,
+        "title": "Arrays",
+        "category": "JavaScript",
+        "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, recusandae voluptatibus inventore rem, doloremque accusantium enim dicta, odit maiores magni deserunt modi placeat minima officiis debitis dolorum! Iusto, culpa veniam!",
+        "author": "35c62d76-8152-4626-8712-eeb96381bea8",
+        "authorEmail": "peter@abv.bg"
+    },
+    "2": {
+        "_id": 2,
+        "title": "Dictionaries",
+        "category": "C#",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ut aut eveniet maxime optio? Rerum quasi, quidem ab est ea fuga minus repudiandae blanditiis nihil fugiat. Iure eos soluta saepe.",
+        "author": "847ec027-f659-4086-8032-5173e2f9c93a",
+        "authorEmail": "mary@abv.bg"
+    },
+    "3": {
+        "_id": 3,
+        "title": "JDK",
+        "category": "Java",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ut aut eveniet maxime optio? Rerum quasi, quidem ab est ea fuga minus repudiandae blanditiis nihil fugiat. Iure eos soluta saepe.",
+        "author": "847ec027-f659-4086-8032-5173e2f9c93a",
+        "authorEmail": "mary@abv.bg"
+    },
+    "4": {
+        "_id": 4,
+        "title": "Django",
+        "category": "Python",
+        "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, recusandae voluptatibus inventore rem, doloremque accusantium enim dicta, odit maiores magni deserunt modi placeat minima officiis debitis dolorum! Iusto, culpa veniam!",
+        "author": "35c62d76-8152-4626-8712-eeb96381bea8",
+        "authorEmail": "peter@abv.bg"
+    }
+}

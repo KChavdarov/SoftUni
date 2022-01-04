@@ -1,0 +1,110 @@
+@import url('/styles/typography.css');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.gallery-item:nth-child(1) {
+    background: #283048;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #859398, #283048);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #859398, #283048);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.gallery-item:nth-child(2) {
+    background: #DC2424;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4A569D, #DC2424);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4A569D, #DC2424);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gallery-item:nth-child(3) {
+    background: #3D7EAA;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFE47A, #3D7EAA);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFE47A, #3D7EAA);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.gallery-item figure {
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gallery-item figcaption {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #Fff;
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+}
+
+.gallery-item .image {
+    display: block;
+    overflow: hidden;
+    border-radius: 0.4rem;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item .image::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    border-radius: 0.4rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    opacity: 0.5;
+}
+
+.gallery-item .image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.gallery-item figure:hover::after,
+.gallery-item figure:hover figcaption {
+    display: none;
+}
+
+.gallery-item.ar-portrait figure {
+    width: auto;
+    height: 80%;
+}
+
+.gallery-item.ar-portrait .image {
+    width: auto;
+    height: 100%;
+}
+
+.gallery-item.ar-portrait .image img {
+    width: auto;
+    height: 100%;
+}
+
+/* .gallery-item figure:hover {
+    width: 60%;
+} */

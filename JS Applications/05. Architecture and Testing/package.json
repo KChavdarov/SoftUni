@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "chai": "^4.3.3",
+    "playwright-chromium": "^1.9.2"
+  }
+}

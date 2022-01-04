@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+.showcase::after {
+    content: '';
+    display: block;
+    height: 100vh;
+    width: 100%;
+    background-image: url(/img/showcase.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(10px);
+    transition: filter 1s;
+}
+
+.showcase:hover::after {
+    filter: blur(0px);
+}
+
+.showcase .content {
+    position: absolute;
+    width: 18rem;
+    height: 20rem;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: filter 1s;
+    filter: blur(0px);
+}
+
+.showcase:hover .content {
+    filter: blur(2px);
+}
+
+header .content .logo {
+    height: 15rem;
+    width: 15rem;
+}
+
+.services .container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.services .service {
+    flex: 0 1 18rem;
+    text-align: center;
+    margin: 5rem 1rem;
+}
+
+.about {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.about .container {
+    flex: 0 1 54rem;
+    display: flex;
+    justify-content: center;
+
+}
+
+.about .container i,
+.about .container .wrapper {
+    flex: 0 1 21rem;
+    margin: 2rem 1rem;
+}

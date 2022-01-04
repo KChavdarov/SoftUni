@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    align-self: stretch;
+}
+
+ul.gallery {
+    align-self: stretch;
+    list-style: none inside;
+    background-color: ;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 1%;
+    flex: 0 1 10rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+    height: 100%;
+    width: auto;
+}
+
+.card:active {
+    flex-basis: auto;
+}

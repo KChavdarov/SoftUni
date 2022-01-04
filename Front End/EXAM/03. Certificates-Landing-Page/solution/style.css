@@ -1,0 +1,176 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@font-face {
+    font-family: "Lato";
+    src: url("./Lato-Regular.ttf") format("TrueType");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: 16px/1.5 "Lato", sans-serif;
+    font-family: "Lato";
+    color: rgb(84, 84, 109);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1rem;
+}
+
+li {
+    list-style: none outside;
+}
+
+button,
+.button {
+    display: block;
+    padding: 0.2em 1em;
+    border-radius: 4em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    height: 100vh;
+}
+
+/* Header Styles */
+
+header {
+    padding: 0.5em 7em;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.3);
+}
+
+header nav {
+    margin-left: auto;
+}
+
+header ul li {
+    display: inline-block;
+    margin: 0.2em;
+}
+
+.button.login {
+    background-color: rgb(155, 93, 198);
+    margin: 0.4em;
+    color: white;
+}
+
+
+
+
+/* Main Styles */
+
+.background {
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    background-color: rgb(84, 84, 109);
+    position: absolute;
+    bottom: 2em;
+    right: -2rem;
+    z-index: -1;
+}
+
+.background img {
+    height: auto;
+    position: absolute;
+    right: 3rem;
+    bottom: 6rem;
+}
+
+
+main article {
+    padding: 3em 7em;
+    position: relative;
+    overflow: hidden;
+}
+
+.diplomas::after {
+    clear: both;
+}
+
+.diplomas .image-container {
+    float: right;
+    margin: 2em;
+}
+
+
+.certificates {
+    background-color: rgb(20, 22, 43);
+    color: white;
+    overflow: visible;
+    display: flex;
+}
+
+.certificates .image-container {
+    margin: 2em;
+    order: 1;
+    height: 4em;
+    margin-top: 0;
+    padding: 0 1em;
+    background-color: transparent;
+}
+
+.certificates .image-container img {
+    display: block;
+    background-color: transparent;
+
+}
+
+
+.career {
+    display: flex;
+}
+
+.career .image-container {
+    margin: 0 2em;
+}
+
+.button.empty {
+    display: inline-block;
+    color: rgb(155, 93, 198);
+    border: 1px solid rgb(155, 93, 198);
+    margin-top: 1em;
+    font-weight: normal;
+}
+
+/* Footer Styles */
+
+footer {
+
+    background: rgb(44, 44, 58);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2em 7em;
+}
+
+h4 {
+    margin-bottom: 0.5rem;
+    color: rgb(155, 93, 198);
+}
+
+footer section {
+    margin-bottom: 0.5rem;
+}
+
+
+footer i {
+    font-size: 32px;
+}

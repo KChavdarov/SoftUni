@@ -1,0 +1,47 @@
+@media (min-width:415px) and (max-width: 768px) {
+    body {
+        height: 100vh;
+    }
+
+    .main-movie{
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-movie ul{
+        width: 80%;
+        justify-content: center;
+        flex-wrap: wrap;
+        display: flex;
+        
+    }
+    
+    .main-movie-poster img{
+        height: auto;
+        display: none;
+    }
+    
+    .main-movie-trailer {
+        /* flex: 1 1 auto; */
+    }
+
+    .main-movie-trailer iframe{
+        width: 100%;
+        height: auto;
+        background-color: lawngreen;
+    }
+
+    .main-movie ul li{
+        flex 1 1 auto;
+        padding: 0;
+    }
+    
+    .main-movie-poster {
+        display: none;
+    }
+}
+
+
+
+
+@media (max-width: 414px) {}

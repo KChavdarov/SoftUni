@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+body {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(./image.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input {
+    display: block;
+    border: none;
+    outline: none;
+}
+
+input::placeholder {
+    font-family: 'Poppins',serif;
+    font-size: 1rem;
+}
+
+.login {
+    max-width: 20rem;
+    flex-grow: 1;
+}
+
+.login h2{
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+}
+
+.login-form {
+    background: white;
+    border-radius: 0.5em;
+}
+
+.input-field {
+    display: flex;
+    padding: 2em 2em 0 2em;
+    border-bottom: 1px solid rgba(232, 232, 232, 1);
+}
+.input-field label {
+    color: rgb(201, 201, 201);
+}
+
+.input-field input{
+    padding: 0.5em 2em;
+    flex-grow: 1;
+}
+
+button,
+.button {
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    background: rgb(212, 23, 114);
+    padding: 0.5em 3em;
+    border-radius: 2em;
+}
+
+.button-wrapper {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+}

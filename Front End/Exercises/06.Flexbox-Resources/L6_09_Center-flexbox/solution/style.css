@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font: 16px/1.5 Helvetica, sans-serif;
+}
+
+h3 {
+    font-family: Georgia, serif;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 0.5rem;
+}
+
+body{
+    background-color: rgb(238, 238, 238);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    flex-basis: 25rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+}

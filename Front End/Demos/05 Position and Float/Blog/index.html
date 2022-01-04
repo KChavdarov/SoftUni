@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/site.css">
+    <title>Blog layout with inline-block</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="site-header">
+            <h1 class="site-tile">
+                <a href="/">Blog title</a>
+            </h1>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Fun</a></li>
+                    <li>
+                        <a href="#">About</a>
+                        <ul>
+                            <li><a href="#">Team</a></li>
+                            <li>
+                                <a href="#">Work</a>
+                                <ul>
+                                    <li><a href="#">Project 1</a></li>
+                                    <li><a href="#">Project 2</a></li>
+                                    <li><a href="#">Project 3</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">History</a></li>
+                        </ul>    
+                    </li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="site-content">
+            <section class="main-content">
+                <article class="post">
+                    <section class="image">
+                        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80">
+                    </section>
+
+                    <header>
+                        <h3>Article title goes here</h3>
+                        <p class="meta">Published by <a href="#">Kiril</a> on <time>8 April 2021</time></p>
+                    </header>
+
+                    <section class="content">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque alias, iure sit commodi nobis ut veniam id eos ipsa ipsam dolor facilis dignissimos laboriosam vero voluptas animi minus molestiae. Aspernatur.</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore harum maxime nulla fugit, voluptatum sed, tempora, amet unde nam quo asperiores autem? Magni cumque aperiam cupiditate sequi vero doloremque est.</p>
+                    </section>
+
+                    <footer>
+                        <p>Tags:
+                            <a href="#">something</a>
+                            <a href="#">something else</a>
+                            <a href="#">other tag</a>
+                        </p>
+                    </footer>
+                </article>
+
+                <article class="post">
+
+                    <section class="image">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80">
+                    </section>
+
+                    <header>
+                        <h3>Article title goes here</h3>
+                        <p class="meta">Published by <a href="#">Kiril</a> on <time>8 April 2021</time></p>
+                    </header>
+
+
+                    <section class="content">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque alias, iure sit commodi nobis ut veniam id eos ipsa ipsam dolor facilis dignissimos laboriosam vero voluptas animi minus molestiae. Aspernatur.</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore harum maxime nulla fugit, voluptatum sed, tempora, amet unde nam quo asperiores autem? Magni cumque aperiam cupiditate sequi vero doloremque est.</p>
+                    </section>
+
+                    <footer>
+                        <p>Tags:
+                            <a href="#">something</a>
+                            <a href="#">something else</a>
+                            <a href="#">other tag</a>
+                        </p>
+                    </footer>
+                </article>
+
+                <article class="post">
+                    <section class="image">
+                        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80">
+                    </section>
+
+                    <header>
+                        <h3>Article title goes here</h3>
+                        <p class="meta">Published by <a href="#">Kiril</a> on <time>8 April 2021</time></p>
+                    </header>
+
+                    <section class="content">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque alias, iure sit commodi nobis ut veniam id eos ipsa ipsam dolor facilis dignissimos laboriosam vero voluptas animi minus molestiae. Aspernatur.</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore harum maxime nulla fugit, voluptatum sed, tempora, amet unde nam quo asperiores autem? Magni cumque aperiam cupiditate sequi vero doloremque est.</p>
+                    </section>
+
+                    <footer>
+                        <p>Tags:
+                            <a href="#">something</a>
+                            <a href="#">something else</a>
+                            <a href="#">other tag</a>
+                        </p>
+                    </footer>
+                </article>
+            </section>
+
+            <aside class="main-sidebar">
+                <section>
+                    <header>
+                        <h4>Search</h4>
+                    </header>
+                    <input type="search">
+                </section>
+
+                <section>
+                    <header>
+                        <h4>Latest posts</h4>
+                    </header>
+                    <ul>
+                        <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit.</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit amet consectetur.</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <header>
+                        <h4>Archive</h4>
+                    </header>
+                    <ul>
+                        <li><a href="#">March 2021</a></li>
+                        <li><a href="#">February 2021</a></li>
+                        <li><a href="#">January 2021</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </main>
+
+        <footer class="site-footer">
+            <p>Blog Title 1992-2021 &copy; All rights reserved</p>
+        </footer>
+    </div>
+</body>
+
+</html>

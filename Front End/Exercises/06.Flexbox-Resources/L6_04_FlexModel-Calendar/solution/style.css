@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 16px Helevetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.container {
+    background-color: lightblue;
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    max-width: 65vw;
+    min-width: fit-content;
+    justify-content: center;
+}
+
+.container section {
+    display: flex;
+}
+
+.container section span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.notes {
+    flex-flow: column wrap;
+    flex: 1 1 auto;
+}
+
+.notes span {
+    flex: 1 1 auto;
+}
+
+.week {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 3 1 auto;
+}
+
+.week>* {
+    flex: 1 1 auto;
+}
+
+.workdays,
+.weekend {
+    display: flex;
+    font-size: 0.8rem;
+}
+
+.workdays>* {
+    flex: 1 1 20%;
+}
+
+.weekend>* {
+    flex: 1 1 auto;
+}

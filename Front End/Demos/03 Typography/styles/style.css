@@ -1,0 +1,18 @@
+body {
+    padding: 1em 2 em;
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+article header,
+article footer {
+    color: brown;
+}
+
+article header {
+    border-bottom: 0.2em solid currentColor;
+}
+
+article footer {
+    border-top: 0.2em solid currentColor;
+}

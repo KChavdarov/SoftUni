@@ -1,0 +1,15 @@
+body {
+    width: 980px;
+    margin: auto;
+    font-size: 24px;
+}
+
+article footer {
+    color: #bbb;
+}
+
+article {
+    box-shadow: 0px 0px 20px 2px #ccc;
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+}

@@ -1,0 +1,22 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+section {
+    text-align: center;
+    width: 250px;
+    height: 250px;
+    border: 4px dotted rgb(47, 196, 47);
+}
+
+p {
+    width: 100%;
+    border: 5px solid blue;
+    padding: 20px;
+}

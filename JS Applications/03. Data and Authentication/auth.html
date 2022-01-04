@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        input {
+            display: block;
+        }
+    </style>
+    <title>Auth Demo</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>
+            <h2>Register</h2>
+        </legend>
+        <form id="registerForm" method="POST" action="/users/register">
+            <label for="email">Email</label><input type="text" name="email" id="email" />
+            <label for="password">Password</label><input type="password" name="password" id="password" />
+            <label for="repass">Repeat password</label><input type="password" name="repass" id="repass" />
+            <input type="submit" value="Register" />
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>
+            <h2>Login</h2>
+        </legend>
+        <form id="loginForm" method="POST" action="/users/register">
+            <label for="email1">Email</label><input type="text" name="email" id="email1" />
+            <label for="password1">Password</label><input type="password" name="password" id="password1" />
+            <input type="submit" value="Log in" />
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>
+            <h2>Create Entry</h2>
+        </legend>
+        <form id="createForm" method="POST" action="/users/register">
+            <label for="name">Name</label><input type="text" name="name" id="name" />
+            <label for="value">Value</label><input type="number" name="value" id="value" />
+            <input type="submit" value="Publish" />
+        </form>
+    </fieldset>
+
+    <script>
+        const registerForm = document.getElementById('registerForm');
+        const loginForm = document.getElementById('loginForm');
+        const createForm = document.getElementById('createForm');
+
+        registerForm.addEventListener('submit', event => {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const email = formData.get('email');
+            const password = formData.get('password');
+            const repass = formData.get('repass');
+
+            if (email == '' || password == '') {
+                alert('All fields are mandatory!');
+            } else if (password !== repass) {
+                alert('Passwords don\'t match!')
+            } else {
+                register(email, password);
+            }
+
+        });
+
+        loginForm.addEventListener('submit', event => {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const email = formData.get('email');
+            const password = formData.get('password');
+
+            login(email, password);
+        });
+
+        createForm.addEventListener('submit', async event => {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const name = formData.get('name');
+            const value = formData.get('value');
+
+            const result = await postData({
+                name,
+                val: value
+            });
+
+            console.log(result);
+        });
+
+        async function postData(entry) {
+            const options = {
+                method: 'post',
+                headers: {},
+                body: JSON.stringify(entry),
+            }
+            const token = sessionStorage.getItem('authToken');
+            if (token !== null) {
+                options.headers['X-Authorization'] = token;
+            }
+            const response = await fetch('http://localhost:3030/data/records', options)
+            return await response.json();
+        }
+
+        async function register(email, password) {
+            const response = await fetch('http://localhost:3030/users/register', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email,
+                    password
+                }),
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                sessionStorage.setItem('authToken', data.accessToken);
+            } else {
+                alert(`Error: ${data.message}`);
+            }
+        }
+
+        async function login(email, password) {
+            const response = await fetch('http://localhost:3030/users/login', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email,
+                    password
+                })
+            })
+
+            const data = await response.json();
+            if (response.ok) {
+                sessionStorage.setItem('authToken', data.accessToken);
+            } else {
+                alert(`Error: ${data.message}`);
+            }
+        }
+
+        async function getData() {
+            const options = {
+                method: 'get',
+                headers: {}
+            }
+            const token = sessionStorage.getItem('authToken');
+            if (token !== null) {
+                options.headers['X-Authorization'] = token;
+            }
+            const response = await fetch('http://localhost:3030/data/records', options)
+            return await response.json();
+        }
+    </script>
+</body>
+
+</html>

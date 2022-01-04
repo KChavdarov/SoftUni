@@ -1,0 +1,18 @@
+@import url('typography.css');
+@import url('reset.css');
+
+body{
+    background-color: rgb(238, 238, 238);
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    padding-bottom: 1.5em;
+}
+
+
+
+

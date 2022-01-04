@@ -1,0 +1,70 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.gallery-item1 {
+    background: linear-gradient(to right, #00f260, #0575e6);
+}
+
+.gallery-item2 {
+    background: linear-gradient(to left, #3a1c71, #d76d77, #ffaf7b);
+}
+
+.viewport {
+    height: calc(100vh);
+    position: relative;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.card {
+    width: 30%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5)
+}
+
+.gallery-item1 .card::before {
+    display: block;
+    font: normal normal normal 1.5rem/1 FontAwesome;
+    color: white;
+    content: '\f0c1';
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+.gallery-item2 .card::before {
+    display: block;
+    font: normal normal normal 1.5rem/1 FontAwesome;
+    color: white;
+    content: '\f005';
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+.card::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    bottom: 0; left: 0;
+    background: radial-gradient(rgba(0,0,0,0), rgba(0,0,0,1));
+    /* background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0), rgba(0,0,0,1)); */
+    opacity: 0.6;
+} 

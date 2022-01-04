@@ -1,0 +1,45 @@
+/* Global Typographic Styles */
+html {
+    font: normal 16px/1.5 Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(51, 51, 51);
+}
+
+body {
+    font: inherit;
+    color: inherit;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    color: inherit;
+    padding-top: 0.4em;
+    padding-bottom: 0.3em;
+}
+
+h1 {font-size: 3.052rem;}
+h2 {font-size: 2.441rem;}
+h3 {font-size: 1.953rem;}
+h4 {font-size: 1.563rem;}
+h5 {font-size: 1.25rem;}
+h6 {font-size: 1rem;}
+
+/* Paragraphs */
+p {
+    padding-bottom: 1.5rem;
+}
+
+
+/* Lists */
+ul, ol {
+    padding-bottom: 1.5em;
+    padding-left: 3em;
+}
+
+li ul, li ol, ul ul, ul ol, ol ul, ol ol {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+
+

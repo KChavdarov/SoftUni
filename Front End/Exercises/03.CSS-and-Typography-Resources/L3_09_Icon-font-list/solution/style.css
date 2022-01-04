@@ -1,0 +1,10 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+section{
+    padding: 50px;
+}
+
+ul.icons{
+    list-style-type: none;
+    font-family: sans-serif;
+}

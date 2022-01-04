@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Components Demo</title>
+</head>
+
+<body>
+    <template id="my-template">
+        <style>
+            h1 {
+                color: red;
+            }
+        </style>
+        <article>
+
+            <h1>
+                <slot name="title">My Title</slot>
+            </h1>
+            <p>
+                <slot name="description">Description</slot>
+            </p>
+            <p>
+                <slot></slot>
+            </p>
+        </article>
+    </template>
+    <main id="main">
+        <card-element color="blue">
+            <span slot="title">John Peters</span>
+            <span slot="description">My Description</span>
+            <ul>
+                <li>One</li>
+                <li>Two</li>
+                <li>Three</li>
+            </ul>
+        </card-element>
+        <card-element id="my-element" visible></card-element>
+    </main>
+    <button id="actionBtn">Click me!</button>
+
+
+    <script type="module">
+
+        class cardElement extends HTMLElement{
+            constructor(){
+                super();
+                this.attachShadow({mode:'open'})
+            }
+            
+            connectedCallback(){
+                const color = this.getAttribute('color');
+                const content = tmp.content.cloneNode(true);
+                content.querySelector('h1').style.color = color;
+                this.shadowRoot.appendChild(content);
+            }
+
+            attributeChangedCallback(name,old,value){
+                console.log(name,old,value);
+                if (value == null) {
+                    this.style.display = 'none';
+                } else {
+                    this.style.display = 'block';
+                }
+            }
+
+            static get observedAttributes(){
+                return['visible']
+            }
+        }
+        const tmp=document.getElementById('my-template');
+        
+        window.customElements.define('card-element', cardElement)
+        
+        const main = document.getElementById('main')
+
+        document.getElementById('my-element').addEventListener('click', event => {
+            console.log('changed');
+            event.currentTarget.removeAttribute('visible');
+        })
+
+        document.getElementById('actionBtn').addEventListener('click', event => {
+
+
+            // main.appendChild(tmp.content.cloneNode(true));
+
+            
+            const myElement = document.createElement('card-element');
+            main.appendChild(myElement);
+
+            // myElement.shadowRoot.querySelector('p').textContent = 'changed content'
+            
+        })
+    </script>
+</body>
+
+</html>

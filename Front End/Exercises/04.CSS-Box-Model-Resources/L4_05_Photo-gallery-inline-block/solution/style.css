@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: lightgray;
+}
+
+ul.gallery {
+    list-style: none;
+    padding: 0;
+    margin: 2rem;
+}
+
+ul.gallery li {
+    display: inline-block;
+    list-style: none;
+    width: 31%;
+    vertical-align: middle;
+    padding-bottom: 2rem;
+    border: 0.4rem solid black;
+    padding: 0.4em;
+    margin: 0.6%;
+    background-color: white;
+
+}
+
+ul.gallery img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}

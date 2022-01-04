@@ -1,0 +1,55 @@
+fieldset {
+    border: 2px solid #CCC;
+    padding: 1.5em 2em;
+}
+
+fieldset+fieldset {
+    margin-top: 2em;
+}
+
+fieldset p {
+    padding-bottom: 0.5em;
+}
+
+p.submit{
+    padding-top: 0.5em;
+    margin-top: 2rem;
+}
+
+
+fieldset p.submit {
+    padding-top: 0.5em;
+}
+
+legend {
+    padding: 0 0.5em;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+select,
+input {
+    display: block;
+    border: 2px solid #CCC;
+    padding: 0.5em 1em;
+    background-color: white;
+    border-radius: 0.3em;
+    width: 100%;
+    outline: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+select:focus,
+input:focus {
+    border-color: #47A;
+}
+
+input[type="submit"] {
+    width: auto;
+    background-color: #369;
+    color: white;
+    border-color: #258;
+    cursor: pointer;
+}

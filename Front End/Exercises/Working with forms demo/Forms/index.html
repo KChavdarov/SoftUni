@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <form action="#" method="GET">
+        <fieldset>
+            <legend>
+                Contact Information
+            </legend>
+            <p>
+                <label for="field-first-name">First Name</label>
+                <input type="text" name="first-name" id="field-first-name" placeholder="John">
+            </p>
+            <p>
+                <label for="field-last-name">Last name</label>
+                <input type="text" name="last-name" id="field-last-name" placeholder="Smith">
+            </p>
+            <p>
+                <label for="field-email">Email</label>
+                <input type="email" name="email" id="field-email" placeholder="john.smith@email.com" required>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>
+                Feedback
+            </legend>
+            <p>
+                <label for="field-first-name">Age</label>
+                <select name="age" id="field-age">
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                </select>
+            </p>
+            <p>
+                <label for="field-last-name">Last name</label>
+                <input type="text" name="last-name" id="field-last-name" placeholder="Smith">
+            </p>
+            <p>
+                <label for="field-email">Email</label>
+                <input type="email" name="email" id="field-email" placeholder="john.smith@email.com" required>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>
+                Login Information
+            </legend>
+            <p>
+                <label for="field-username">Username</label>
+                <span class="input-wrapper">
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                    <input type="text" name="username" id="field-username" placeholder="John">
+                </span>
+            </p>
+            <p>
+                <label for="field-password">Password</label>
+                <input type="password" name="password" id="field-password">
+            </p>
+            <p>
+                <label for="field-email">Email</label>
+                <input type="email" name="email" id="field-email" placeholder="john.smith@email.com" required>
+            </p>
+        </fieldset>
+        <p class="submit">
+            <input type="submit" value="Update">
+        </p>
+    </form>
+
+</body>
+
+</html>

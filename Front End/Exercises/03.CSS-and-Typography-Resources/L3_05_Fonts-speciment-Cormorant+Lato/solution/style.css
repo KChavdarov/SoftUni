@@ -1,0 +1,11 @@
+h1,h2 {
+    font-family: 'Cormorant',serif;
+    font-weight: bold;
+    line-height: 1.2;
+}
+main{
+    margin: 50px;
+    font-size: 16;
+    font-family: 'Lato',sans-serif;
+    line-height: 1.5;
+}

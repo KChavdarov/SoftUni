@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 24px Helvetica, sans-serif;
+    padding-top: 2rem;
+}
+
+.container {
+    max-width: 80rem;
+    height: 80vh;
+    margin: 0 auto;
+    background-color: lightblue;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between ;
+    align-items: stretch;
+}
+
+.item,
+.container::after {
+    padding: 2rem;
+    border: 2px solid black;
+    display: none;
+}
+
+.item:nth-child(1){
+    display: block;
+    flex: 0 1 54rem;
+}
+
+.item:nth-child(2){
+    display: block;
+    flex: 0 2 24rem;
+}

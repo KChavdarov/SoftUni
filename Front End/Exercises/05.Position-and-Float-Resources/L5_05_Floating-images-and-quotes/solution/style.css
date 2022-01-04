@@ -1,0 +1,96 @@
+/* Reset Whtiespace */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Typography */
+body {
+    font: normal 16px/1.5 Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+h3 {
+    font-size: 2.0rem;
+}
+
+h1,
+h2,
+h3,
+blockquote {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    padding-bottom: 1rem;
+}
+
+p {
+    padding-bottom: 1rem;
+}
+
+/* Layout and Styling */
+body {
+    padding: 7% 10%;
+    background-color: rgb(238, 238, 238);
+}
+
+.site-title {
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: bold;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid black;
+    margin-bottom: 2rem;
+}
+
+article section img {
+    display: block;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid black;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+}
+
+.image-right {
+    float: right;
+    margin-left: 2rem;
+}
+
+.image-left {
+    float: left;
+    margin-right: 2rem;
+}
+
+section {
+    clear: both;
+    padding-bottom: 2rem;
+}
+
+
+.quote-right {
+    float: right;
+    width: 47%;
+    margin-left: 3%;
+    padding-left: 2em;
+    border-left: 2px solid lightgrey;
+    font-style: italic;
+}
+
+blockquote p:last-of-type {
+    font-weight: bold;
+    text-align: right;
+}
+
+/* .author {
+    text-align: right;
+} */

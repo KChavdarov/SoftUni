@@ -1,0 +1,32 @@
+table,
+table tr td,
+table tr th {
+    border: 2px solid #000;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table tr th,
+table tr td {
+    padding: 0.5em 0.6em;
+    line-height: 1;
+}
+
+table thead tr th,
+table tfoot tr td,
+table tfoot tr th {
+    background-color: #ddd;
+}
+
+table tbody tr:nth-child(odd) td {
+    background-color: #fff;
+}
+
+table tbody tr:nth-child(even) td {
+    background-color: #ddd;
+}

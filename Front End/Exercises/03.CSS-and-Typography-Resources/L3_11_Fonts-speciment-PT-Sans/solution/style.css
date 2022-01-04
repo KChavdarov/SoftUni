@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "PT Sans";
+    src: url('./fonts/PTSans-Regular.ttf');
+}
+main{
+    margin: 60px 100px;
+}
+article {
+    font-family: "PT Sans";
+    font-size: 16px;
+    line-height: 1.5;
+}

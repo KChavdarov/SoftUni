@@ -1,0 +1,52 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard {
+    background-color: lightcyan;
+    flex-grow: 1;
+    display: flex;
+}
+
+.dash-nav {
+    background-color: lightgreen;
+}
+
+.dash-main {
+    background-color: #000000;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.dash-header {
+    background-color: red;
+}
+
+.dash-content {
+    flex-grow: 1;
+    background-color: purple;
+}
+
+.dash-footer {
+    background-color: #fff;
+}
+
+.menu li {
+    display: block;
+    list-style: none outside;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+}

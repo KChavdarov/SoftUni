@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    box-shadow: 2px 5px 13px 0px #000000, 8px -15px 31px -12px rgb(0 0 0 / 0%);
+    margin-bottom: 15px;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+}
+
+.container.signin {
+    margin-top: 20px;
+}
+
+textarea {
+    height: 80px;
+}
+
+.error {
+    border: 2px solid red !important;
+}
+
+.like-counter {
+    display: inline-block;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 1em;
+}
+
+#likes button:disabled {
+    background-color: grey;
+}
+
+.pager {
+    margin: 2rem auto;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.pager a {
+    text-decoration: none;
+    color: black;
+}
+
+form.search{
+    margin: 9px 16px;
+    float: left;
+}
+
+form.search input{
+    font-size: 1rem;
+    padding: 5px 0.5rem;
+    border: none;
+    background-color: #f1f1f1;
+}

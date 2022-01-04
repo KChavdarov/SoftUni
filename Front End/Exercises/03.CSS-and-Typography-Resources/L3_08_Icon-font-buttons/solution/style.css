@@ -1,0 +1,24 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+section{
+    margin: 50px;
+}
+
+.button{
+    display: inline-block;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 3px;
+    min-width: 100px;
+}
+
+.button.star{
+    background-color: green;
+}
+.button.email{
+    background-color: orange;
+}

@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: greenyellow;
+    display: flex;
+    padding: 1rem;
+}
+
+.calendar-container {
+    border: 1px solid black ;
+    background-color: hotpink;
+    display: flex;
+    flex-grow: 1;
+}
+
+.week {
+    background-color: khaki;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.notes {
+    background-color: lightcoral;
+    display: flex;
+    flex-direction: column;
+}
+
+.notes >*{
+    flex-grow: 1;
+}
+
+.week >*{
+    flex-grow: 1;
+}
+
+.workdays,
+.weekend {
+    display: flex;
+}
+
+.workdays > *,
+.weekend > *{
+    flex-grow: 1;
+}
+
+.calendar-container section span {
+    border: 1px solid black ;
+}

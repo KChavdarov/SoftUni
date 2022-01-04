@@ -1,0 +1,120 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    font: 16px/1.5 Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+    vertical-align: top;
+    padding: 2% 10%;
+}
+
+.site-title {
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    display: inline-block;
+}
+
+header {
+    border-bottom: 2px solid #000;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+
+h1,
+h2,
+h3 {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    margin: 1rem 0;
+}
+
+
+img {
+    display: inline-block;
+    border: 0.2rem solid black;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.5);
+    padding: 0.5rem;
+    vertical-align: middle;
+}
+
+.image-right {
+    float: right;
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+    vertical-align: bottom;
+}
+
+.image-left {
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 1.5rem;
+    vertical-align: bottom;
+    
+}
+
+.quote-right {
+    width: 50%;
+    float: right;
+    font: italic 1rem/1.5 Georgia, serif;
+    border-left: 0.2rem solid rgba(158, 158, 158, 0.5);
+    padding-left: 2rem;
+}
+
+blockquote p.author {
+    text-align: right;
+    font-weight: bold;
+}
+
+blockquote{
+    font-family: Georgia, serif;
+}
+
+main {
+    float: left;
+    width: 73%;
+}
+
+.sidebar {
+    float: right;
+    width: 22%;
+}
+
+.content::after {
+    display: block;
+    content: " ";
+    clear: both;
+}
+
+.sidebar ul {
+    list-style: square;
+}
+
+a.category,
+a.social {
+    color: limegreen;
+    text-decoration: none;
+}
