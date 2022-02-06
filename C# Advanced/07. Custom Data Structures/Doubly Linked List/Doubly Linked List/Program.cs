@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _07._Doubly_Linked_List
+namespace Doubly_Linked_List
 {
     internal class Program
     {
