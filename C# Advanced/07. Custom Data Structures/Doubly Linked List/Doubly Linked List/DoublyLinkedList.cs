@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Doubly_Linked_List
 {
-    internal class DoublyLinkedList<T>
+    internal class DoublyLinkedList<T> : IEnumerable<LinkedListItem<T>>
     {
         private LinkedListItem<T> first = null;
         private LinkedListItem<T> last = null;
@@ -148,6 +149,24 @@ namespace Doubly_Linked_List
                 callback(current.Value);
                 current = current.Next;
             }
+        }
+
+        public IEnumerator<LinkedListItem<T>> GetEnumerator()
+        {
+            //return new LinkedListEnumerator<T>(first);
+
+            var current = first;
+            while (current != null)
+            {
+                yield return current;
+                current = current.Next;
+            }
+
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

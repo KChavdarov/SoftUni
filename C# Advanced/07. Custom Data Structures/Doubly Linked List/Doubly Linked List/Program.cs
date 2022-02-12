@@ -14,7 +14,12 @@ namespace Doubly_Linked_List
             list.AddLast("l");
             Console.WriteLine(string.Join("-", list.ToArray()));
 
-            list.ForEach(Console.WriteLine);
+            //list.ForEach(Console.WriteLine);
+
+            foreach (var item in list)
+            {
+                Console.WriteLine(item.Value);
+            }
         }
     }
 }
