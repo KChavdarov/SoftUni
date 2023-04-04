@@ -8,19 +8,24 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\ivanovki\\.nuget\\packages\\": {}
+    "C:\\Users\\ivanovki\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ivanovki\\Documents\\GitHub\\SoftUni\\C# Fundamentals\\02. Data Types and Variables\\Workshop\\Lab\\06.EvenOrOddSubtraction\\06.EvenOrOddSubtraction.csproj",
+      "projectUniqueName": "C:\\Users\\ivanovki\\Documents\\GitHub\\SoftUni\\C# Fundamentals\\03. Arrays\\Lab\\06.EvenOrOddSubtraction\\06.EvenOrOddSubtraction.csproj",
       "projectName": "06.EvenOrOddSubtraction",
-      "projectPath": "C:\\Users\\ivanovki\\Documents\\GitHub\\SoftUni\\C# Fundamentals\\02. Data Types and Variables\\Workshop\\Lab\\06.EvenOrOddSubtraction\\06.EvenOrOddSubtraction.csproj",
+      "projectPath": "C:\\Users\\ivanovki\\Documents\\GitHub\\SoftUni\\C# Fundamentals\\03. Arrays\\Lab\\06.EvenOrOddSubtraction\\06.EvenOrOddSubtraction.csproj",
       "packagesPath": "C:\\Users\\ivanovki\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ivanovki\\Documents\\GitHub\\SoftUni\\C# Fundamentals\\02. Data Types and Variables\\Workshop\\Lab\\06.EvenOrOddSubtraction\\obj\\",
+      "outputPath": "C:\\Users\\ivanovki\\Documents\\GitHub\\SoftUni\\C# Fundamentals\\03. Arrays\\Lab\\06.EvenOrOddSubtraction\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\ivanovki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,6 +33,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -51,7 +57,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -60,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

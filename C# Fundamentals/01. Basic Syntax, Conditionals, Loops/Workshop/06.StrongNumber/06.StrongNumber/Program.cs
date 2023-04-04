@@ -8,19 +8,27 @@ namespace _06.StrongNumber
         {
             string numAsString = Console.ReadLine();
             int sum = 0;
+            int num = int.Parse(numAsString);
 
-            for (int i = 0; i < numAsString.Length; i++)
+            while (num > 0)
             {
-                int num = int.Parse(numAsString[i].ToString());
-                int product = 1;
-
-                for (int j = num; j > 1; j--)
-                {
-                    product *= j;
-                }
-
-                sum += product;
+                int digit = num % 10;
+                sum += Factorial(digit);
+                num /= 10;
             }
+
+            //for (int i = 0; i < numAsString.Length; i++)
+            //{
+            //    int num = int.Parse(numAsString[i].ToString());
+            //    int product = 1;
+
+            //    for (int j = num; j > 1; j--)
+            //    {
+            //        product *= j;
+            //    }
+
+            //    sum += product;
+            //}
 
             if (int.Parse(numAsString) == sum)
             {
@@ -30,6 +38,17 @@ namespace _06.StrongNumber
             {
                 Console.WriteLine("no");
             }
+        }
+
+        private static int Factorial(int num)
+        {
+            int result = 1;
+            for (int i = num; i > 1; i--)
+            {
+                result *= i;
+            }
+
+            return result;
         }
     }
 }

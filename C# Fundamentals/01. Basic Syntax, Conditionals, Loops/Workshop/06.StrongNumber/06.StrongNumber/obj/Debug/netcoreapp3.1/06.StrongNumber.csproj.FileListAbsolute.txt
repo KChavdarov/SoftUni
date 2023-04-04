@@ -11,3 +11,17 @@ C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Con
 C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\Workshop\06.StrongNumber\06.StrongNumber\obj\Debug\netcoreapp3.1\06.StrongNumber.dll
 C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\Workshop\06.StrongNumber\06.StrongNumber\obj\Debug\netcoreapp3.1\06.StrongNumber.pdb
 C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditional Statements and Loops\Workshop\06.StrongNumber\06.StrongNumber\obj\Debug\netcoreapp3.1\06.StrongNumber.genruntimeconfig.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditionals, Loops\Workshop\06.StrongNumber\06.StrongNumber\bin\Debug\netcoreapp3.1\06.StrongNumber.exe
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditionals, Loops\Workshop\06.StrongNumber\06.StrongNumber\bin\Debug\netcoreapp3.1\06.StrongNumber.deps.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditionals, Loops\Workshop\06.StrongNumber\06.StrongNumber\bin\Debug\netcoreapp3.1\06.StrongNumber.runtimeconfig.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditionals, Loops\Workshop\06.StrongNumber\06.StrongNumber\bin\Debug\netcoreapp3.1\06.StrongNumber.runtimeconfig.dev.json
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditionals, Loops\Workshop\06.StrongNumber\06.StrongNumber\bin\Debug\netcoreapp3.1\06.StrongNumber.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditionals, Loops\Workshop\06.StrongNumber\06.StrongNumber\bin\Debug\netcoreapp3.1\06.StrongNumber.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditionals, Loops\Workshop\06.StrongNumber\06.StrongNumber\obj\Debug\netcoreapp3.1\06.StrongNumber.csproj.AssemblyReference.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditionals, Loops\Workshop\06.StrongNumber\06.StrongNumber\obj\Debug\netcoreapp3.1\06.StrongNumber.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditionals, Loops\Workshop\06.StrongNumber\06.StrongNumber\obj\Debug\netcoreapp3.1\06.StrongNumber.AssemblyInfoInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditionals, Loops\Workshop\06.StrongNumber\06.StrongNumber\obj\Debug\netcoreapp3.1\06.StrongNumber.AssemblyInfo.cs
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditionals, Loops\Workshop\06.StrongNumber\06.StrongNumber\obj\Debug\netcoreapp3.1\06.StrongNumber.csproj.CoreCompileInputs.cache
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditionals, Loops\Workshop\06.StrongNumber\06.StrongNumber\obj\Debug\netcoreapp3.1\06.StrongNumber.dll
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditionals, Loops\Workshop\06.StrongNumber\06.StrongNumber\obj\Debug\netcoreapp3.1\06.StrongNumber.pdb
+C:\Users\ivanovki\Documents\GitHub\SoftUni\C# Fundamentals\01. Basic Syntax, Conditionals, Loops\Workshop\06.StrongNumber\06.StrongNumber\obj\Debug\netcoreapp3.1\06.StrongNumber.genruntimeconfig.cache

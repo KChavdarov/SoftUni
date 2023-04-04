@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ivanovki\\Documents\\GitHub\\SoftUni\\C# Fundamentals\\01. Basic Syntax, Conditional Statements and Loops\\Workshop\\02.Division\\02.Division\\02.Division.csproj",
+      "projectUniqueName": "C:\\Users\\ivanovki\\Documents\\GitHub\\SoftUni\\C# Fundamentals\\01. Basic Syntax, Conditionals, Loops\\Workshop\\02.Division\\02.Division\\02.Division.csproj",
       "projectName": "02.Division",
-      "projectPath": "C:\\Users\\ivanovki\\Documents\\GitHub\\SoftUni\\C# Fundamentals\\01. Basic Syntax, Conditional Statements and Loops\\Workshop\\02.Division\\02.Division\\02.Division.csproj",
+      "projectPath": "C:\\Users\\ivanovki\\Documents\\GitHub\\SoftUni\\C# Fundamentals\\01. Basic Syntax, Conditionals, Loops\\Workshop\\02.Division\\02.Division\\02.Division.csproj",
       "packagesPath": "C:\\Users\\ivanovki\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ivanovki\\Documents\\GitHub\\SoftUni\\C# Fundamentals\\01. Basic Syntax, Conditional Statements and Loops\\Workshop\\02.Division\\02.Division\\obj\\",
+      "outputPath": "C:\\Users\\ivanovki\\Documents\\GitHub\\SoftUni\\C# Fundamentals\\01. Basic Syntax, Conditionals, Loops\\Workshop\\02.Division\\02.Division\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ivanovki\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

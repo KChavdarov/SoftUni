@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5V0moCzu1vLnKhRqyN2IbxFV8Rr2dn0itdF2w23QP7Odt/4opxk36OZYKDmRnujVHcxzQBPOohwM3NeCh7ez4Q==",
+  "dgSpecHash": "6OYUze9aJh4Ywa/HJGTJpCkyWLzIqp8AO946rF80tm6C0TtCZVzssiKsaFsIhaLMphisqtFMGcOw5+anekuBRA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ivanovki\\Documents\\GitHub\\SoftUni\\C# Fundamentals\\01. Basic Syntax, Conditional Statements and Loops\\09.SumOfOddNumbers\\09.SumOfOddNumbers\\09.SumOfOddNumbers.csproj",
+  "projectFilePath": "C:\\Users\\ivanovki\\Documents\\GitHub\\SoftUni\\C# Fundamentals\\01. Basic Syntax, Conditionals, Loops\\Lab\\09.SumOfOddNumbers\\09.SumOfOddNumbers\\09.SumOfOddNumbers.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
