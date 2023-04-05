@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Blacksmith", "01.Blacksmith\01.Blacksmith.csproj", "{D8DE40BC-D4B8-42A9-A65F-45CB097B0C94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Armory", "02.Armory\02.Armory.csproj", "{888F866A-2365-43D8-A8E8-EE811A6AED5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8DE40BC-D4B8-42A9-A65F-45CB097B0C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8DE40BC-D4B8-42A9-A65F-45CB097B0C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8DE40BC-D4B8-42A9-A65F-45CB097B0C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8DE40BC-D4B8-42A9-A65F-45CB097B0C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{888F866A-2365-43D8-A8E8-EE811A6AED5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{888F866A-2365-43D8-A8E8-EE811A6AED5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{888F866A-2365-43D8-A8E8-EE811A6AED5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{888F866A-2365-43D8-A8E8-EE811A6AED5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D81A1324-7250-4793-8DAF-CF595D5C40A2}
+	EndGlobalSection
+EndGlobal
