@@ -8,8 +8,8 @@ namespace _03.SimpleCalculator
     {
         static void Main(string[] args)
         {
-            //string expression = "((1+2)*3+100)/2";
-            string expression = Console.ReadLine();
+            string expression = "((1+2)*3+100)/2";
+            //string expression = Console.ReadLine();
             double result = Evaluate(expression);
 
             Console.WriteLine(result);
