@@ -1,4 +1,4 @@
-﻿PascalTriangle();
+﻿Miner();
 
 void SumMatrixElements()
 {
@@ -236,5 +236,282 @@ void PascalTriangle()
     for (int i = 0; i < triangle.Length; i++)
     {
         Console.WriteLine($"{new string(' ', triangle.Length - i)}{string.Join(" ", triangle[i])}");
+    }
+}
+
+void DiagonalDifference()
+{
+    int x = int.Parse(Console.ReadLine());
+    int[,] table = new int[x, x];
+
+    for (int row = 0; row < x; row++)
+    {
+        int[] values = Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
+
+        for (int col = 0; col < x; col++)
+        {
+            table[row, col] = values[col];
+        }
+    }
+
+    int diagA = 0;
+    int diagB = 0;
+    for (int i = 0; i < table.GetLength(0); i++)
+    {
+        diagA += table[i, i];
+        diagB += table[i, table.GetLength(1) - i - 1];
+    }
+
+    Console.WriteLine(Math.Abs(diagB - diagA));
+}
+
+void SquaresInMatrix()
+{
+    int[] dimensions = Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
+    int x = dimensions[0];
+    int y = dimensions[1];
+    int squareSize = 2;
+    string[,] table = new string[x, y];
+    int equalCount = 0;
+
+    for (int i = 0; i < x; i++)
+    {
+        string[] values = Console.ReadLine().Split(" ");
+        for (int j = 0; j < y; j++)
+        {
+            table[i, j] = values[j];
+        }
+    }
+
+    for (int row = 0; row < table.GetLength(0) - (squareSize - 1); row++)
+    {
+        for (int col = 0; col < table.GetLength(1) - (squareSize - 1); col++)
+        {
+            string[,] square = new string[squareSize, squareSize];
+            for (int i = 0; i < square.GetLength(0); i++)
+            {
+                for (int j = 0; j < square.GetLength(1); j++)
+                {
+                    square[i, j] = table[row + i, col + j];
+                }
+            }
+            if (isConsistent(square))
+            {
+                equalCount++;
+            }
+
+        }
+    }
+
+    Console.WriteLine(equalCount);
+
+    bool isConsistent(string[,] square)
+    {
+        string a = square[0, 0];
+        foreach (var b in square)
+        {
+            if (b != a)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+}
+
+void SnakeMoves()
+{
+    int[] dimensions = Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
+    int n = dimensions[0];
+    int m = dimensions[1];
+
+    char[,] table = new char[n, m];
+    Queue<char> snake = new Queue<char>(Console.ReadLine().ToCharArray());
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            int x = i % 2 == 0 ? j : m - j - 1;
+            var ch = snake.Dequeue();
+            snake.Enqueue(ch);
+            table[i, x] = ch;
+        }
+    }
+
+    PrintTable(table);
+
+    void PrintTable<T>(T[,] table)
+    {
+        for (int i = 0; i < table.GetLength(0); i++)
+        {
+            for (int j = 0; j < table.GetLength(1); j++)
+            {
+                Console.Write(table[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+void JaggedArrayManipulator()
+{
+    int n = int.Parse(Console.ReadLine());
+    int[][] table = new int[n][];
+
+    for (int i = 0; i < n; i++)
+    {
+        table[i] = Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
+    }
+
+    for (int i = 0; i < table.Length - 1; i++)
+    {
+        if (table[i].Length == table[i + 1].Length)
+        {
+            table[i] = table[i].Select(a => a * 2).ToArray();
+            table[i + 1] = table[i + 1].Select(a => a * 2).ToArray();
+        }
+        else
+        {
+            table[i] = table[i].Select(a => a / 2).ToArray();
+            table[i + 1] = table[i + 1].Select(a => a / 2).ToArray();
+        }
+    }
+
+    string input = Console.ReadLine();
+
+    while (input != "End")
+    {
+        string[] tokens = input.Split();
+        string action = tokens[0];
+        int row = int.Parse(tokens[1]);
+        int col = int.Parse(tokens[2]);
+        int value = int.Parse(tokens[3]);
+
+        if (IsValid(row, col))
+        {
+            switch (action)
+            {
+                case "Add":
+
+                    table[row][col] += value;
+
+                    break;
+                case "Subtract":
+                    table[row][col] -= value;
+                    break;
+            }
+        }
+        input = Console.ReadLine();
+    }
+
+    PrintTable(table);
+
+    bool IsValid(int row, int col)
+    {
+        return !(row < 0 || row >= table.Length || col < 0 || col >= table[row].Length);
+    }
+
+    void PrintTable(int[][] table)
+    {
+        foreach (var row in table)
+        {
+            Console.WriteLine(string.Join(" ", row));
+        }
+    }
+}
+
+void Miner()
+{
+    int size = int.Parse(Console.ReadLine());
+    string[,] field = new string[size, size];
+    Queue<string> directions = new Queue<string>(Console.ReadLine().Split(" "));
+    int coal = 0;
+    int row = 0;
+    int col = 0;
+
+    for (int i = 0; i < size; i++)
+    {
+        string[] values = Console.ReadLine().Split(" ");
+        for (int j = 0; j < size; j++)
+        {
+            string value = values[j];
+            field[i, j] = value;
+            if (value == "s")
+            {
+                row = i;
+                col = j;
+            }
+            else if (value == "c")
+            {
+                coal++;
+            }
+        }
+    }
+
+    while (directions.Any())
+    {
+        string direction = directions.Dequeue();
+        if (Move(direction))
+        {
+            Console.WriteLine($"Game over! ({row}, {col})");
+            return;
+        }
+
+        if (coal == 0)
+        {
+            Console.WriteLine($"You collected all coals! ({row}, {col})");
+            return;
+        }
+    }
+
+    Console.WriteLine($"{coal} coals left. ({row}, {col})");
+
+    bool Move(string direction)
+    {
+        bool isGameOver = false;
+        int nextRow = row;
+        int nextCol = col;
+        switch (direction)
+        {
+            case "up":
+                nextRow--;
+                break;
+            case "down":
+                nextRow++;
+                break;
+            case "right":
+                nextCol++;
+                break;
+            case "left":
+                nextCol--;
+                break;
+        }
+
+        if (IsValid(nextRow, nextCol))
+        {
+            string next = field[nextRow, nextCol];
+            switch (next)
+            {
+                case "e":
+                    isGameOver = true;
+                    break;
+                case "c":
+                    coal--;
+                    break;
+            }
+
+            field[row, col] = "*";
+            field[nextRow, nextCol] = "s";
+            row = nextRow;
+            col = nextCol;
+        }
+        return isGameOver;
+    }
+
+    bool IsValid(int row, int col)
+    {
+        return !(row < 0 || row >= field.GetLength(0) || col < 0 || col >= field.GetLength(1));
     }
 }
