@@ -1,6 +1,7 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Text;
+using System.Text.RegularExpressions;
 
-FolderSize();
+DirectoryTraversal();
 void Demo()
 {
     using (StreamWriter writer = new StreamWriter("test.txt"))
@@ -113,5 +114,96 @@ void FolderSize()
         }
 
         return size;
+    }
+}
+
+void EvenLines()
+{
+    string filePath = @"..\..\..\Files\EvenLinesText.txt";
+    using var reader = new StreamReader(filePath);
+    int i = 0;
+
+    while (!reader.EndOfStream)
+    {
+        string line = reader.ReadLine();
+        if (i % 2 == 0)
+        {
+            Console.WriteLine(ReformatText(line));
+        }
+        i++;
+    }
+
+    string ReformatText(string text)
+    {
+        var replaced = Regex.Replace(text, @"[-,\.!?]", "@");
+        return string.Join(" ", replaced.Split(" ", StringSplitOptions.RemoveEmptyEntries).Reverse());
+    }
+}
+
+void LineNumbers2()
+{
+    string filePath = @"..\..\..\Files\LineNumbers2Text.txt";
+    string[] lines = File.ReadAllLines(filePath);
+    int count = 1;
+    foreach (var line in lines)
+    {
+        int letters = line.ToCharArray().Count(a => Char.IsLetter(a));
+        int punctuations = line.ToCharArray().Count(a => Char.IsPunctuation(a));
+        Console.WriteLine($"Line {count++}: {line}({letters})({punctuations})");
+    }
+}
+
+void CopyBinaryFile()
+{
+    string inputFilePath = @"..\..\..\Files\copyMe.png";
+    string outputFilePath = @"..\..\..\Files\copyMe-Copied.png";
+    byte[] buffer = new byte[4096];
+    using var input = new FileStream(inputFilePath, FileMode.Open, FileAccess.Read);
+    using var output = new FileStream(outputFilePath, FileMode.OpenOrCreate, FileAccess.Write);
+    int read = input.Read(buffer);
+    while (read > 0)
+    {
+        output.Write(buffer);
+        read = input.Read(buffer);
+    }
+}
+
+void DirectoryTraversal()
+{
+    var directoryPath = @"..\..\..\Files";
+
+    Console.WriteLine(TraverseDirectory(directoryPath));
+
+    string TraverseDirectory(string directoryPath)
+    {
+        var directorySummary = new Dictionary<string, Dictionary<string, long>>();
+        var filesPaths = Directory.GetFiles(directoryPath);
+
+        foreach (var filePath in filesPaths)
+        {
+            var info = new FileInfo(filePath);
+            var name = info.Name;
+            var size = info.Length;
+            var extension = info.Extension;
+
+            if (!directorySummary.ContainsKey(extension))
+            {
+                directorySummary[extension] = new Dictionary<string, long>();
+            }
+            directorySummary[extension].Add(name, size);
+        }
+
+        var result = new StringBuilder();
+
+        foreach ((var extension, var files) in directorySummary.OrderByDescending(a => a.Value.Count).ThenBy(a => a.Key))
+        {
+            result.AppendLine(extension);
+            foreach ((var name, var size) in files.OrderBy(a => a.Value))
+            {
+                result.AppendLine($"--{name} - {size / 1024f:f3}kb");
+            }
+        }
+
+        return result.ToString();
     }
 }
