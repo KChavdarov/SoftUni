@@ -61,7 +61,7 @@ namespace Custom_Queue
         {
             if (Count == 0)
             {
-                throw new InvalidOperationException("Stack empty");
+                throw new InvalidOperationException("Queue empty");
             }
 
             return queue[head];
