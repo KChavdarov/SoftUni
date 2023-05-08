@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _07._Custom_Data_Structures
 {
-    public class DoublyLinkedList<T>
+    public class DoublyLinkedList<T> : IEnumerable<T>
     {
         public int Count { get; private set; } = 0;
         private Item<T> first { get; set; }
@@ -105,16 +106,26 @@ namespace _07._Custom_Data_Structures
             }
             return arr;
         }
-    }
-
-    internal class Item<T>
-    {
-        public Item(T value)
+        public IEnumerator<T> GetEnumerator()
         {
-            Value = value;
+            var current = first;
+            while (current != null)
+            {
+                yield return current.Value;
+                current = current.Next;
+            }
         }
-        public Item<T> Prev { get; set; }
-        public Item<T> Next { get; set; }
-        public T Value { get; set; }
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+        internal class Item<T>
+        {
+            public Item(T value)
+            {
+                Value = value;
+            }
+            public Item<T> Prev { get; set; }
+            public Item<T> Next { get; set; }
+            public T Value { get; set; }
+        }
     }
 }
