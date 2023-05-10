@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exam - 12 April 2023", "Exam - 12 April 2023\Exam - 12 April 2023.csproj", "{D2A00D2C-52B0-447F-BCBE-F6ECB0B2B6D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2A00D2C-52B0-447F-BCBE-F6ECB0B2B6D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2A00D2C-52B0-447F-BCBE-F6ECB0B2B6D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2A00D2C-52B0-447F-BCBE-F6ECB0B2B6D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2A00D2C-52B0-447F-BCBE-F6ECB0B2B6D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D35D5DA0-160F-46EC-AC05-04AA0BE6A2CD}
+	EndGlobalSection
+EndGlobal
