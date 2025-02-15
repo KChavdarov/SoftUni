@@ -1,28 +1,34 @@
+let calculator = calculator();
+calculator.init('input#num1', 'input#num2', 'input#result');
+document.getElementById('sumButton').addEventListener('click', calculator.add);
+document.getElementById('subtractButton').addEventListener('click', calculator.subtract);
+
 function calculator() {
-    let num1 = null;
-    let num2 = null;
-    let result = null;
-
-    function init(selector1, selector2, resultSelector) {
-        num1 = document.querySelector(`${selector1}`);
-        num2 = document.querySelector(`${selector2}`);
-        result = document.querySelector(`${resultSelector}`);
-
-    }
-
-    function add() {
-        let sum = Number(num1.value) + Number(num2.value);
-        result.value = sum;
-    }
-
-    function subtract() {
-        let delta = Number(num1.value) - Number(num2.value);
-        result.value = delta;
-    }
+    let inputA = null;
+    let inputB = null;
+    let resultField = null
 
     return {
         init,
         add,
         subtract,
-    };
+    }
+
+    function init(selector1, selector2, resultSelector) {
+        inputA = document.querySelector(selector1);
+        inputB = document.querySelector(selector2);
+        resultField = document.querySelector(resultSelector);
+    }
+
+    function add() {
+        let a = Number(inputA.value);
+        let b = Number(inputB.value);
+        resultField.value = a + b;
+    }
+
+    function subtract() {
+        let a = Number(inputA.value);
+        let b = Number(inputB.value);
+        resultField.value = a - b;
+    }
 }
