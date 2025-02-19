@@ -13,19 +13,34 @@ const symbols = {
 submitBtn.addEventListener('click', getWeatherInfo);
 
 async function getWeatherInfo() {
-    try {
+
+    async function getLocations() {
         const response = await fetch('http://localhost:3030/jsonstore/forecaster/locations');
+        const locations = await response.json();
         if (!response.ok) {
             throw new Error(response.statusText);
         }
+        return locations;
+    }
 
-        const locations = await response.json();
-        console.log(locName.value);
-        let location = locations.find(a => a.name.toLowerCase() == locName.value.toLowerCase());
-        console.log(location);
-        if (location === undefined) {
-            throw new Error(`${locName.value} data unavailable`);
-        }
+    let locations = await getLocations();
+    let location = locations.find(a => a.name.toLowerCase() == locName.value.toLowerCase());
+    console.log(location);
+
+
+    try {
+        //     const response = await fetch('http://localhost:3030/jsonstore/forecaster/locations');
+        //     if (!response.ok) {
+        //         throw new Error(response.statusText);
+        //     }
+
+        //     const locations = await response.json();
+        //     console.log(locName.value);
+        //     let location = locations.find(a => a.name.toLowerCase() == locName.value.toLowerCase());
+        //     console.log(location);
+        //     if (location === undefined) {
+        //         throw new Error(`${locName.value} data unavailable`);
+        //     }
 
         let [todayFc, upcomingFc] = await Promise.all([
             fetch(`http://localhost:3030/jsonstore/forecaster/today/${location.code}`).then(response => response.json()),
