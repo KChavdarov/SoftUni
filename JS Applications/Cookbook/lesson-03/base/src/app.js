@@ -1,12 +1,12 @@
 async function getRecipes() {
-    const response = await fetch('http://localhost:3030/jsonstore/cookbook/recipes');
+    const response = await fetch('http://localhost:3030/data/recipes?select=_id%2Cname%2Cimg');
     const recipes = await response.json();
 
     return Object.values(recipes);
 }
 
 async function getRecipeById(id) {
-    const response = await fetch('http://localhost:3030/jsonstore/cookbook/details/' + id);
+    const response = await fetch('http://localhost:3030/data/recipes/' + id);
     const recipe = await response.json();
 
     return recipe;
@@ -46,15 +46,45 @@ function createRecipeCard(recipe) {
     return result;
 }
 
-window.addEventListener('load', async () => {
-    const main = document.querySelector('main');
+async function logout() {
+    const token = sessionStorage.getItem('userToken');
+    const response = await fetch('http://localhost:3030/users/logout', {
+        method: 'GET',
+        headers: { 'X-Authorization': token },
+    });
+    if (!response.ok) {
+        const err = response.json();
+        return alert(err.message);
+    }
+    sessionStorage.removeItem('userToken');
+    window.location.pathname = 'index.html';
+}
 
+window.addEventListener('load', async () => {
+    getUserNav();
+    const main = document.querySelector('main');
     const recipes = await getRecipes();
     const cards = recipes.map(createRecipePreview);
 
     main.innerHTML = '';
     cards.forEach(c => main.appendChild(c));
 });
+
+function getUserNav() {
+    const token = sessionStorage.getItem('userToken');
+    const guestNav = document.getElementById('guest');
+    const userNav = document.getElementById('user');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    if (token) {
+        guestNav.style.display = 'none';
+        userNav.style.display = 'inline-block'
+        logoutBtn.addEventListener('click', logout);
+    } else {
+        guestNav.style.display = 'inline-block';
+        userNav.style.display = 'none';
+    }
+}
 
 function e(type, attributes, ...content) {
     const result = document.createElement(type);
