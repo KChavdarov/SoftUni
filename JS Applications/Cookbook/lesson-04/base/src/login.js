@@ -1,10 +1,27 @@
-const form = document.querySelector('form');
+import { showCatalog } from "./catalog.js";
 
-form.addEventListener('submit', (ev => {
-    ev.preventDefault();
-    const formData = new FormData(ev.target);
-    onSubmit([...formData.entries()].reduce((p, [k, v]) => Object.assign(p, { [k]: v }), {}));
-}));
+let main;
+let section;
+let setActiveNav;
+
+export function setupLogin(mainTarget, sectionTarget, setActiveNavCb) {
+    main = mainTarget;
+    section = sectionTarget;
+    setActiveNav = setActiveNavCb;
+
+    const form = section.querySelector('form');
+    form.addEventListener('submit', (ev => {
+        ev.preventDefault();
+        const formData = new FormData(ev.target);
+        onSubmit([...formData.entries()].reduce((p, [k, v]) => Object.assign(p, { [k]: v }), {}));
+    }));
+}
+
+export async function showLogin() {
+    main.innerHTML = '';
+    main.appendChild(section);
+    setActiveNav('loginLink');
+}
 
 async function onSubmit(data) {
     const body = JSON.stringify({
@@ -23,7 +40,13 @@ async function onSubmit(data) {
         const data = await response.json();
         if (response.status == 200) {
             sessionStorage.setItem('authToken', data.accessToken);
-            window.location.pathname = 'index.html';
+            sessionStorage.setItem('userId', data._id);
+            sessionStorage.setItem('email', data.email);
+
+            document.getElementById('user').style.display = 'inline-block';
+            document.getElementById('guest').style.display = 'none';
+            
+            showCatalog();
         } else {
             throw new Error(data.message);
         }

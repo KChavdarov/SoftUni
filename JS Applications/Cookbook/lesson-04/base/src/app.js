@@ -1,49 +1,74 @@
-async function getRecipes() {
-    const response = await fetch('http://localhost:3030/data/recipes');
-    const recipes = await response.json();
+import { setupCatalog, showCatalog } from './catalog.js';
+import { setupLogin, showLogin } from './login.js';
+import { setupRegister, showRegister } from './register.js';
+import { setupCreate, showCreate } from './create.js';
+import { setupDetails } from './details.js';
+import { setupEdit } from './edit.js';
 
-    return recipes;
+setupMain();
+
+function setupMain() {
+    setUserNav();
+    const main = document.querySelector('main');
+    const catalogSection = document.getElementById('catalogSection');
+    const loginSection = document.getElementById('loginSection');
+    const registerSection = document.getElementById('registerSection');
+    const createSection = document.getElementById('createSection');
+    const detailsSection = document.getElementById('detailsSection');
+    const editSection = document.getElementById('editSection');
+
+    setupNavigation();
+    setupCatalog(main, catalogSection, setActiveNav);
+    setupLogin(main, loginSection, setActiveNav);
+    setupRegister(main, registerSection, setActiveNav);
+    setupCreate(main, createSection, setActiveNav);
+    setupDetails(main, detailsSection, setActiveNav);
+    setupEdit(main, editSection, setActiveNav);
+
+    showCatalog();
 }
 
-async function getRecipeById(id) {
-    const response = await fetch('http://localhost:3030/data/recipes/' + id);
-    const recipe = await response.json();
+function setupNavigation() {
+    document.getElementById('logoutBtn').addEventListener('click', logout);
+    const nav = document.getElementById('siteNav');
+    nav.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (event.target.tagName == "A") {
+            let action = views[event.target.id];
+            if (action) {
+                action();
+                setActiveNav(event.target.id);
+            }
+        }
+    })
 
-    return recipe;
-}
-
-function createRecipePreview(recipe) {
-    const result = e('article', { className: 'preview', onClick: toggleCard },
-        e('div', { className: 'title' }, e('h2', {}, recipe.name)),
-        e('div', { className: 'small' }, e('img', { src: recipe.img })),
-    );
-
-    return result;
-
-    async function toggleCard() {
-        const fullRecipe = await getRecipeById(recipe._id);
-
-        result.replaceWith(createRecipeCard(fullRecipe));
+    const views = {
+        catalogLink: showCatalog,
+        loginLink: showLogin,
+        registerLink: showRegister,
+        createLink: showCreate,
     }
 }
 
-function createRecipeCard(recipe) {
-    const result = e('article', {},
-        e('h2', {}, recipe.name),
-        e('div', { className: 'band' },
-            e('div', { className: 'thumb' }, e('img', { src: recipe.img })),
-            e('div', { className: 'ingredients' },
-                e('h3', {}, 'Ingredients:'),
-                e('ul', {}, recipe.ingredients.map(i => e('li', {}, i))),
-            )
-        ),
-        e('div', { className: 'description' },
-            e('h3', {}, 'Preparation:'),
-            recipe.steps.map(s => e('p', {}, s))
-        ),
-    );
+function setActiveNav(targetId = 'catalogLink') {
+    const nav = document.getElementById('siteNav');
+    [...nav.querySelectorAll('a')].forEach(link => {
+        if (link.id == targetId) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    })
+}
 
-    return result;
+function setUserNav() {
+    if (sessionStorage.getItem('authToken') != null) {
+        document.getElementById('user').style.display = 'inline-block';
+        document.getElementById('guest').style.display = 'none';
+    } else {
+        document.getElementById('guest').style.display = 'inline-block';
+        document.getElementById('user').style.display = 'none';
+    }
 }
 
 async function logout() {
@@ -55,50 +80,11 @@ async function logout() {
     });
     if (response.status == 200) {
         sessionStorage.removeItem('authToken');
-        window.location.pathname = 'index.html';
+        sessionStorage.removeItem('userId');
+        sessionStorage.removeItem('email');
+        setUserNav();
+        showCatalog();
     } else {
         console.error(await response.json());
     }
-}
-
-window.addEventListener('load', async () => {
-    if (sessionStorage.getItem('authToken') != null) {
-        document.getElementById('user').style.display = 'inline-block';
-        document.getElementById('logoutBtn').addEventListener('click', logout);
-    } else {
-        document.getElementById('guest').style.display = 'inline-block';
-    }
-
-    const main = document.querySelector('main');
-
-    const recipes = await getRecipes();
-    const cards = recipes.map(createRecipePreview);
-
-    main.innerHTML = '';
-    cards.forEach(c => main.appendChild(c));
-});
-
-function e(type, attributes, ...content) {
-    const result = document.createElement(type);
-
-    for (let [attr, value] of Object.entries(attributes || {})) {
-        if (attr.substring(0, 2) == 'on') {
-            result.addEventListener(attr.substring(2).toLocaleLowerCase(), value);
-        } else {
-            result[attr] = value;
-        }
-    }
-
-    content = content.reduce((a, c) => a.concat(Array.isArray(c) ? c : [c]), []);
-
-    content.forEach(e => {
-        if (typeof e == 'string' || typeof e == 'number') {
-            const node = document.createTextNode(e);
-            result.appendChild(node);
-        } else {
-            result.appendChild(e);
-        }
-    });
-
-    return result;
 }

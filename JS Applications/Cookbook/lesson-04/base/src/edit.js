@@ -5,7 +5,7 @@ let main;
 let section;
 let setActiveNav;
 
-export function setupCreate(mainTarget, sectionTarget, setActiveNavCb) {
+export function setupEdit(mainTarget, sectionTarget, setActiveNavCb) {
     main = mainTarget;
     section = sectionTarget;
     setActiveNav = setActiveNavCb;
@@ -19,10 +19,24 @@ export function setupCreate(mainTarget, sectionTarget, setActiveNavCb) {
     }));
 }
 
-export async function showCreate() {
+export async function showEdit(id) {
+    setActiveNav('');
     main.innerHTML = '';
+
+    const recipe = await getRecipeById(id);
+    section.querySelector('[name="id"]').value = recipe._id;
+    section.querySelector('[name="name"]').value = recipe.name;
+    section.querySelector('[name="img"]').value = recipe.img;
+    section.querySelector('[name="ingredients"]').value = recipe.ingredients.join('\n');
+    section.querySelector('[name="steps"]').value = recipe.steps.join('\n');
+
     main.appendChild(section);
-    setActiveNav('createLink');
+}
+
+async function getRecipeById(id) {
+    const response = await fetch('http://localhost:3030/data/recipes/' + id);
+    const recipe = await response.json();
+    return recipe;
 }
 
 async function onSubmit(data) {
@@ -35,12 +49,12 @@ async function onSubmit(data) {
 
     const token = sessionStorage.getItem('authToken');
     if (token == null) {
-        return showCatalog();
+        showCatalog();
     }
 
     try {
-        const response = await fetch('http://localhost:3030/data/recipes', {
-            method: 'post',
+        const response = await fetch('http://localhost:3030/data/recipes/' + data.id, {
+            method: 'put',
             headers: {
                 'Content-Type': 'application/json',
                 'X-Authorization': token
