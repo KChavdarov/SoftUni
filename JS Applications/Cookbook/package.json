@@ -3,16 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
   "devDependencies": {
     "@types/mocha": "^8.2.0",
     "http-server": "^0.12.3",
-    "playwright-chromium": "^1.8.1"
+    "playwright-chromium": "^1.50.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"dev": "http-server lesson-07/finished -a localhost -p 3000 -P http://localhost:3000?",
-	"server": "server.bat"
+    "dev": "http-server lesson-07/finished -a localhost -p 3000 -P http://localhost:3000?",
+    "server": "server.bat"
   },
   "repository": {
     "type": "git",
@@ -24,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/viktorpts/js-apps-workshop/issues"
   },
-  "homepage": "https://github.com/viktorpts/js-apps-workshop#readme"
+  "homepage": "https://github.com/viktorpts/js-apps-workshop#readme",
+  "dependencies": {
+    "mocha": "^11.1.0"
+  }
 }
