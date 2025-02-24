@@ -23,7 +23,7 @@ export async function getRecipeCount() {
 }
 
 export async function getRecent() {
-    return await api.get(endpoints.RECENT_RECIPES);
+    return await api.get(endpoints.RECENT_RECIPES + `&offset=0&pageSize=3`);
 }
 
 export async function getRecipeById(id) {

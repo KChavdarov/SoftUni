@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/viktorpts/js-apps-workshop#readme",
   "dependencies": {
+    "lit-html": "^3.2.1",
     "mocha": "^11.1.0"
   }
 }

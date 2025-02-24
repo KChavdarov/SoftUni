@@ -111,13 +111,15 @@ article h2 {
 .recent-recipes {
     width: 850px;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
 }
-
+/* 
 .recent-recipes::after {
     display: table;
     clear: both;
     content: "";
-}
+} */
 
 .recent-space {
     float: left;
