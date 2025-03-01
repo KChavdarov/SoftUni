@@ -1,5 +1,4 @@
 import { html } from "../../node_modules/lit-html/lit-html.js";
-import { api } from "../api/api.js";
 
 const loginTemplate = (onSubmit, error) => html`
     <section id="login">
@@ -27,7 +26,7 @@ async function onSubmit(event, context) {
 
     if (email && password) {
         try {
-            await api.auth.login(email, password);
+            await context.api.auth.login(email, password);
             context.page.redirect('/my-teams');
         } catch (error) {
             context.renderView(loginTemplate((event) => onSubmit(event, context), error.message));

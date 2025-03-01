@@ -1,5 +1,4 @@
 import { html } from "../../node_modules/lit-html/lit-html.js";
-import { api } from "../api/api.js";
 import { openModal } from "./modal.js";
 
 const navbarTemplate = (isUser, onLogout) => html`
@@ -23,7 +22,7 @@ export async function navbar(context) {
 async function onLogout(context) {
     const confirmed = await openModal('Are you sure you want to log out?');
     if (confirmed) {
-        await api.auth.logout();
+        await context.api.auth.logout();
         context.page.redirect('/');
     }
 }

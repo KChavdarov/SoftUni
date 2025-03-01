@@ -1,23 +1,23 @@
 import * as request from './request.js';
 
 
-export async function getAllItems() {
+export async function getAllTeams() {
     return await request.get(request.settings.host + '/data/teams');
 }
 
-export async function getItemById(id) {
+export async function getTeamById(id) {
     return await request.get(request.settings.host + '/data/teams/' + id);
 }
 
-export async function createItem(data) {
+export async function createTeam(data) {
     return await request.post(request.settings.host + '/data/teams', data);
 }
 
-export async function updateItemById(id, data) {
+export async function updateTeamById(id, data) {
     return await request.put(request.settings.host + '/data/teams/' + id, data);
 }
 
-export async function deleteItemById(id) {
+export async function deleteTeamById(id) {
     return await request.del(request.settings.host + '/data/teams/' + id);
 }
 

@@ -1,14 +1,13 @@
 import { html } from "../../node_modules/lit-html/lit-html.js";
-import { api } from "../api/api.js";
 
-const registerTemplate = (onSubmit, error) => html`
+const registerTemplate = (onSubmit, errors) => html`
     <section id="register">
         <article class="narrow">
             <header class="pad-med">
                 <h1>Register</h1>
             </header>
             <form @submit=${onSubmit} id="register-form" class="main-form pad-large">
-                ${error ? html`<div class="error">${error}</div>` : ''}
+                ${errors ? html`<div class="error">${errors}</div>` : ''}
                 <label>E-mail: <input type="text" name="email"></label>
                 <label>Username: <input type="text" name="username"></label>
                 <label>Password: <input type="password" name="password"></label>
@@ -29,18 +28,23 @@ async function onSubmit(event, context) {
     const password = formData.get('password').toLowerCase().trim();
     const repass = formData.get('repass').toLowerCase().trim();
 
+    [...event.target.querySelectorAll('input, textarea, button')].forEach(i => i.disabled = true);
+
     const errorText = validate(email, username, password, repass);
 
     if (errorText != '') {
         context.renderView(registerTemplate((event) => onSubmit(event, context), errorText));
     } else {
         try {
-            await api.auth.register(email, username, password);
+            await context.api.auth.register(email, username, password);
+            event.target.reset();
             context.page.redirect('/my-teams');
         } catch (error) {
             context.renderView(registerTemplate((event) => onSubmit(event, context), error.message));
         }
     }
+    
+    [...event.target.querySelectorAll('input, textarea, button')].forEach(i => i.disabled = false);
 }
 
 export async function registerPage(context) {
