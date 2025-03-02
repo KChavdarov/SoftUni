@@ -17,8 +17,8 @@ page('/', middleware, homePage);
 page('/login', middleware, routeGuard('guest'), loginPage);
 page('/register', middleware, routeGuard('guest'), registerPage);
 page('/catalog', middleware, catalogPage);
-page('/create', middleware, routeGuard('user'), createPage);
 page('/details/:id', middleware, detailsPage);
+page('/create', middleware, routeGuard('user'), createPage);
 page('/edit/:id', middleware, routeGuard('user'), editPage);
 page('/my-teams', middleware, routeGuard('user'), myTeamsPage);
 
@@ -28,7 +28,7 @@ function middleware(context, next) {
     context.api = api;
     context.renderView = (view) => render(view, root.querySelector('main'));
     context.renderNavbar = (view) => render(view, root.querySelector('header#titlebar'));
-    context.user = sessionStorage.getItem('user');
+    context.user = JSON.parse(sessionStorage.getItem('user'));
     updateNavbar(context);
     next();
 }
