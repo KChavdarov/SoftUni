@@ -28,7 +28,7 @@ async function populateTemplate(context) {
     if (team._ownerId != context.user.id) {
         context.page.redirect('/details/' + context.params.id);
     }
-    return editTemplate(team, onSubmit);
+    return editTemplate(team, (event) => onSubmit(event, context));
 }
 
 async function onSubmit(event, context) {

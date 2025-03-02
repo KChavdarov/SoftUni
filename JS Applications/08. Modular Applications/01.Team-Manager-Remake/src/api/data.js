@@ -43,9 +43,9 @@ export async function createMembershipRequest(teamId) {
     return await request.post(request.settings.host + '/data/members', { teamId });
 }
 
-export async function approveMembershipRequest(request) {
-    const body = { _id: request._id, teamId: request.teamId, status: 'member' };
-    return await request.put(request.settings.host + '/data/members/' + request._id, body);
+export async function approveMembershipRequest(membership) {
+    const body = { _id: membership._id, teamId: membership.teamId, status: 'member' };
+    return await request.put(request.settings.host + '/data/members/' + membership._id, body);
 }
 
 export async function cancelMembershipOrRequest(requestId) {

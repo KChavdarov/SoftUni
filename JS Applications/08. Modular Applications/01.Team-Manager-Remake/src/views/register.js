@@ -14,7 +14,7 @@ const registerTemplate = (onSubmit, errors) => html`
                 <label>Repeat: <input type="password" name="repass"></label>
                 <input class="action cta" type="submit" value="Create Account">
             </form>
-            <footer class="pad-small">Already have an account? <a href="#" class="invert">Sign in here</a>
+            <footer class="pad-small">Already have an account? <a href="/login" class="invert">Sign in here</a>
             </footer>
         </article>
     </section>

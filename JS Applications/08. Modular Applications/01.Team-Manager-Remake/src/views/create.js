@@ -37,12 +37,14 @@ async function onSubmit(event, context) {
     } else {
         try {
             const team = await context.api.data.createTeam({ name, logoUrl, description });
+            const membership = await context.api.data.createMembershipRequest(team._id);
+            await context.api.data.approveMembershipRequest(membership);
             context.page.redirect(`/details/${team._id}`);
         } catch (error) {
             context.renderView(createTemplate((event) => onSubmit(event, context), error.message));
         }
     }
-    
+
     [...event.target.querySelectorAll('input, textarea, button')].forEach(i => i.disabled = false);
 }
 
