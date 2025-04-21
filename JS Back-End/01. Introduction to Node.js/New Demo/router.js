@@ -1,7 +1,13 @@
 const handlers = {};
+const staticHandler = require('./controllers/static.js');
+const defaultHandler = require('./controllers/default.js');
 
 function match(url, method) {
     let handler = defaultHandler;
+
+    if (method == 'GET' && url.startsWith('/static/')) {
+        return staticHandler;
+    }
 
     if (handlers[url] && handlers[url][method]) {
         handler = handlers[url][method];
@@ -17,12 +23,6 @@ function registerHandler(method, url, handler) {
 
     const methods = handlers[url];
     methods[method] = handler;
-}
-
-function defaultHandler(req, res) {
-    res.statusCode = 404;
-    res.write('not found');
-    res.end()
 }
 
 module.exports = {

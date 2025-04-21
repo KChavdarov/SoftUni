@@ -1,8 +1,9 @@
-const html = require('../views/about.js');
+const template = require('../util/template.js');
 
-function about(req, res) {
+async function about(req, res) {
+    const page = await template.load('about');
     res.statusCode = 200;
-    res.write(html);
+    res.write(await template.render(page, 'My page - About'));
     res.end();
 }
 
